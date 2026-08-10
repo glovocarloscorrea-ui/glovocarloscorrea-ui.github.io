@@ -3,67 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sección Sindical UGT | Guía Amarilla</title>
+    <title>Guía Amarilla - Sección Sindical UGT | Madrid</title>
     <style>
-        /* Estilos generales */
         body { 
             font-family: Arial, sans-serif; 
             margin: 0; 
             padding: 0; 
             background-color: #f4f4f9; 
             color: #333; 
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
-        /* Cabecera principal (Banner Superior) */
+        /* CABECERA SECCIÓN SINDICAL */
         header { 
             background-color: #1a365d; 
             color: white; 
-            padding: 25px 20px; 
+            padding: 20px 15px; 
             text-align: center; 
         }
-        header h1 { margin: 0; font-size: 26px; }
-        header p { margin: 5px 0 0 0; font-size: 14px; color: #cbd5e0; }
+        .titulo-principal { margin: 0; font-size: 22px; font-weight: bold; }
+        .subtitulo-empresa { margin: 4px 0 0 0; font-size: 16px; color: #cbd5e0; font-weight: 600; }
+        .descripcion-portal { margin: 6px 0 0 0; font-size: 14px; color: #e2e8f0; }
 
-        /* Barra de navegación */
+        /* BARRA DE NAVEGACIÓN */
         .menu-navegacion { 
             background-color: #2b6cb0; 
-            padding: 12px; 
+            padding: 10px; 
             text-align: center; 
         }
         .menu-navegacion a { 
             color: white; 
-            margin: 0 15px; 
+            margin: 0 5px; 
             text-decoration: none; 
             font-weight: bold; 
-            font-size: 15px; 
+            font-size: 14px; 
+            display: inline-block;
+            padding: 6px 10px;
         }
-        .menu-navegacion a:hover { 
-            text-decoration: underline; 
-            color: #e2e8f0; 
-        }
-
-        /* Contenedor de contenido */
-        main { 
-            padding: 30px 20px; 
-            max-width: 900px; 
-            margin: 20px auto; 
-            background: white; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        .menu-navegacion a.activo {
+            background-color: #1a365d;
             border-radius: 4px;
         }
 
-        /* Pie de página (Banner Inferior) */
-        footer { 
-            text-align: center; 
-            padding: 20px; 
-            background-color: #1a365d; 
-            color: white; 
-            margin-top: 40px; 
-            font-size: 14px;
+        /* CONTENEDOR PRINCIPAL */
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: 20px auto;
+            background: #ffffff;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
-        /* Estilos lista Guía Amarilla */
+        /* ESTILOS ESPECÍFICOS GUÍA AMARILLA */
         .lista-documentos {
             list-style-type: disc;
             padding-left: 20px;
@@ -86,25 +78,39 @@
         .sublista-nomina li {
             margin-bottom: 4px;
         }
+
+        /* PIE DE PÁGINA */
+        footer { 
+            text-align: center; 
+            padding: 15px; 
+            background-color: #1a365d; 
+            color: white; 
+            margin-top: 25px; 
+            font-size: 13px;
+        }
+        footer a { color: #90cdf4; }
     </style>
 </head>
 <body>
 
-    <!-- BANNER SUPERIOR (CABECERA PRINCIPAL) -->
+    <!-- CABECERA SECCION SINDICAL -->
     <header>
-        <h1>Sección Sindical UGT | Madrid</h1>
-        <p>Portal Informativo de Derechos Laborales y Acción Sindical</p>
+        <h1 class="titulo-principal">Sección Sindical UGT | Madrid</h1>
+        <div class="subtitulo-empresa">Glovoapp Spain Platform</div>
+        <div class="descripcion-portal">Portal Informativo de Derechos Laborales y Acción Sindical</div>
     </header>
 
-    <!-- BARRA DE NAVEGACIÓN -->
+    <!-- MENÚ DE NAVEGACIÓN -->
     <nav class="menu-navegacion">
         <a href="index.html">Inicio</a>
-        <a href="normativa.html">Normativa y Jurídico</a>
+        <a href="guiaamarilla.html" class="activo">Guía Amarilla</a>
+        <a href="mutua.html">Mutua</a>
+        <a href="normativa.html">Normativa</a>
         <a href="comunicados.html">Comunicados</a>
-        <a href="contacto.html">Contacto y Delegados</a>
+        <a href="contacto.html">Contacto</a>
     </nav>
 
-    <!-- CONTENIDO PRINCIPAL: GUÍA AMARILLA -->
+    <!-- CONTENIDO PRINCIPAL -->
     <main>
         <!-- BANNER ESPECÍFICO DE LA GUÍA AMARILLA -->
         <div style="width: 100%; text-align: center; margin-bottom: 20px;">
@@ -173,9 +179,10 @@
         </p>
     </main>
 
-    <!-- BANNER INFERIOR (PIE DE PÁGINA) -->
+    <!-- PIE DE PÁGINA -->
     <footer>
-        <p>&copy; Sección Sindical UGT | Madrid - Información Jurídica y Laboral</p>
+        <p>&copy; Sección Sindical UGT - Glovoapp Spain Platform | Madrid</p>
+        <p>Contacto: <a href="mailto:ugt.glovomadrid@gmail.com">ugt.glovomadrid@gmail.com</a></p>
     </footer>
 
 </body>
