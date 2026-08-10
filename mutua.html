@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutua y Accidente Laboral - Sección Sindical UGT | Madrid</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #f4f4f9; 
+            color: #333; 
+            line-height: 1.5;
+        }
+
+        /* HEADER */
+        header { 
+            background-color: #1a365d; 
+            color: white; 
+            padding: 20px 15px; 
+            text-align: center; 
+        }
+        .titulo-principal { margin: 0; font-size: 22px; font-weight: bold; }
+        .subtitulo-empresa { margin: 4px 0 0 0; font-size: 16px; color: #cbd5e0; font-weight: 600; }
+        .descripcion-portal { margin: 6px 0 0 0; font-size: 14px; color: #e2e8f0; }
+
+        /* NAVEGACIÓN */
+        .menu-navegacion { 
+            background-color: #2b6cb0; 
+            padding: 10px; 
+            text-align: center; 
+        }
+        .menu-navegacion a { 
+            color: white; 
+            margin: 0 5px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 14px; 
+            display: inline-block;
+            padding: 6px 10px;
+        }
+        .menu-navegacion a.activo {
+            background-color: #1a365d;
+            border-radius: 4px;
+        }
+
+        /* CONTENIDO PRINCIPAL */
+        main { 
+            padding: 15px; 
+            max-width: 800px; 
+            margin: 15px auto; 
+            background: white; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+            border-radius: 6px;
+        }
+
+        /* URGENCIA / TELEFONOS */
+        .alerta-urgente {
+            background-color: #fff5f5;
+            border-left: 6px solid #e53e3e;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .alerta-urgente h2 { margin-top: 0; color: #c53030; font-size: 18px; }
+
+        .btn-telefono-112 {
+            display: block;
+            background-color: #c53030;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            font-size: 17px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            margin: 8px 0;
+        }
+
+        .btn-telefono-mutua {
+            display: block;
+            background-color: #2b6cb0;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            font-size: 17px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            margin: 8px 0;
+        }
+
+        /* PASOS DE ACTUACIÓN */
+        .pasos-container { margin-bottom: 25px; }
+        .paso-box {
+            background: #edf2f7;
+            border-left: 4px solid #2b6cb0;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 0 4px 4px 0;
+        }
+        .paso-box h3 { margin: 0 0 5px 0; color: #1a365d; font-size: 15px; }
+        .paso-box p { margin: 0; font-size: 14px; }
+
+        .nota-importante {
+            background-color: #feebc8;
+            border: 1px solid #fbd38d;
+            padding: 10px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #742a2a;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* TABLA Y LISTAS DE CENTROS */
+        .bloque-centros {
+            margin-bottom: 20px;
+        }
+        .bloque-centros h3 {
+            color: #1a365d;
+            border-bottom: 2px solid #2b6cb0;
+            padding-bottom: 5px;
+            font-size: 16px;
+        }
+        .centro-card {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            padding: 10px 12px;
+            margin-bottom: 8px;
+            border-radius: 4px;
+        }
+        .centro-card strong { color: #2b6cb0; font-size: 14px; }
+        .centro-card div { font-size: 13px; margin-top: 3px; color: #4a5568; }
+
+        /* FOOTER */
+        footer { 
+            text-align: center; 
+            padding: 15px; 
+            background-color: #1a365d; 
+            color: white; 
+            margin-top: 25px; 
+            font-size: 13px;
+        }
+        footer a { color: #90cdf4; }
+    </style>
+</head>
+<body>
+
+    <!-- ENCABEZADO -->
+    <header>
+        <h1 class="titulo-principal">Sección Sindical UGT | Madrid</h1>
+        <div class="subtitulo-empresa">Glovoapp Spain Platform</div>
+        <div class="descripcion-portal">Portal Informativo de Derechos Laborales y Acción Sindical</div>
+    </header>
+
+    <!-- MENÚ -->
+    <nav class="menu-navegacion">
+        <a href="index.html">Inicio</a>
+        <a href="mutua.html" class="activo">Mutua</a>
+        <a href="normativa.html">Normativa</a>
+        <a href="comunicados.html">Comunicados</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+
+    <main>
+
+        <!-- EMERGENCIAS Y TELÉFONOS RÁPIDOS -->
+        <section class="alerta-urgente">
+            <h2>🚨 ¿Has tenido un accidente laboral?</h2>
+            
+            <p><strong>ACCIDENTE GRAVE:</strong> Llama inmediatamente al 112 y sigue sus indicaciones.</p>
+            <a href="tel:112" class="btn-telefono-112">📞 LLAMAR AL 112</a>
+
+            <p style="margin-top: 15px;"><strong>MUTUA UNIVERSAL (Atención 24h):</strong></p>
+            <a href="tel:900203203" class="btn-telefono-mutua">📞 LLAMAR MUTUA: 900 203 203</a>
+        </section>
+
+        <!-- PASOS ANTE ACCIDENTE LEVE / EN RUTA -->
+        <section class="pasos-container">
+            <h2>📋 ¿Cómo proceder según el caso?</h2>
+
+            <div class="paso-box">
+                <h3>1. Si tienes pedido en curso:</h3>
+                <p>Reporta el accidente en la App de Glovo. Esto reasignará el pedido en curso y quitará las horas de trabajo actuales y próximas.</p>
+            </div>
+
+            <div class="paso-box">
+                <h3>2. Solicitud de Volante de Asistencia:</h3>
+                <p>Informa a los <strong>Fleet Leads (Jefes de Flota)</strong> sobre el accidente para que gestionen la generación del volante de asistencia.</p>
+            </div>
+
+            <div class="paso-box">
+                <h3>3. Atestado Policial (si aplica):</h3>
+                <p>Si la Policía ha intervenido en el accidente, solicita el parte correspondiente.</p>
+            </div>
+
+            <div class="paso-box">
+                <h3>4. Asistencia Médica:</h3>
+                <p>Dirígete a uno de los centros de atención de Mutua Universal con el volante de asistencia.</p>
+            </div>
+
+            <div class="nota-importante">
+                💡 IMPORTANTE: Puedes ir recibiendo atención de la Mutua mientras Glovo gestiona y genera el volante de asistencia.
+            </div>
+        </section>
+
+        <!-- CENTROS PROPIOS MUTUA UNIVERSAL -->
+        <section class="bloque-centros">
+            <h3>🏥 Centros Propios - Mutua Universal</h3>
+
+            <div class="centro-card">
+                <strong>Madrid (Dentro M30 - Abierto todos los días)</strong>
+                <div>📍 C/ Príncipe de Vergara 53 | 📞 <a href="tel:914261800">914 261 800</a></div>
+                <div>🕒 Horario: Todos los días</div>
+            </div>
+
+            <div class="centro-card">
+                <strong>Madrid (Dentro M30)</strong>
+                <div>📍 C/ Santa Cruz de Marcenado 15 | 📞 <a href="tel:913220700">913 220 700</a></div>
+                <div>🕒 Horario: Lunes a Viernes</div>
+            </div>
+
+            <div class="centro-card">
+                <strong>Madrid (Fuera M30)</strong>
+                <div>📍 C/ Ulises 31 | 📞 <a href="tel:913220800">913 220 800</a></div>
+                <div>🕒 Horario: Lunes a Viernes</div>
+            </div>
+
+            <div class="centro-card">
+                <strong>Alcorcón</strong>
+                <div>📍 C/ Islas Cíes 9 | 📞 <a href="tel:916211208">916 211 208</a></div>
+                <div>🕒 Horario: Lunes a Viernes</div>
+            </div>
+
+            <div class="centro-card">
+                <strong>Getafe</strong>
+                <div>📍 C/ Aviador de Francisco 7 | 📞 <a href="tel:916011310">916 011 310</a></div>
+                <div>🕒 Horario: Lunes a Viernes</div>
+            </div>
+
+            <div class="centro-card">
+                <strong>Alcobendas</strong>
+                <div>📍 C/ Severo Ochoa 45 | 📞 <a href="tel:914840613">914 840 613</a></div>
+                <div>🕒 Horario: Lunes a Viernes</div>
+            </div>
+
+            <div class="centro-card">
+                <strong>Móstoles</strong>
+                <div>📍 C/ Violeta 15 | 📞 <a href="tel:916659955">916 659 955</a></div>
+                <div>🕒 Horario: Lunes a Viernes</div>
+            </div>
+
+            <div class="centro-card">
+                <strong>Las Rozas</strong>
+                <div>📍 C/ Pollenza 2 | 📞 <a href="tel:916366259">916 366 259</a></div>
+                <div>🕒 Horario: Lunes a Viernes</div>
+            </div>
+        </section>
+
+        <!-- CENTROS HOSPITALARIOS CONCERTADOS -->
+        <section class="bloque-centros">
+            <h3>🏥 Centros Hospitalarios Concertados</h3>
+
+            <div class="centro-card">
+                <strong>Majadahonda</strong>
+                <div>📍 Ctra. de Pozuelo 61 | 📞 <a href="tel:916265680">916 265 680</a></div>
+                <div>🕒 Horario: Todos los días</div>
+            </div>
+
+            <div class="centro-card">
+                <strong>Coslada</strong>
+                <div>📍 C/ Joaquín de Cárdenas 2 | 📞 <a href="tel:916735011">916 735 011</a></div>
+                <div>🕒 Horario: Todos los días</div>
+            </div>
+
+            <div class="centro-card">
+                <strong>Rivas Vaciamadrid</strong>
+                <div>📍 C/ Electrodo 68 | 📞 <a href="tel:914991761">914 991 761</a></div>
+                <div>🕒 Horario: Lunes a Viernes</div>
+            </div>
+
+            <div class="centro-card">
+                <strong>Pinto</strong>
+                <div>📍 C/ Coto de Doñana 18 | 📞 <a href="tel:916212001">916 212 001</a></div>
+                <div>🕒 Horario: Lunes a Viernes</div>
+            </div>
+
+            <div class="centro-card">
+                <strong>San Sebastián de los Reyes</strong>
+                <div>📍 Av. de Tenerife 20 | 📞 <a href="tel:916531255">916 531 255</a></div>
+                <div>🕒 Horario: Lunes a Viernes</div>
+            </div>
+
+            <div class="centro-card">
+                <strong>Torrejón de Ardoz</strong>
+                <div>📍 C/ Primavera 49 | 📞 <a href="tel:916749412">916 749 412</a></div>
+                <div>🕒 Horario: Lunes a Viernes</div>
+            </div>
+
+            <div class="centro-card">
+                <strong>Tres Cantos</strong>
+                <div>📍 C/ Viento 12 | 📞 <a href="tel:918041073">918 041 073</a></div>
+                <div>🕒 Horario: Lunes a Viernes</div>
+            </div>
+
+            <div class="centro-card">
+                <strong>Arganda del Rey</strong>
+                <div>📍 C/ de Madrid 28 | 📞 <a href="tel:918701831">918 701 831</a></div>
+                <div>🕒 Horario: Lunes a Viernes</div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; Sección Sindical UGT - Glovoapp Spain Platform (Madrid)</p>
+        <p>Contacto: <a href="mailto:ugt.glovomadrid@gmail.com">ugt.glovomadrid@gmail.com</a></p>
+    </footer>
+
+</body>
+</html>
