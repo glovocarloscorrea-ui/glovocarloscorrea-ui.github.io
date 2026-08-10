@@ -1,73 +1,182 @@
-<!-- BANNER PRINCIPAL / ENCABEZADO SUPERIOR -->
-<div style="width: 100%; text-align: center; margin-bottom: 20px;">
-  <img src="banner.jpg" alt="Sección Sindical UGT Glovo" style="max-width: 100%; height: auto;">
-</div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sección Sindical UGT | Guía Amarilla</title>
+    <style>
+        /* Estilos generales */
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #f4f4f9; 
+            color: #333; 
+            line-height: 1.6;
+        }
 
-<!-- BANNER ESPECÍFICO DE LA GUÍA AMARILLA -->
-<div style="width: 100%; text-align: center; margin-bottom: 20px;">
-  <img src="bannerguiaamarilla.jpg" alt="Guia Amarilla Flota Interna" style="max-width: 100%; height: auto;">
-</div>
+        /* Cabecera principal (Banner Superior) */
+        header { 
+            background-color: #1a365d; 
+            color: white; 
+            padding: 25px 20px; 
+            text-align: center; 
+        }
+        header h1 { margin: 0; font-size: 26px; }
+        header p { margin: 5px 0 0 0; font-size: 14px; color: #cbd5e0; }
 
-<!-- TEXTO DE INTRODUCCIÓN Y CONTENIDO -->
-<div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto;">
-  <p style="font-weight: bold; margin-bottom: 5px;">La Guia Amarilla contiene las políticas internas de la empresa</p>
-  <p style="font-weight: bold; margin-top: 0;">Como trabajador tienes el deber y el derecho de conocer estas políticas</p>
+        /* Barra de navegación */
+        .menu-navegacion { 
+            background-color: #2b6cb0; 
+            padding: 12px; 
+            text-align: center; 
+        }
+        .menu-navegacion a { 
+            color: white; 
+            margin: 0 15px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 15px; 
+        }
+        .menu-navegacion a:hover { 
+            text-decoration: underline; 
+            color: #e2e8f0; 
+        }
 
-  <hr style="border: 0; border-top: 1px solid #ccc; margin: 25px 0;">
+        /* Contenedor de contenido */
+        main { 
+            padding: 30px 20px; 
+            max-width: 900px; 
+            margin: 20px auto; 
+            background: white; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-radius: 4px;
+        }
 
-  <!-- DOCUMENTOS DENTRO DE LA GUÍA -->
-  <h3 style="font-weight: bold; letter-spacing: 0.5px;">DOCUMENTOS DENTRO DE LA GUIA</h3>
+        /* Pie de página (Banner Inferior) */
+        footer { 
+            text-align: center; 
+            padding: 20px; 
+            background-color: #1a365d; 
+            color: white; 
+            margin-top: 40px; 
+            font-size: 14px;
+        }
 
-  <ul style="list-style-type: disc; padding-left: 20px;">
-    <li style="margin-bottom: 12px;">
-      <a href="politicatiemposdeentrega.pdf" target="_blank" style="text-decoration: none; color: #000; font-weight: bold;">⏱️ Política de Tiempos de Entrega</a>
-    </li>
-    <li style="margin-bottom: 12px;">
-      <a href="comoentendernomina.pdf" target="_blank" style="text-decoration: none; color: #000; font-weight: bold;">💶 ¿Cómo entender mi Hoja de Salario?</a>
-      <ul style="list-style-type: circle; padding-left: 25px; margin-top: 6px; font-weight: normal; color: #555;">
-        <li style="margin-bottom: 4px;">Bajas Medicas</li>
-        <li style="margin-bottom: 4px;">¿Cómo se calcula el salario?</li>
-        <li style="margin-bottom: 4px;">¿Cómo se calcula la RUO?</li>
-        <li style="margin-bottom: 4px;">¿Cómo se calculan los Gastos de Locomoción?</li>
-      </ul>
-    </li>
-    <li style="margin-bottom: 12px;">
-      <a href="fichariesgos.pdf" target="_blank" style="text-decoration: none; color: #000; font-weight: bold;">⚠️ Persona Repartidora – Ficha informativa de riesgos</a>
-    </li>
-    <li style="margin-bottom: 12px;">
-      <a href="transportecargas.pdf" target="_blank" style="text-decoration: none; color: #000; font-weight: bold;">📦 Manipulación y transporte de cargas</a>
-    </li>
-    <li style="margin-bottom: 12px;">
-      <a href="prevensionverano.pdf" target="_blank" style="text-decoration: none; color: #000; font-weight: bold;">☀️ Medidas preventivas para el verano</a>
-    </li>
-    <li style="margin-bottom: 12px;">
-      <a href="violenciarobo.pdf" target="_blank" style="text-decoration: none; color: #000; font-weight: bold;">🛡️ Actuación ante violencia, acoso, robo o agresión</a>
-    </li>
-    <li style="margin-bottom: 12px;">
-      <a href="solicitudesadhoc.pdf" target="_blank" style="text-decoration: none; color: #000; font-weight: bold;">📝 Solicitudes Ad Hoc – Empleados</a>
-    </li>
-    <li style="margin-bottom: 12px;">
-      <a href="modificarinfopersonal.pdf" target="_blank" style="text-decoration: none; color: #000; font-weight: bold;">⚙️ ¿Cómo modificar la información personal? – Empleados</a>
-    </li>
-    <li style="margin-bottom: 12px;">
-      <a href="workdaytutorial.pdf" target="_blank" style="text-decoration: none; color: #000; font-weight: bold;">💻 Workday tutorial – ES</a>
-    </li>
-  </ul>
+        /* Estilos lista Guía Amarilla */
+        .lista-documentos {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .lista-documentos li {
+            margin-bottom: 12px;
+        }
+        .lista-documentos a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+        .sublista-nomina {
+            list-style-type: circle;
+            padding-left: 25px;
+            margin-top: 6px;
+            font-weight: normal;
+            color: #555;
+        }
+        .sublista-nomina li {
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body>
 
-  <hr style="border: 0; border-top: 1px solid #000; margin: 30px 0 20px 0;">
+    <!-- BANNER SUPERIOR (CABECERA PRINCIPAL) -->
+    <header>
+        <h1>Sección Sindical UGT | Madrid</h1>
+        <p>Portal Informativo de Derechos Laborales y Acción Sindical</p>
+    </header>
 
-  <!-- AVISO LEGAL Y NOTA INFORMATIVA -->
-  <h4 style="font-weight: bold; margin-bottom: 10px; font-size: 1.1em;">Aviso Legal y Nota Informativa</h4>
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav class="menu-navegacion">
+        <a href="index.html">Inicio</a>
+        <a href="normativa.html">Normativa y Jurídico</a>
+        <a href="comunicados.html">Comunicados</a>
+        <a href="contacto.html">Contacto y Delegados</a>
+    </nav>
 
-  <p style="font-size: 0.95em; text-align: justify; margin-bottom: 12px;">
-    La publicación y difusión de la presente <em>Guia Amarilla</em> tiene un propósito puramente informativo. La consulta o conocimiento de sus contenidos por parte de la plantilla <strong>no implica, en ningún caso, la aceptación tácita o expresa de sus disposiciones.</strong>
-  </p>
+    <!-- CONTENIDO PRINCIPAL: GUÍA AMARILLA -->
+    <main>
+        <!-- BANNER ESPECÍFICO DE LA GUÍA AMARILLA -->
+        <div style="width: 100%; text-align: center; margin-bottom: 20px;">
+            <img src="bannerguiaamarilla.jpg" alt="Guia Amarilla Flota Interna" style="max-width: 100%; height: auto;">
+        </div>
 
-  <p style="font-size: 0.95em; text-align: justify; margin-bottom: 12px;">
-    La Sección Sindical de UGT en Glovoapp Spain Platform (Comunidad de Madrid) advierte que diversos puntos de esta normativa interna contravienen abiertamente las disposiciones del Convenio Colectivo de aplicación, así como los derechos laborales mínimos contemplados en el Real Decreto Legislativo 2/2015, de 23 de octubre, por el que se aprueba el Texto Refundido del Estatuto de los Trabajadores.
-  </p>
+        <p style="font-weight: bold; margin-bottom: 5px;">La Guia Amarilla contiene las políticas internas de la empresa</p>
+        <p style="font-weight: bold; margin-top: 0;">Como trabajador tienes el deber y el derecho de conocer estas políticas</p>
 
-  <p style="font-size: 0.95em; text-align: justify;">
-    En consecuencia, esta representación legal de las personas trabajadoras <strong>se reserva expresamente el ejercicio de cuantas acciones legales y de conflicto colectivo correspondan</strong>, incluyendo la interposición de las oportunas denuncias ante la Inspección Provincial de Trabajo y Seguridad Social por los incumplimientos detectados.
-  </p>
-</div>
+        <hr style="border: 0; border-top: 1px solid #ccc; margin: 25px 0;">
+
+        <!-- DOCUMENTOS DENTRO DE LA GUÍA -->
+        <h3 style="font-weight: bold; letter-spacing: 0.5px; color: #2c5282;">DOCUMENTOS DENTRO DE LA GUIA</h3>
+
+        <ul class="lista-documentos">
+            <li>
+                <a href="politicatiemposdeentrega.pdf" target="_blank">⏱️ Política de Tiempos de Entrega</a>
+            </li>
+            <li>
+                <a href="comoentendernomina.pdf" target="_blank">💶 ¿Cómo entender mi Hoja de Salario?</a>
+                <ul class="sublista-nomina">
+                    <li>Bajas Medicas</li>
+                    <li>¿Cómo se calcula el salario?</li>
+                    <li>¿Cómo se calcula la RUO?</li>
+                    <li>¿Cómo se calculan los Gastos de Locomoción?</li>
+                </ul>
+            </li>
+            <li>
+                <a href="fichariesgos.pdf" target="_blank">⚠️ Persona Repartidora – Ficha informativa de riesgos</a>
+            </li>
+            <li>
+                <a href="transportecargas.pdf" target="_blank">📦 Manipulación y transporte de cargas</a>
+            </li>
+            <li>
+                <a href="prevensionverano.pdf" target="_blank">☀️ Medidas preventivas para el verano</a>
+            </li>
+            <li>
+                <a href="violenciarobo.pdf" target="_blank">🛡️ Actuación ante violencia, acoso, robo o agresión</a>
+            </li>
+            <li>
+                <a href="solicitudesadhoc.pdf" target="_blank">📝 Solicitudes Ad Hoc – Empleados</a>
+            </li>
+            <li>
+                <a href="modificarinfopersonal.pdf" target="_blank">⚙️ ¿Cómo modificar la información personal? – Empleados</a>
+            </li>
+            <li>
+                <a href="workdaytutorial.pdf" target="_blank">💻 Workday tutorial – ES</a>
+            </li>
+        </ul>
+
+        <hr style="border: 0; border-top: 1px solid #000; margin: 30px 0 20px 0;">
+
+        <!-- AVISO LEGAL Y NOTA INFORMATIVA -->
+        <h4 style="font-weight: bold; margin-bottom: 10px; font-size: 1.1em; color: #1a365d;">Aviso Legal y Nota Informativa</h4>
+
+        <p style="font-size: 0.95em; text-align: justify; margin-bottom: 12px;">
+            La publicación y difusión de la presente <em>Guia Amarilla</em> tiene un propósito puramente informativo. La consulta o conocimiento de sus contenidos por parte de la plantilla <strong>no implica, en ningún caso, la aceptación tácita o expresa de sus disposiciones.</strong>
+        </p>
+
+        <p style="font-size: 0.95em; text-align: justify; margin-bottom: 12px;">
+            La Sección Sindical de UGT en Glovoapp Spain Platform (Comunidad de Madrid) advierte que diversos puntos de esta normativa interna contravienen abiertamente las disposiciones del Convenio Colectivo de aplicación, así como los derechos laborales mínimos contemplados en el Real Decreto Legislativo 2/2015, de 23 de octubre, por el que se aprueba el Texto Refundido del Estatuto de los Trabajadores.
+        </p>
+
+        <p style="font-size: 0.95em; text-align: justify;">
+            En consecuencia, esta representación legal de las personas trabajadoras <strong>se reserva expresamente el ejercicio de cuantas acciones legales y de conflicto colectivo correspondan</strong>, incluyendo la interposición de las oportunas denuncias ante la Inspección Provincial de Trabajo y Seguridad Social por los incumplimientos detectados.
+        </p>
+    </main>
+
+    <!-- BANNER INFERIOR (PIE DE PÁGINA) -->
+    <footer>
+        <p>&copy; Sección Sindical UGT | Madrid - Información Jurídica y Laboral</p>
+    </footer>
+
+</body>
+</html>
