@@ -26,7 +26,7 @@
         .descripcion-portal { margin: 6px 0 0 0; font-size: 14px; color: #e2e8f0; }
 
         /* NAVEGACIÓN */
-       .menu-navegacion { 
+        .menu-navegacion { 
             background-color: #2b6cb0; 
             padding: 10px; 
             text-align: center; 
@@ -53,6 +53,16 @@
             background: white; 
             box-shadow: 0 2px 4px rgba(0,0,0,0.08);
             border-radius: 6px;
+        }
+
+        .titulo-seccion-principal {
+            color: #1a365d;
+            font-size: 20px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #2b6cb0;
+            padding-bottom: 5px;
+            font-style: normal;
         }
 
         /* URGENCIA / TELEFONOS */
@@ -93,15 +103,21 @@
 
         /* PASOS DE ACTUACIÓN */
         .pasos-container { margin-bottom: 25px; }
+        .pasos-container h2 {
+            color: #1a365d;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
         .paso-box {
             background: #edf2f7;
             border-left: 4px solid #2b6cb0;
             padding: 12px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             border-radius: 0 4px 4px 0;
         }
         .paso-box h3 { margin: 0 0 5px 0; color: #1a365d; font-size: 15px; }
         .paso-box p { margin: 0; font-size: 14px; }
+        .paso-box a { color: #2b6cb0; font-weight: bold; text-decoration: underline; }
 
         .nota-importante {
             background-color: #feebc8;
@@ -110,7 +126,7 @@
             border-radius: 4px;
             font-size: 13px;
             color: #742a2a;
-            margin-top: 10px;
+            margin-top: 15px;
             font-weight: bold;
         }
 
@@ -167,9 +183,12 @@
 
     <main>
 
+        <!-- TÍTULO PRINCIPAL DE LA SECCIÓN -->
+        <h2 class="titulo-seccion-principal">🚨 ¿Qué hacer en caso de accidente laboral?</h2>
+
         <!-- EMERGENCIAS Y TELÉFONOS RÁPIDOS -->
         <section class="alerta-urgente">
-            <h2>🚨 ¿Has tenido un accidente laboral?</h2>
+            <h2>Acción Inmediata y Emergencias</h2>
             
             <p><strong>ACCIDENTE GRAVE:</strong> Llama inmediatamente al 112 y sigue sus indicaciones.</p>
             <a href="tel:112" class="btn-telefono-112">📞 LLAMAR AL 112</a>
@@ -183,27 +202,27 @@
             <h2>📋 ¿Cómo proceder según el caso?</h2>
 
             <div class="paso-box">
-                <h3>1. Si tienes pedido en curso:</h3>
-                <p>Reporta el accidente en la App de Glovo. Esto reasignará el pedido en curso y quitará las horas de trabajo actuales y próximas.</p>
+                <h3>1. Si tienes un pedido en curso:</h3>
+                <p>Reporta de inmediato el accidente a través de la App de Glovo. Esto reasignará la orden en curso y liberará tus horas de trabajo actuales y posteriores.</p>
             </div>
 
             <div class="paso-box">
-                <h3>2. Solicitud de Volante de Asistencia:</h3>
-                <p>Informa a los <strong>Fleet Leads (Jefes de Flota)</strong> sobre el accidente para que gestionen la generación del volante de asistencia.</p>
+                <h3>2. Si te puedes desplazar y no requieres ambulancia:</h3>
+                <p>Informa por correo electrónico a los <a href="fleetlead.html" target="_blank">Fleet Leads (Jefes de Flota)</a> indicando lo ocurrido, la ubicación exacta del accidente y el pedido que tenías asignado. Con esto tramitarán el volante de asistencia a la Mutua para tu evaluación médica.</p>
             </div>
 
             <div class="paso-box">
-                <h3>3. Atestado Policial (si aplica):</h3>
-                <p>Si la Policía ha intervenido en el accidente, solicita el parte correspondiente.</p>
+                <h3>3. Si eres trasladado al hospital en ambulancia:</h3>
+                <p>Al recibir el alta hospitalaria, solicita todos los informes médicos, el parte de baja (en caso de haber sido emitida) y el atestado policial (si intervino la policía). Envía toda esta documentación por correo a los <a href="fleetlead.html" target="_blank">Fleet Leads</a> para la emisión del volante de asistencia a la Mutua.</p>
             </div>
 
             <div class="paso-box">
-                <h3>4. Asistencia Médica:</h3>
-                <p>Dirígete a uno de los centros de atención de Mutua Universal con el volante de asistencia.</p>
+                <h3>4. Tramitación de la Baja Médica:</h3>
+                <p>En caso de accidente laboral, la baja médica debe ser emitida siempre por la Mutua, quienes lo comunicarán directamente a Glovo. No obstante, <strong>exige siempre la entrega del documento en papel/PDF de la baja médica</strong> para disponer de justificante oficial.</p>
             </div>
 
             <div class="nota-importante">
-                💡 IMPORTANTE: Puedes ir recibiendo atención de la Mutua mientras Glovo gestiona y genera el volante de asistencia.
+                💡 IMPORTANTE: Puedes acudir y recibir atención inicial en la Mutua mientras Glovo gestiona y genera el volante de asistencia correspondiente.
             </div>
         </section>
 
@@ -249,7 +268,7 @@
 
             <div class="centro-card">
                 <strong>Getafe</strong>
-                <div>📍 C/ Aviador de Francisco 7 | 📞 <a href="tel:916011310">916 011 310</a></div>
+                <div>📍 C/ Aviador de Francisco 7 | 📞 <a href="tel:916011310">916 601 1310</a></div>
                 <div>🕒 Horario: Lunes a Viernes</div>
             </div>
 
@@ -302,13 +321,13 @@
 
             <div class="centro-card">
                 <strong>San Sebastián de los Reyes</strong>
-                <div>📍 Av. de Tenerife 20 | 📞 <a href="tel:916531255">916 531 255</a></div>
+                <div>📍 Av. de Tenerife 20 | 📞 <a href="tel:916531255">916 653 1255</a></div>
                 <div>🕒 Horario: Lunes a Viernes</div>
             </div>
 
             <div class="centro-card">
                 <strong>Torrejón de Ardoz</strong>
-                <div>📍 C/ Primavera 49 | 📞 <a href="tel:916749412">916 749 412</a></div>
+                <div>📍 C/ Primavera 49 | 📞 <a href="tel:916749412">916 674 9412</a></div>
                 <div>🕒 Horario: Lunes a Viernes</div>
             </div>
 
@@ -320,7 +339,7 @@
 
             <div class="centro-card">
                 <strong>Arganda del Rey</strong>
-                <div>📍 C/ de Madrid 28 | 📞 <a href="tel:918701831">918 701 831</a></div>
+                <div>📍 C/ de Madrid 28 | 📞 <a href="tel:918701831">918 870 1831</a></div>
                 <div>🕒 Horario: Lunes a Viernes</div>
             </div>
         </section>
@@ -334,74 +353,73 @@
     </footer>
 
     <!-- SCRIPT OFICIAL DE GOOGLE IDENTITY -->
-<script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 
-<!-- MODAL CON BOTÓN OFICIAL DE GOOGLE -->
-<div id="modal-registro" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.75); display: flex; justify-content: center; align-items: center; z-index: 9999;">
-    <div style="background: white; padding: 30px; border-radius: 10px; max-width: 400px; width: 90%; box-shadow: 0 4px 15px rgba(0,0,0,0.3); text-align: center;">
-        <h3 style="color: #1a365d; margin-top: 0; font-size: 1.3em;">Acceso Sección Sindical UGT</h3>
-        <p style="font-size: 0.9em; color: #555; margin-bottom: 20px;">Inicia sesión con tu cuenta de Google para validar tu acceso al portal de información laboral.</p>
-        
-        <!-- Configuración del botón de Google -->
-        <div id="g_id_onload"
-             data-client_id="1045651313029-cr80m30gc1111g792anbkqqktop780tk.apps.googleusercontent.com"
-             data-callback="handleCredentialResponse"
-             data-auto_prompt="false">
+    <!-- MODAL CON BOTÓN OFICIAL DE GOOGLE -->
+    <div id="modal-registro" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.75); display: flex; justify-content: center; align-items: center; z-index: 9999;">
+        <div style="background: white; padding: 30px; border-radius: 10px; max-width: 400px; width: 90%; box-shadow: 0 4px 15px rgba(0,0,0,0.3); text-align: center;">
+            <h3 style="color: #1a365d; margin-top: 0; font-size: 1.3em;">Acceso Sección Sindical UGT</h3>
+            <p style="font-size: 0.9em; color: #555; margin-bottom: 20px;">Inicia sesión con tu cuenta de Google para validar tu acceso al portal de información laboral.</p>
+            
+            <div id="g_id_onload"
+                 data-client_id="1045651313029-cr80m30gc1111g792anbkqqktop780tk.apps.googleusercontent.com"
+                 data-callback="handleCredentialResponse"
+                 data-auto_prompt="false">
+            </div>
+
+            <div class="g_id_signin"
+                 data-type="standard"
+                 data-size="large"
+                 data-theme="outline"
+                 data-text="sign_in_with"
+                 data-shape="rectangular"
+                 data-logo_alignment="left"
+                 style="display: flex; justify-content: center;">
+            </div>
+
+            <p style="font-size: 0.75em; color: #777; margin-top: 20px;">Identificación rápida de un solo clic para control interno de la plantilla.</p>
         </div>
-
-        <div class="g_id_signin"
-             data-type="standard"
-             data-size="large"
-             data-theme="outline"
-             data-text="sign_in_with"
-             data-shape="rectangular"
-             data-logo_alignment="left"
-             style="display: flex; justify-content: center;">
-        </div>
-
-        <p style="font-size: 0.75em; color: #777; margin-top: 20px;">Identificación rápida de un solo clic para control interno de la plantilla.</p>
     </div>
-</div>
 
-<script>
-    const URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbyd2fDDima-jZeW0H0L0yGZVDbul8sMJAQMw3OpK_nPLP46kI6n8cNEAYXP4l_wdUuO-g/exec";
+    <script>
+        const URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbyd2fDDima-jZeW0H0L0yGZVDbul8sMJAQMw3OpK_nPLP46kI6n8cNEAYXP4l_wdUuO-g/exec";
 
-    if (localStorage.getItem('ugt_usuario_registrado') === 'true') {
-        document.getElementById('modal-registro').style.display = 'none';
-    }
-
-    function parseJwt(token) {
-        var base64Url = token.split('.')[1];
-        var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-        var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
-            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-        }).join(''));
-        return JSON.parse(jsonPayload);
-    }
-
-    function handleCredentialResponse(response) {
-        const usuario = parseJwt(response.credential);
-
-        const datos = {
-            name: usuario.name,
-            email: usuario.email,
-            sub: usuario.sub
-        };
-
-        fetch(URL_APPS_SCRIPT, {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(datos)
-        })
-        .then(() => {
-            localStorage.setItem('ugt_usuario_registrado', 'true');
+        if (localStorage.getItem('ugt_usuario_registrado') === 'true') {
             document.getElementById('modal-registro').style.display = 'none';
-        })
-        .catch(error => {
-            alert("Error de conexión al validar el acceso.");
-        });
-    }
-</script>
+        }
+
+        function parseJwt(token) {
+            var base64Url = token.split('.')[1];
+            var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+            var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+            return JSON.parse(jsonPayload);
+        }
+
+        function handleCredentialResponse(response) {
+            const usuario = parseJwt(response.credential);
+
+            const datos = {
+                name: usuario.name,
+                email: usuario.email,
+                sub: usuario.sub
+            };
+
+            fetch(URL_APPS_SCRIPT, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(datos)
+            })
+            .then(() => {
+                localStorage.setItem('ugt_usuario_registrado', 'true');
+                document.getElementById('modal-registro').style.display = 'none';
+            })
+            .catch(error => {
+                alert("Error de conexión al validar el acceso.");
+            });
+        }
+    </script>
 </body>
 </html>
