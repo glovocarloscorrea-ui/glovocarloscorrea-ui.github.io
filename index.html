@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sección Sindical UGT | Madrid - Inicio</title>
     <style>
-        /* ESTILOS GENERALES */
+        /* ESTABLECER SCROLLBAR FIJO PARA EVITAR SALTOS DE PÁGINA */
+        html { 
+            overflow-y: scroll; 
+            scrollbar-gutter: stable;
+        }
+
         body { 
             font-family: Arial, sans-serif; 
             margin: 0; 
@@ -15,7 +20,7 @@
             line-height: 1.5;
         }
 
-        /* HEADER */
+        /* CABECERA SECCIÓN SINDICAL */
         header { 
             background-color: #1a365d; 
             color: white; 
@@ -26,7 +31,7 @@
         .subtitulo-empresa { margin: 4px 0 0 0; font-size: 16px; color: #cbd5e0; font-weight: 600; }
         .descripcion-portal { margin: 6px 0 0 0; font-size: 14px; color: #e2e8f0; }
 
-        /* NAVEGACIÓN */
+        /* BARRA DE NAVEGACIÓN */
         .menu-navegacion { 
             background-color: #2b6cb0; 
             padding: 10px; 
@@ -46,7 +51,7 @@
             border-radius: 4px;
         }
 
-        /* CONTENIDO PRINCIPAL */
+        /* CONTENEDOR PRINCIPAL */
         main { 
             padding: 15px; 
             max-width: 800px; 
@@ -98,7 +103,7 @@
             line-height: 1.5;
         }
 
-        /* FOOTER */
+        /* PIE DE PÁGINA */
         footer { 
             text-align: center; 
             padding: 15px; 
@@ -112,7 +117,7 @@
 </head>
 <body>
 
-    <!-- ENCABEZADO -->
+    <!-- CABECERA SECCION SINDICAL -->
     <header>
         <h1 class="titulo-principal">Sección Sindical UGT | Madrid</h1>
         <div class="subtitulo-empresa">Glovoapp Spain Platform</div>
@@ -152,7 +157,7 @@
         </section>
     </main>
 
-    <!-- FOOTER -->
+    <!-- PIE DE PÁGINA -->
     <footer>
         <p>&copy; Sección Sindical UGT - Glovoapp Spain Platform | Madrid</p>
         <p>Contacto: <a href="mailto:ugt.glovomadrid@gmail.com">ugt.glovomadrid@gmail.com</a></p>
@@ -167,6 +172,7 @@
             <h3 style="color: #1a365d; margin-top: 0; font-size: 1.3em;">Acceso Sección Sindical UGT</h3>
             <p style="font-size: 0.9em; color: #555; margin-bottom: 20px;">Inicia sesión con tu cuenta de Google para validar tu acceso al portal de información laboral.</p>
             
+            <!-- Configuración del botón de Google -->
             <div id="g_id_onload"
                  data-client_id="1045651313029-cr80m30gc1111g792anbkqqktop780tk.apps.googleusercontent.com"
                  data-callback="handleCredentialResponse"
