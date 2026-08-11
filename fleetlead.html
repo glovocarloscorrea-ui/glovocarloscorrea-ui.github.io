@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fleet Leads (Jefes de Flota) - Sección Sindical UGT | Madrid</title>
+    <title>Fleet Leads y Atención Presencial - Sección Sindical UGT | Madrid</title>
     <style>
         body { 
             font-family: Arial, sans-serif; 
@@ -59,7 +59,7 @@
             color: #1a365d;
             font-size: 20px;
             margin-top: 5px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             border-bottom: 2px solid #2b6cb0;
             padding-bottom: 5px;
         }
@@ -68,6 +68,10 @@
             font-size: 14px;
             color: #4a5568;
             margin-bottom: 20px;
+            background-color: #ebf8ff;
+            border-left: 4px solid #3182ce;
+            padding: 10px 12px;
+            border-radius: 0 4px 4px 0;
         }
 
         /* GRID DE DOS COLUMNAS */
@@ -75,7 +79,7 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         /* CARD DE CONTACTO */
@@ -104,7 +108,7 @@
         .nombre-contacto {
             font-size: 16px;
             font-weight: bold;
-            color: #00a082; /* Verde corporativo de la imagen */
+            color: #00a082;
             margin-bottom: 12px;
             display: flex;
             align-items: center;
@@ -116,7 +120,7 @@
             align-items: center;
             justify-content: center;
             gap: 6px;
-            background-color: #ffc244; /* Amarillo de la imagen */
+            background-color: #ffc244;
             color: #2c2c2c;
             text-decoration: none;
             font-weight: bold;
@@ -132,10 +136,77 @@
             background-color: #e6af3d;
         }
 
+        /* SECCIÓN DE ATENCIÓN PRESENCIAL */
+        .bloque-atencion-presencial {
+            background-color: #f7fafc;
+            border: 1px solid #cbd5e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .info-atencion-item {
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .info-atencion-item strong {
+            color: #1a365d;
+        }
+
+        .info-atencion-item a {
+            color: #2b6cb0;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        /* BOTÓN CITA PREVIA GRANDE Y CENTRADO */
+        .contenedor-btn-cita {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .btn-cita-previa-grande {
+            display: inline-block;
+            background-color: #2b6cb0;
+            color: white;
+            padding: 16px 24px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            max-width: 90%;
+        }
+
+        .btn-cita-previa-grande:hover {
+            background-color: #1a365d;
+            transform: translateY(-1px);
+        }
+
+        .alerta-sin-cita {
+            background-color: #fff5f5;
+            border: 1px solid #feb2b2;
+            color: #c53030;
+            padding: 10px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-top: 15px;
+            text-align: center;
+        }
+
         /* DISEÑO RESPONSIVO */
         @media (max-width: 600px) {
             .grid-contactos {
                 grid-template-columns: 1fr;
+            }
+            .btn-cita-previa-grande {
+                font-size: 16px;
+                padding: 14px 18px;
+                width: 90%;
             }
         }
 
@@ -175,7 +246,9 @@
 
         <!-- TÍTULO PRINCIPAL DE LA SECCIÓN -->
         <h2 class="titulo-seccion-principal">👥 Fleet Leads (Jefes de Flota)</h2>
-        <p class="descripcion-seccion">Directorio de contactos de referencia de los Jefes de Flota. Puedes hacer clic en el botón correspondiente para enviar un correo electrónico directo.</p>
+        <p class="descripcion-seccion">
+            Los Fleet Leads forman parte del departamento de Operaciones. Son tu punto de contacto principal para la resolución de dudas generales y el canal encargado de tramitar y gestionar tus solicitudes ante los distintos departamentos de la empresa.
+        </p>
 
         <!-- CONTENEDOR EN DOS COLUMNAS -->
         <div class="grid-contactos">
@@ -229,6 +302,37 @@
                 <a href="mailto:jesus.castelin@glovoapp.com" class="btn-email">✉️ jesus.castelin@glovoapp.com</a>
             </div>
 
+        </div>
+
+        <!-- SECCIÓN DE ATENCIÓN PRESENCIAL Y HORARIOS -->
+        <h2 class="titulo-seccion-principal">📍 Horarios de Atención al Repartidor</h2>
+        
+        <div class="bloque-atencion-presencial">
+            <div class="info-atencion-item">
+                <strong>📍 Ubicación:</strong> 
+                <a href="https://maps.google.com/?q=Calle+de+Esquilache+7,+Chamberi,+28003,+Madrid" target="_blank" rel="noopener noreferrer">
+                    Calle de Esquilache 7, Chamberí, 28003, Madrid ↗
+                </a>
+            </div>
+
+            <div class="info-atencion-item">
+                <strong>🕒 Horario de Atención:</strong> Martes a Viernes de 9:30 h a 14:30 h.
+            </div>
+
+            <p style="margin-top: 15px; font-size: 14px; text-align: center;">
+                Se recomienda encarecidamente solicitar cita previa antes de acudir de forma presencial.
+            </p>
+
+            <!-- BOTÓN GRANDE Y CENTRADO -->
+            <div class="contenedor-btn-cita">
+                <a href="https://glovo.as.me/?calendarID=11504205&lid=472nlkby2uvm" target="_blank" rel="noopener noreferrer" class="btn-cita-previa-grande">
+                    📅 SOLICITAR CITA PREVIA AQUÍ ↗
+                </a>
+            </div>
+
+            <div class="alerta-sin-cita">
+                ⚠️ Importante: La atención presencial sin cita previa no está garantizada.
+            </div>
         </div>
 
     </main>
