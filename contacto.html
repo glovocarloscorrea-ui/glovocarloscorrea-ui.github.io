@@ -238,6 +238,64 @@
         <p>&copy; Sección Sindical UGT - Glovoapp Spain Platform | Madrid</p>
         <p>Contacto: <a href="mailto:ugt.glovomadrid@gmail.com">ugt.glovomadrid@gmail.com</a></p>
     </footer>
+    
+<!-- MODAL DE REGISTRO / ACCESO SINDICAL -->
+<div id="modal-registro" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: flex; justify-content: center; align-items: center; z-index: 9999;">
+    <div style="background: white; padding: 25px; border-radius: 8px; max-width: 400px; width: 90%; box-shadow: 0 4px 10px rgba(0,0,0,0.3); text-align: center;">
+        <h3 style="color: #1a365d; margin-top: 0;">Bienvenido/a al Portal UGT</h3>
+        <p style="font-size: 0.9em; color: #555;">Para acceder a los recursos informativos y de acción sindical, identifícate para nuestro control interno:</p>
+        
+        <form id="form-contacto-ugt" style="display: flex; flex-direction: column; gap: 12px; margin-top: 15px;">
+            <input type="text" id="nombre" placeholder="Nombre completo" required style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
+            <input type="email" id="email" placeholder="Correo electrónico" required style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
+            
+            <button type="submit" id="btn-enviar" style="background-color: #2b6cb0; color: white; border: none; padding: 12px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 14px;">
+                Acceder a la Web
+            </button>
+        </form>
+        <p style="font-size: 0.75em; color: #777; margin-top: 12px;">Tus datos serán utilizados únicamente para la gestión de la Sección Sindical UGT Glovo Madrid.</p>
+    </div>
+</div>
 
+<script>
+    // Sustituye este texto por la URL que copiaste de Apps Script
+    const URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbyd2fDDima-jZeW0H0L0yGZVDbul8sMJAQMw3OpK_nPLP46kI6n8cNEAYXP4l_wdUuO-g/exec";
+
+    // Verificar si el usuario ya se registró previamente
+    if (localStorage.getItem('ugt_usuario_registrado') === 'true') {
+        document.getElementById('modal-registro').style.display = 'none';
+    }
+
+    document.getElementById('form-contacto-ugt').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const btn = document.getElementById('btn-enviar');
+        btn.innerText = "Registrando...";
+        btn.disabled = true;
+
+        const datos = {
+            name: document.getElementById('nombre').value,
+            email: document.getElementById('email').value,
+            sub: 'Registro Manual Web'
+        };
+
+        fetch(URL_APPS_SCRIPT, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(datos)
+        })
+        .then(() => {
+            // Guardar en memoria local para no volver a pedirlo
+            localStorage.setItem('ugt_usuario_registrado', 'true');
+            document.getElementById('modal-registro').style.display = 'none';
+        })
+        .catch(error => {
+            alert("Hubo un error al guardar el registro. Inténtalo de nuevo.");
+            btn.innerText = "Acceder a la Web";
+            btn.disabled = false;
+        });
+    });
+</script>
 </body>
 </html>
