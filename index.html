@@ -5,94 +5,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sección Sindical UGT | Madrid - Inicio</title>
     <style>
-        /* Estilos generales */
+        /* ESTILOS GENERALES */
         body { 
             font-family: Arial, sans-serif; 
             margin: 0; 
             padding: 0; 
             background-color: #f4f4f9; 
             color: #333; 
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
-        /* Cabecera principal */
+        /* HEADER */
         header { 
             background-color: #1a365d; 
             color: white; 
-            padding: 25px 20px; 
+            padding: 20px 15px; 
             text-align: center; 
         }
-        header h1 { margin: 0; font-size: 26px; }
-        header p { margin: 5px 0 0 0; font-size: 14px; color: #cbd5e0; }
+        .titulo-principal { margin: 0; font-size: 22px; font-weight: bold; }
+        .subtitulo-empresa { margin: 4px 0 0 0; font-size: 16px; color: #cbd5e0; font-weight: 600; }
+        .descripcion-portal { margin: 6px 0 0 0; font-size: 14px; color: #e2e8f0; }
 
-        /* Barra de navegación */
+        /* NAVEGACIÓN */
         .menu-navegacion { 
             background-color: #2b6cb0; 
-            padding: 12px; 
+            padding: 10px; 
             text-align: center; 
         }
         .menu-navegacion a { 
             color: white; 
-            margin: 0 15px; 
+            margin: 0 5px; 
             text-decoration: none; 
             font-weight: bold; 
-            font-size: 15px; 
+            font-size: 14px; 
+            display: inline-block;
+            padding: 6px 10px;
         }
-        .menu-navegacion a:hover { 
-            text-decoration: underline; 
-            color: #e2e8f0; 
-        }
-
-        /* Contenedor de contenido */
-        main { 
-            padding: 30px 20px; 
-            max-width: 900px; 
-            margin: 20px auto; 
-            background: white; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        .menu-navegacion a.activo {
+            background-color: #1a365d;
             border-radius: 4px;
         }
 
-        /* Destacados e información de portada */
-        .bienvenida {
-            margin-bottom: 30px;
+        /* CONTENIDO PRINCIPAL */
+        main { 
+            padding: 20px 15px; 
+            max-width: 800px; 
+            margin: 15px auto; 
+            background: white; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+            border-radius: 6px;
         }
 
+        .bienvenida {
+            margin-bottom: 25px;
+        }
+
+        .titulo-seccion-principal {
+            color: #1a365d;
+            font-size: 20px;
+            margin-top: 5px;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #2b6cb0;
+            padding-bottom: 5px;
+        }
+
+        .descripcion-seccion {
+            font-size: 14px;
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* CARDS DE INICIO */
         .card-inicio { 
             border-left: 4px solid #2b6cb0; 
-            padding: 15px 20px; 
+            padding: 15px; 
             background: #f7fafc; 
-            margin-bottom: 20px; 
-            border-radius: 0 4px 4px 0;
+            margin-bottom: 15px; 
+            border-radius: 0 6px 6px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
         }
         .card-inicio h3 { 
             margin-top: 0; 
-            color: #2c5282; 
+            margin-bottom: 8px;
+            color: #1a365d; 
+            font-size: 16px;
+        }
+        .card-inicio p {
+            margin: 0;
+            font-size: 14px;
+            color: #4a5568;
+            line-height: 1.5;
         }
 
-        /* Pie de página */
+        /* FOOTER */
         footer { 
             text-align: center; 
-            padding: 20px; 
+            padding: 15px; 
             background-color: #1a365d; 
             color: white; 
-            margin-top: 40px; 
-            font-size: 14px;
+            margin-top: 25px; 
+            font-size: 13px;
         }
+        footer a { color: #90cdf4; }
     </style>
 </head>
 <body>
 
-    <!-- CABECERA -->
+    <!-- ENCABEZADO -->
     <header>
-        <h1>Sección Sindical UGT | Madrid</h1>
-        <p>Portal Informativo de Derechos Laborales y Acción Sindical</p>
+        <h1 class="titulo-principal">Sección Sindical UGT | Madrid</h1>
+        <div class="subtitulo-empresa">Glovoapp Spain Platform</div>
+        <div class="descripcion-portal">Portal Informativo de Derechos Laborales y Acción Sindical</div>
     </header>
 
-    <!-- MENU DE NAVEGACION -->
+    <!-- MENÚ DE NAVEGACIÓN -->
     <nav class="menu-navegacion">
         <a href="index.html" class="activo">Inicio</a>
-        <a href="guiaamarilla.html">Guia Amarilla</a>
+        <a href="guiaamarilla.html">Guía Amarilla</a>
         <a href="mutua.html">Mutua</a>
         <a href="fleetlead.html">Fleet Leads</a>
         <a href="contacto.html">Contacto</a>
@@ -101,30 +131,31 @@
     <!-- CONTENIDO PRINCIPAL -->
     <main>
         <section class="bienvenida">
-            <h2>Bienvenido al Portal Informativo</h2>
-            <p>Este espacio digital ha sido diseñado para mantener informada a la plantilla sobre sus derechos laborales, la acción representación sindical, la seguridad y salud en el trabajo, y las novedades normativas que afectan a nuestra actividad diaria.</p>
+            <h2 class="titulo-seccion-principal">Bienvenido al Portal Informativo</h2>
+            <p class="descripcion-seccion">Este espacio digital ha sido diseñado para mantener informada a la plantilla sobre sus derechos laborales, la representación legal de los trabajadores, la prevención de riesgos laborales y las novedades normativas que afectan a nuestra actividad diaria.</p>
         </section>
 
-        <!-- SECCION DE PILARES Y FUNCIONES -->
+        <!-- SECCIÓN DE PILARES Y FUNCIONES -->
         <section class="card-inicio">
-            <h3>Representación Legal y Acción Sindical</h3>
+            <h3>⚖️ Representación Legal y Acción Sindical</h3>
             <p>Velamos por el cumplimiento estricto del Estatuto de los Trabajadores, el Convenio Colectivo aplicable y la protección de las condiciones de trabajo garantizadas por la legislación vigente.</p>
         </section>
 
         <section class="card-inicio">
-            <h3>Prevención de Riesgos Laborales (PRL)</h3>
+            <h3>🛡️ Prevención de Riesgos Laborales (PRL)</h3>
             <p>La seguridad y la salud en el trabajo son prioridades fundamentales. Ofrecemos orientación e información sobre evaluación de riesgos, salud laboral y protocolos de actuación.</p>
         </section>
 
         <section class="card-inicio">
-            <h3>Asesoramiento y Atención a la Plantilla</h3>
+            <h3>🤝 Asesoramiento y Atención a la Plantilla</h3>
             <p>A través de nuestros delegados y de la representación sindical, proporcionamos canalización de consultas laborales, seguimiento de la jornada y garantías de cumplimiento contractual.</p>
         </section>
     </main>
 
-    <!-- PIE DE PAGINA -->
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; Sección Sindical UGT | Madrid - Información Jurídica y Laboral</p>
+        <p>&copy; Sección Sindical UGT - Glovoapp Spain Platform | Madrid</p>
+        <p>Contacto: <a href="mailto:ugt.glovomadrid@gmail.com">ugt.glovomadrid@gmail.com</a></p>
     </footer>
 
     <!-- SCRIPT OFICIAL DE GOOGLE IDENTITY -->
