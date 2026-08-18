@@ -20,180 +20,290 @@
     </script>
 
     <style>
-        /* ESTABLECER SCROLLBAR FIJO PARA EVITAR SALTOS DE PÁGINA */
-        html { 
-            overflow-y: scroll; 
-            scrollbar-gutter: stable;
-        }
+    /* ESTABLECER SCROLLBAR FIJO PARA EVITAR SALTOS DE PÁGINA */
+    html { 
+        overflow-y: scroll; 
+        scrollbar-gutter: stable;
+    }
 
-        * {
-            box-sizing: border-box;
-        }
+    * {
+        box-sizing: border-box;
+    }
 
-        body { 
-            font-family: Arial, sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            background-color: #f4f4f9; 
-            color: #333; 
-            line-height: 1.5;
-        }
+    body { 
+        font-family: Arial, sans-serif; 
+        margin: 0; 
+        padding: 0; 
+        background-color: #f4f4f9; 
+        color: #333; 
+        line-height: 1.5;
+    }
 
-        /* CABECERA SECCIÓN SINDICAL (IDÉNTICA A AFILIACION.HTML) */
-        header.cabecera-principal { 
-            background-color: #1e3654; 
-            color: white; 
-            padding: 15px 20px; 
+    /* CABECERA SECCIÓN SINDICAL */
+    header.cabecera-principal { 
+        background-color: #1e3654; 
+        color: white; 
+        padding: 15px 20px; 
+    }
+
+    .contenedor-cabecera {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .bloque-izquierdo {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .logo-cabecera {
+        height: 130px;
+        width: auto;
+        object-fit: contain;
+    }
+
+    .logo-ugt-derecha {
+        height: 65px;
+        width: auto;
+        object-fit: contain;
+    }
+
+    .texto-cabecera {
+        text-align: left;
+    }
+
+    .titulo-principal { 
+        margin: 0; 
+        font-size: 22px; 
+        font-weight: bold; 
+        line-height: 1.2;
+    }
+
+    .subtitulo-empresa { 
+        margin: 6px 0 0 0; 
+        font-size: 16px; 
+        color: #ffffff; 
+        font-weight: 600; 
+    }
+
+    .descripcion-portal { 
+        margin: 8px 0 0 0; 
+        font-size: 14px; 
+        color: #e2e8f0; 
+    }
+
+    /* BARRA DE NAVEGACIÓN HORIZONTAL SUPERIOR */
+    .menu-navegacion { 
+        background-color: #2b6cb0; 
+        padding: 10px; 
+        text-align: center; 
+        white-space: nowrap;
+    }
+    .menu-navegacion a { 
+        color: white; 
+        margin: 0 5px; 
+        text-decoration: none; 
+        font-weight: bold; 
+        font-size: 14px; 
+        display: inline-block;
+        padding: 6px 10px;
+    }
+    .menu-navegacion a.activo {
+        background-color: #1a365d;
+        border-radius: 4px;
+    }
+
+    /* CONTENEDOR GENERAL DE LA PÁGINA */
+    .contenedor-pagina {
+        max-width: 1000px;
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+
+    /* CUERPO PRINCIPAL DE CONTENIDO (MAIN) */
+    main.contenido-principal { 
+        padding: 20px; 
+        background: white; 
+        box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        border-radius: 6px;
+        border: 1px solid #e2e8f0;
+    }
+
+    /* BANNER AMARILLA - ESTRUCTURA ADAPTABLE */
+    .contenedor-banner {
+        position: relative;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .imagen-banner {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 4px;
+    }
+
+    /* BOTÓN CENTRADO VERTICALMENTE EN ESCRITORIO */
+    .boton-banner {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 15px;
+        background-color: #e53e3e;
+        color: white;
+        padding: 10px 16px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 13px;
+        border-radius: 4px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        z-index: 10;
+        text-align: center;
+    }
+
+    /* ESTILOS ESPECÍFICOS GUÍA AMARILLA */
+    .lista-documentos {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+    .lista-documentos li {
+        margin-bottom: 12px;
+    }
+    .lista-documentos a {
+        text-decoration: none;
+        color: #000;
+        font-weight: bold;
+    }
+    .sublista-nomina {
+        list-style-type: circle;
+        padding-left: 25px;
+        margin-top: 6px;
+        font-weight: normal;
+        color: #555;
+    }
+    .sublista-nomina li {
+        margin-bottom: 4px;
+    }
+
+    /* PIE DE PÁGINA */
+    footer { 
+        text-align: center; 
+        padding: 15px; 
+        background-color: #1a365d; 
+        color: white; 
+        margin-top: 30px; 
+        font-size: 13px;
+    }
+    footer a { color: #90cdf4; text-decoration: none; }
+
+    /* ADAPTACIONES ESPECÍFICAS PARA MÓVIL */
+    @media (max-width: 768px) {
+        header.cabecera-principal {
+            padding: 10px 8px;
         }
 
         .contenedor-cabecera {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
+            flex-direction: row;
             justify-content: space-between;
-            gap: 20px;
+            align-items: center;
+            gap: 6px;
         }
 
         .bloque-izquierdo {
-            display: flex;
+            flex-direction: row;
+            gap: 8px;
             align-items: center;
-            gap: 20px;
+            flex: 1;
+            min-width: 0; /* Para evitar desbordamientos flexbox */
         }
 
+        /* 3. Aumentar tamaño del logo de la sección */
         .logo-cabecera {
-            height: 130px;
-            width: auto;
-            object-fit: contain;
+            height: 58px; 
+            flex-shrink: 0;
         }
 
+        /* 3. Reducir tamaño del logo de UGT */
         .logo-ugt-derecha {
-            height: 65px;
-            width: auto;
-            object-fit: contain;
+            height: 28px; 
+            flex-shrink: 0;
         }
 
         .texto-cabecera {
             text-align: left;
+            min-width: 0;
         }
 
-        .titulo-principal { 
-            margin: 0; 
-            font-size: 22px; 
-            font-weight: bold; 
-            line-height: 1.2;
+        /* 2. Forzar texto en una sola línea */
+        .titulo-principal {
+            font-size: 13px;
+            line-height: 1.1;
+            white-space: nowrap; 
         }
 
-        .subtitulo-empresa { 
-            margin: 6px 0 0 0; 
-            font-size: 16px; 
-            color: #ffffff; 
-            font-weight: 600; 
+        .subtitulo-empresa {
+            font-size: 10.5px;
+            margin-top: 2px;
+            white-space: nowrap;
         }
 
-        .descripcion-portal { 
-            margin: 8px 0 0 0; 
-            font-size: 14px; 
-            color: #e2e8f0; 
+        .descripcion-portal {
+            display: none;
         }
 
-        /* BARRA DE NAVEGACIÓN HORIZONTAL SUPERIOR */
-        .menu-navegacion { 
-            background-color: #2b6cb0; 
-            padding: 10px; 
-            text-align: center; 
-        }
-        .menu-navegacion a { 
-            color: white; 
-            margin: 0 5px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            font-size: 14px; 
-            display: inline-block;
-            padding: 6px 10px;
-        }
-        .menu-navegacion a.activo {
-            background-color: #1a365d;
-            border-radius: 4px;
+        /* Navegación deslizable */
+        .menu-navegacion {
+            display: flex;
+            overflow-x: auto;
+            justify-content: flex-start;
+            padding: 6px 4px;
+            -webkit-overflow-scrolling: touch;
         }
 
-        /* CONTENEDOR GENERAL DE LA PÁGINA */
+        .menu-navegacion a {
+            flex: 0 0 auto;
+            font-size: 12px;
+            padding: 5px 10px;
+        }
+
         .contenedor-pagina {
-            max-width: 1000px;
-            margin: 20px auto;
-            padding: 0 15px;
+            margin: 10px auto;
+            padding: 0 8px;
         }
 
-        /* CUERPO PRINCIPAL DE CONTENIDO (MAIN) */
-        main.contenido-principal { 
-            padding: 20px; 
-            background: white; 
-            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-            border-radius: 6px;
-            border: 1px solid #e2e8f0;
+        main.contenido-principal {
+            padding: 12px;
         }
 
-        /* ESTILOS ESPECÍFICOS GUÍA AMARILLA */
-        .lista-documentos {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-        .lista-documentos li {
-            margin-bottom: 12px;
-        }
-        .lista-documentos a {
-            text-decoration: none;
-            color: #000;
-            font-weight: bold;
-        }
-        .sublista-nomina {
-            list-style-type: circle;
-            padding-left: 25px;
-            margin-top: 6px;
-            font-weight: normal;
-            color: #555;
-        }
-        .sublista-nomina li {
-            margin-bottom: 4px;
-        }
-
-        /* PIE DE PÁGINA */
-        footer { 
-            text-align: center; 
-            padding: 15px; 
-            background-color: #1a365d; 
-            color: white; 
-            margin-top: 30px; 
+        /* Botón ocupa ancho completo debajo de la imagen en móvil */
+        .boton-banner {
+            position: static;
+            transform: none;
+            display: block;
+            margin-top: 8px;
+            width: 100%;
+            padding: 10px 8px;
             font-size: 13px;
         }
-        footer a { color: #90cdf4; text-decoration: none; }
 
-        /* RESPONSIVE CABECERA */
-        @media (max-width: 768px) {
-            .contenedor-cabecera {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
-            .bloque-izquierdo {
-                flex-direction: column;
-                gap: 10px;
-            }
-            .texto-cabecera {
-                text-align: center;
-            }
-            .logo-cabecera {
-                height: 75px;
-            }
-            .logo-ugt-derecha {
-                height: 60px;
-            }
+        .lista-documentos {
+            padding-left: 18px;
         }
-    </style>
+
+        .sublista-nomina {
+            padding-left: 18px;
+        }
+    }
+</style>
 </head>
 <body>
 
-    <!-- CABECERA SECCIÓN SINDICAL (IGUAL A AFILIACION.HTML) -->
+    <!-- CABECERA SECCIÓN SINDICAL -->
     <header class="cabecera-principal">
         <div class="contenedor-cabecera">
             <div class="bloque-izquierdo">
@@ -225,9 +335,9 @@
         <main class="contenido-principal">
             
             <!-- BANNER ESPECÍFICO DE LA GUÍA AMARILLA -->
-            <div style="position: relative; width: 100%; margin-bottom: 20px;">
-                <img src="bannerguiaamarilla.jpg" alt="Guía Amarilla Flota Interna" style="width: 100%; height: auto; display: block; border-radius: 4px;">
-                <a href="https://share.articulate.com/0WWD1wxiQ2wK-HrxYm7ff" target="_blank" style="position: absolute; top: 15px; right: 15px; background-color: #e53e3e; color: white; padding: 10px 16px; text-decoration: none; font-weight: bold; font-size: 13px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.3); z-index: 10;">
+            <div class="contenedor-banner">
+                <img src="bannerguiaamarilla.jpg" alt="Guía Amarilla Flota Interna" class="imagen-banner">
+                <a href="https://share.articulate.com/0WWD1wxiQ2wK-HrxYm7ff" target="_blank" class="boton-banner">
                     Acceder a la Guía ➔
                 </a>
             </div>
@@ -275,7 +385,7 @@
                     <a href="modificarinfopersonal.pdf" target="_blank"> ¿Cómo modificar la información personal? – Empleados (.pdf)</a>
                 </li>
                 <li>
-                    <a href="workdaytutorial.pdf" target="_blank"> Workday tutorial – ES (.pdf)</a>
+                    <a href="workday.pdf" target="_blank"> Workday tutorial – ES (.pdf)</a>
                 </li>
             </ul>
 
