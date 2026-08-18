@@ -134,62 +134,6 @@
         border: 1px solid #e2e8f0;
     }
 
-    /* BANNER AMARILLA - ESTRUCTURA ADAPTABLE */
-    .contenedor-banner {
-        position: relative;
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .imagen-banner {
-        width: 100%;
-        height: auto;
-        display: block;
-        border-radius: 4px;
-    }
-
-    /* BOTÓN CENTRADO VERTICALMENTE EN ESCRITORIO */
-    .boton-banner {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        right: 15px;
-        background-color: #e53e3e;
-        color: white;
-        padding: 10px 16px;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 13px;
-        border-radius: 4px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-        z-index: 10;
-        text-align: center;
-    }
-
-    /* ESTILOS ESPECÍFICOS GUÍA AMARILLA */
-    .lista-documentos {
-        list-style-type: disc;
-        padding-left: 20px;
-    }
-    .lista-documentos li {
-        margin-bottom: 12px;
-    }
-    .lista-documentos a {
-        text-decoration: none;
-        color: #000;
-        font-weight: bold;
-    }
-    .sublista-nomina {
-        list-style-type: circle;
-        padding-left: 25px;
-        margin-top: 6px;
-        font-weight: normal;
-        color: #555;
-    }
-    .sublista-nomina li {
-        margin-bottom: 4px;
-    }
-
     /* PIE DE PÁGINA */
     footer { 
         text-align: center; 
@@ -279,25 +223,6 @@
         main.contenido-principal {
             padding: 12px;
         }
-
-        /* Botón ocupa ancho completo debajo de la imagen en móvil */
-        .boton-banner {
-            position: static;
-            transform: none;
-            display: block;
-            margin-top: 8px;
-            width: 100%;
-            padding: 10px 8px;
-            font-size: 13px;
-        }
-
-        .lista-documentos {
-            padding-left: 18px;
-        }
-
-        .sublista-nomina {
-            padding-left: 18px;
-        }
     }
 </style>
 </head>
@@ -333,78 +258,9 @@
 
         <!-- CONTENIDO PRINCIPAL -->
         <main class="contenido-principal">
-            
-            <!-- BANNER ESPECÍFICO DE LA GUÍA AMARILLA -->
-            <div class="contenedor-banner">
-                <img src="bannerguiaamarilla.jpg" alt="Guía Amarilla Flota Interna" class="imagen-banner">
-                <a href="https://share.articulate.com/0WWD1wxiQ2wK-HrxYm7ff" target="_blank" class="boton-banner">
-                    Acceder a la Guía ➔
-                </a>
-            </div>
-
-            <p style="font-weight: bold; margin-bottom: 5px;">La Guía Amarilla contiene las políticas internas de la empresa</p>
-            <p style="font-weight: bold; margin-top: 0;">Como trabajador tienes el deber y el derecho de conocer estas políticas</p>
-
-            <hr style="border: 0; border-top: 1px solid #ccc; margin: 25px 0;">
-
-            <!-- DOCUMENTOS DENTRO DE LA GUÍA -->
-            <h3 style="font-weight: bold; letter-spacing: 0.5px; color: #2c5282; margin-bottom: 2px;">DOCUMENTOS DENTRO DE LA GUÍA</h3>
-            <p style="margin-top: 0; margin-bottom: 15px; font-size: 0.9em; color: #555;">(actualizado a Julio 2026)</p>
-
-            <hr style="border: 0; border-top: 1px solid #ccc; margin: 15px 0 20px 0;">
-
-            <ul class="lista-documentos">
-                <li>
-                    <a href="politicatiemposdeentrega.pdf" target="_blank"> Política de Tiempos de Entrega (.pdf)</a>
-                </li>
-                <li>
-                    <a href="comoentendernomina.pdf" target="_blank"> ¿Cómo entender mi Hoja de Salario? (.pdf)</a>
-                    <ul class="sublista-nomina">
-                        <li>Bajas Médicas</li>
-                        <li>¿Cómo se calcula el salario?</li>
-                        <li>¿Cómo se calcula la RUO?</li>
-                        <li>¿Cómo se calculan los Gastos de Locomoción?</li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="fichariesgos.pdf" target="_blank"> Persona Repartidora – Ficha informativa de riesgos (.pdf)</a>
-                </li>
-                <li>
-                    <a href="transportecargas.pdf" target="_blank"> Manipulación y transporte de cargas (.pdf)</a>
-                </li>
-                <li>
-                    <a href="prevensionverano.pdf" target="_blank"> Medidas preventivas para el verano (.pdf)</a>
-                </li>
-                <li>
-                    <a href="violenciarobo.pdf" target="_blank"> Actuación ante violencia, acoso, robo o agresión (.pdf)</a>
-                </li>
-                <li>
-                    <a href="solicitudesadhoc.pdf" target="_blank"> Solicitudes Ad Hoc – Empleados (.pdf)</a>
-                </li>
-                <li>
-                    <a href="modificarinfopersonal.pdf" target="_blank"> ¿Cómo modificar la información personal? – Empleados (.pdf)</a>
-                </li>
-                <li>
-                    <a href="workday.pdf" target="_blank"> Workday tutorial – ES (.pdf)</a>
-                </li>
-            </ul>
-
-            <hr style="border: 0; border-top: 1px solid #000; margin: 30px 0 20px 0;">
-
-            <!-- AVISO LEGAL Y NOTA INFORMATIVA -->
-            <h4 style="font-weight: bold; margin-bottom: 10px; font-size: 1.1em; color: #1a365d;">Aviso Legal y Nota Informativa</h4>
-
-            <p style="font-size: 0.95em; text-align: justify; margin-bottom: 12px;">
-                La publicación y difusión de la presente <em>Guía Amarilla</em> tiene un propósito puramente informativo. La consulta o conocimiento de sus contenidos por parte de la plantilla <strong>no implica, en ningún caso, la aceptación tácita o expresa de sus disposiciones.</strong>
-            </p>
-
-            <p style="font-size: 0.95em; text-align: justify; margin-bottom: 12px;">
-                La Sección Sindical de UGT en Glovoapp Spain Platform (Comunidad de Madrid) advierte que diversos puntos de esta normativa interna contravienen abiertamente las disposiciones del Convenio Colectivo de aplicación, así como los derechos laborales mínimos contemplados en el Real Decreto Legislativo 2/2015, de 23 de octubre, por el que se aprueba el Texto Refundido del Estatuto de los Trabajadores.
-            </p>
-
-            <p style="font-size: 0.95em; text-align: justify;">
-                En consecuencia, esta representación legal de las personas trabajadoras <strong>se reserva expresamente el ejercicio de cuantas acciones legales y de conflicto colectivo correspondan</strong>, incluyendo la interposición de las oportunas denuncias ante la Inspección Provincial de Trabajo y Seguridad Social por los incumplimientos detectados.
-            </p>
+            <h2>Bienvenidos al Portal Informativo</h2>
+            <p>Este es el espacio oficial de la Sección Sindical de UGT en Glovoapp Spain Platform (Comunidad de Madrid).</p>
+            <p>A través de este portal podrás consultar la normativa interna de la empresa, guías de derechos laborales, contactos de la representación sindical e información de interés para la plantilla.</p>
         </main>
     </div>
 
