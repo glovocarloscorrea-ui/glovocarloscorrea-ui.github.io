@@ -35,7 +35,7 @@
             line-height: 1.5;
         }
 
-        /* CABECERA SECCIÓN SINDICAL (NUEVO DISEÑO CON LOGO) */
+        /* CABECERA SECCIÓN SINDICAL (DOS LOGOS) */
         header.cabecera-principal { 
             background-color: #1e3654; 
             color: white; 
@@ -47,18 +47,19 @@
             margin: 0 auto;
             display: flex;
             align-items: center;
-            justify-content: flex-start;
-            gap: 25px;
+            justify-content: space-between;
+            gap: 20px;
         }
 
         .logo-cabecera {
-            height: 120px;
+            height: 110px;
             width: auto;
             object-fit: contain;
         }
 
         .texto-cabecera {
-            text-align: left;
+            text-align: center;
+            flex-grow: 1;
         }
 
         .titulo-principal { 
@@ -142,11 +143,11 @@
         footer a { color: #90cdf4; }
 
         /* RESPONSIVE CABECERA PARA MÓVILES */
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             .contenedor-cabecera {
                 flex-direction: column;
                 text-align: center;
-                gap: 10px;
+                gap: 15px;
             }
             .texto-cabecera {
                 text-align: center;
@@ -159,15 +160,16 @@
 </head>
 <body>
 
-    <!-- CABECERA SECCIÓN SINDICAL CON LOGO -->
+    <!-- CABECERA SECCIÓN SINDICAL CON DOS LOGOS -->
     <header class="cabecera-principal">
         <div class="contenedor-cabecera">
-            <img src="seccionlogo.jpg" alt="Logo UGT Madrid Glovo" class="logo-cabecera">
+            <img src="seccionlogo.jpg" alt="Logo Sección Sindical UGT Madrid" class="logo-cabecera">
             <div class="texto-cabecera">
                 <h1 class="titulo-principal">Sección Sindical UGT | Madrid</h1>
                 <div class="subtitulo-empresa">Glovoapp Spain Platform</div>
                 <div class="descripcion-portal">Portal Informativo de Derechos Laborales y Acción Sindical</div>
             </div>
+            <img src="ugtlogo.jpg" alt="Logo UGT Oficial" class="logo-cabecera">
         </div>
     </header>
 
