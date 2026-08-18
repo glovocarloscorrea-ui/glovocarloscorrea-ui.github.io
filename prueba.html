@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRUEBA - Guía Amarilla - UGT Madrid</title>
+    <title>Guía Amarilla - Sección Sindical UGT | Madrid</title>
 
     <!-- REDIRECCIÓN AUTOMÁTICA FUERA DE WHATSAPP PARA ANDROID -->
     <script>
@@ -20,7 +20,7 @@
     </script>
 
     <style>
-        /* CONTROL DE SCROLLBAR FIJO */
+        /* ESTABLECER SCROLLBAR FIJO PARA EVITAR SALTOS DE PÁGINA */
         html { 
             overflow-y: scroll; 
             scrollbar-gutter: stable;
@@ -39,7 +39,7 @@
             line-height: 1.5;
         }
 
-        /* CABECERA BASE (ESCRITORIO) */
+        /* CABECERA SECCIÓN SINDICAL */
         header.cabecera-principal { 
             background-color: #1e3654; 
             color: white; 
@@ -97,11 +97,12 @@
             color: #e2e8f0; 
         }
 
-        /* BARRA DE NAVEGACIÓN */
+        /* BARRA DE NAVEGACIÓN HORIZONTAL SUPERIOR */
         .menu-navegacion { 
             background-color: #2b6cb0; 
             padding: 10px; 
             text-align: center; 
+            white-space: nowrap;
         }
         .menu-navegacion a { 
             color: white; 
@@ -124,7 +125,7 @@
             padding: 0 15px;
         }
 
-        /* CUERPO PRINCIPAL (MAIN) */
+        /* CUERPO PRINCIPAL DE CONTENIDO (MAIN) */
         main.contenido-principal { 
             padding: 20px; 
             background: white; 
@@ -133,85 +134,58 @@
             border: 1px solid #e2e8f0;
         }
 
-        /* BANNER GUÍA AMARILLA (OPTIMIZADO CON FLEXBOX) */
-        .banner-guia {
-            background-color: #ffcc00;
-            border-radius: 8px;
-            padding: 15px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 15px;
-            margin-bottom: 25px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        /* BANNER AMARILLA - ESTRUCTURA ADAPTABLE */
+        .contenedor-banner {
+            position: relative;
+            width: 100%;
+            margin-bottom: 20px;
         }
 
-        .contenido-banner {
-            display: flex;
-            align-items: center;
-            gap: 12px;
+        .imagen-banner {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
         }
 
-        .icono-guia {
-            width: 45px;
-            height: 45px;
-            flex-shrink: 0;
-        }
-
-        .texto-banner {
-            font-size: 18px;
-            font-weight: bold;
-            color: #1a202c;
-            line-height: 1.2;
-        }
-
-        .btn-acceder-guia {
+        .boton-banner {
+            position: absolute;
+            top: 15px;
+            right: 15px;
             background-color: #e53e3e;
             color: white;
+            padding: 10px 16px;
             text-decoration: none;
-            padding: 10px 18px;
             font-weight: bold;
-            font-size: 14px;
-            border-radius: 6px;
-            white-space: nowrap;
-            transition: background-color 0.2s ease;
+            font-size: 13px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            z-index: 10;
             text-align: center;
         }
 
-        .btn-acceder-guia:hover {
-            background-color: #c53030;
-        }
-
-        /* TEXTO EXPLICATIVO Y LISTA */
-        .texto-destacado {
-            font-size: 15px;
-            color: #2d3748;
-            margin-bottom: 15px;
-        }
-
-        .seccion-documentos-titulo {
-            color: #1a365d;
-            font-size: 18px;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #2b6cb0;
-            padding-bottom: 5px;
-        }
-
+        /* ESTILOS ESPECÍFICOS GUÍA AMARILLA */
         .lista-documentos {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+            list-style-type: disc;
+            padding-left: 20px;
         }
-
         .lista-documentos li {
-            background-color: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-left: 4px solid #2b6cb0;
-            padding: 12px 15px;
-            margin-bottom: 10px;
-            border-radius: 0 4px 4px 0;
-            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .lista-documentos a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+        .sublista-nomina {
+            list-style-type: circle;
+            padding-left: 25px;
+            margin-top: 6px;
+            font-weight: normal;
+            color: #555;
+        }
+        .sublista-nomina li {
+            margin-bottom: 4px;
         }
 
         /* PIE DE PÁGINA */
@@ -225,87 +199,78 @@
         }
         footer a { color: #90cdf4; text-decoration: none; }
 
-
-        /* =========================================================
-           REGLAS ESPECÍFICAS PARA MÓVIL (MENOS DE 768px DE ANCHO)
-           ========================================================= */
+        /* ADAPTACIÓN ESPECÍFICA PARA DISPOSITIVOS MÓVILES */
         @media (max-width: 768px) {
-            
-            /* 1. CABECERA COMPACTA EN MÓVIL */
             header.cabecera-principal {
-                padding: 10px 12px;
+                padding: 15px 10px;
             }
 
             .contenedor-cabecera {
-                display: grid;
-                grid-template-columns: auto 1fr auto; /* Logo izq | Texto centro | Logo dcha */
-                align-items: center;
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            .bloque-izquierdo {
+                flex-direction: column;
                 gap: 10px;
             }
-
-            .bloque-izquierdo {
-                display: contents; /* Desmontamos la envoltura flex para el grid */
-            }
-
-            .logo-cabecera {
-                height: 45px; /* Logo Sección Sindical reducido */
-            }
-
-            .logo-ugt-derecha {
-                height: 45px; /* Logo UGT reducido */
-            }
-
             .texto-cabecera {
                 text-align: center;
             }
-
+            .logo-cabecera {
+                height: 85px;
+            }
+            .logo-ugt-derecha {
+                height: 55px;
+            }
             .titulo-principal {
+                font-size: 19px;
+            }
+            .subtitulo-empresa {
                 font-size: 15px;
-                line-height: 1.2;
             }
-
-            /* Ocultamos subtítulos secundarios en móvil para ahorrar espacio */
-            .subtitulo-empresa, 
             .descripcion-portal {
-                display: none;
+                font-size: 13px;
             }
 
-            /* 2. MENÚ DE NAVEGACIÓN COMPACTO */
+            /* Navegación deslizable en móvil */
             .menu-navegacion {
-                padding: 6px;
+                display: flex;
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding: 8px 5px;
+                -webkit-overflow-scrolling: touch;
             }
             .menu-navegacion a {
-                padding: 5px 7px;
-                font-size: 12px;
-                margin: 2px 1px;
+                flex: 0 0 auto;
+                font-size: 13px;
+                padding: 6px 12px;
             }
 
-            /* 3. BANNER DE LA GUÍA AMARILLA FLEXIBLE (SIN SOLAPAMIENTO) */
-            .banner-guia {
-                flex-direction: column; /* Apilar elementos en vertical */
-                text-align: center;
+            .contenedor-pagina {
+                margin: 10px auto;
+                padding: 0 8px;
+            }
+
+            main.contenido-principal {
                 padding: 15px;
-                gap: 12px;
             }
 
-            .contenido-banner {
-                flex-direction: column;
-                gap: 8px;
+            /* Adaptación del Banner y Botón en móvil */
+            .boton-banner {
+                position: static;
+                display: block;
+                margin-top: 10px;
+                width: 100%;
+                padding: 12px 10px;
+                font-size: 14px;
             }
 
-            .icono-guia {
-                width: 40px;
-                height: 40px;
+            .lista-documentos {
+                padding-left: 18px;
             }
-
-            .texto-banner {
-                font-size: 16px;
-            }
-
-            .btn-acceder-guia {
-                width: 100%; /* El botón ocupa todo el ancho en móvil */
-                padding: 12px;
-                font-size: 15px;
+            .sublista-nomina {
+                padding-left: 18px;
             }
         }
     </style>
@@ -342,39 +307,78 @@
 
         <!-- CONTENIDO PRINCIPAL -->
         <main class="contenido-principal">
-
-            <!-- BANNER DE ACCESO A LA GUÍA AMARILLA -->
-            <div class="banner-guia">
-                <div class="contenido-banner">
-                    <!-- Icono o imagen SVG decorativa -->
-                    <svg class="icono-guia" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="#00a082"/>
-                    </svg>
-                    <div class="texto-banner">Guía Amarilla Flota Interna</div>
-                </div>
-                <a href="https://drive.google.com/drive/folders/16iLzCvh678j3j3G-X0x633d7bI4a2Wc9" target="_blank" rel="noopener noreferrer" class="btn-acceder-guia">
-                    Acceder a la Guía →
+            
+            <!-- BANNER ESPECÍFICO DE LA GUÍA AMARILLA -->
+            <div class="contenedor-banner">
+                <img src="bannerguiaamarilla.jpg" alt="Guía Amarilla Flota Interna" class="imagen-banner">
+                <a href="https://share.articulate.com/0WWD1wxiQ2wK-HrxYm7ff" target="_blank" class="boton-banner">
+                    Acceder a la Guía ➔
                 </a>
             </div>
 
-            <!-- EXPLICACIÓN Y CONTENIDOS -->
-            <p class="texto-destacado">
-                La <strong>Guía Amarilla</strong> contiene las políticas internas y protocolos operativos de la empresa.
-            </p>
-            <p class="texto-destacado">
-                Como trabajador tienes el deber y el derecho de conocer estas políticas normativas para garantizar el cumplimiento de tus condiciones laborales.
-            </p>
+            <p style="font-weight: bold; margin-bottom: 5px;">La Guía Amarilla contiene las políticas internas de la empresa</p>
+            <p style="font-weight: bold; margin-top: 0;">Como trabajador tienes el deber y el derecho de conocer estas políticas</p>
 
-            <h2 class="seccion-documentos-titulo">📑 DOCUMENTOS DENTRO DE LA GUÍA</h2>
+            <hr style="border: 0; border-top: 1px solid #ccc; margin: 25px 0;">
+
+            <!-- DOCUMENTOS DENTRO DE LA GUÍA -->
+            <h3 style="font-weight: bold; letter-spacing: 0.5px; color: #2c5282; margin-bottom: 2px;">DOCUMENTOS DENTRO DE LA GUÍA</h3>
+            <p style="margin-top: 0; margin-bottom: 15px; font-size: 0.9em; color: #555;">(actualizado a Julio 2026)</p>
+
+            <hr style="border: 0; border-top: 1px solid #ccc; margin: 15px 0 20px 0;">
 
             <ul class="lista-documentos">
-                <li><strong>Protocolo de Operativa General:</strong> Normas de reparto, tiempos y procedimiento de pedidos.</li>
-                <li><strong>Política de Vestimenta y Material:</strong> Regulación sobre el equipamiento proporcionado.</li>
-                <li><strong>Protocolo de Ausencias y Bajas:</strong> Procedimiento para notificación de IT y ausencias justificadas.</li>
-                <li><strong>Prevención de Riesgos Laborales (PRL):</strong> Normativa de seguridad en vía pública y condiciones climáticas.</li>
-                <li><strong>Régimen Disciplinario Interno:</strong> Criterios sobre faltas y sanciones operativas.</li>
+                <li>
+                    <a href="politicatiemposdeentrega.pdf" target="_blank"> Política de Tiempos de Entrega (.pdf)</a>
+                </li>
+                <li>
+                    <a href="comoentendernomina.pdf" target="_blank"> ¿Cómo entender mi Hoja de Salario? (.pdf)</a>
+                    <ul class="sublista-nomina">
+                        <li>Bajas Médicas</li>
+                        <li>¿Cómo se calcula el salario?</li>
+                        <li>¿Cómo se calcula la RUO?</li>
+                        <li>¿Cómo se calculan los Gastos de Locomoción?</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="fichariesgos.pdf" target="_blank"> Persona Repartidora – Ficha informativa de riesgos (.pdf)</a>
+                </li>
+                <li>
+                    <a href="transportecargas.pdf" target="_blank"> Manipulación y transporte de cargas (.pdf)</a>
+                </li>
+                <li>
+                    <a href="prevensionverano.pdf" target="_blank"> Medidas preventivas para el verano (.pdf)</a>
+                </li>
+                <li>
+                    <a href="violenciarobo.pdf" target="_blank"> Actuación ante violencia, acoso, robo o agresión (.pdf)</a>
+                </li>
+                <li>
+                    <a href="solicitudesadhoc.pdf" target="_blank"> Solicitudes Ad Hoc – Empleados (.pdf)</a>
+                </li>
+                <li>
+                    <a href="modificarinfopersonal.pdf" target="_blank"> ¿Cómo modificar la información personal? – Empleados (.pdf)</a>
+                </li>
+                <li>
+                    <a href="workdaytutorial.pdf" target="_blank"> Workday tutorial – ES (.pdf)</a>
+                </li>
             </ul>
 
+            <hr style="border: 0; border-top: 1px solid #000; margin: 30px 0 20px 0;">
+
+            <!-- AVISO LEGAL Y NOTA INFORMATIVA -->
+            <h4 style="font-weight: bold; margin-bottom: 10px; font-size: 1.1em; color: #1a365d;">Aviso Legal y Nota Informativa</h4>
+
+            <p style="font-size: 0.95em; text-align: justify; margin-bottom: 12px;">
+                La publicación y difusión de la presente <em>Guía Amarilla</em> tiene un propósito puramente informativo. La consulta o conocimiento de sus contenidos por parte de la plantilla <strong>no implica, en ningún caso, la aceptación tácita o expresa de sus disposiciones.</strong>
+            </p>
+
+            <p style="font-size: 0.95em; text-align: justify; margin-bottom: 12px;">
+                La Sección Sindical de UGT en Glovoapp Spain Platform (Comunidad de Madrid) advierte que diversos puntos de esta normativa interna contravienen abiertamente las disposiciones del Convenio Colectivo de aplicación, así como los derechos laborales mínimos contemplados en el Real Decreto Legislativo 2/2015, de 23 de octubre, por el que se aprueba el Texto Refundido del Estatuto de los Trabajadores.
+            </p>
+
+            <p style="font-size: 0.95em; text-align: justify;">
+                En consecuencia, esta representación legal de las personas trabajadoras <strong>se reserva expresamente el ejercicio de cuantas acciones legales y de conflicto colectivo correspondan</strong>, incluyendo la interposición de las oportunas denuncias ante la Inspección Provincial de Trabajo y Seguridad Social por los incumplimientos detectados.
+            </p>
         </main>
     </div>
 
@@ -387,12 +391,13 @@
     <!-- SCRIPT OFICIAL DE GOOGLE IDENTITY -->
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 
-    <!-- MODAL REGISTRO -->
+    <!-- MODAL CON BOTÓN OFICIAL DE GOOGLE -->
     <div id="modal-registro" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.75); display: flex; justify-content: center; align-items: center; z-index: 9999;">
         <div style="background: white; padding: 30px; border-radius: 10px; max-width: 400px; width: 90%; box-shadow: 0 4px 15px rgba(0,0,0,0.3); text-align: center;">
             <h3 style="color: #1a365d; margin-top: 0; font-size: 1.3em;">Acceso Sección Sindical UGT</h3>
             <p style="font-size: 0.9em; color: #555; margin-bottom: 20px;">Inicia sesión con tu cuenta de Google para validar tu acceso al portal de información laboral.</p>
-
+            
+            <!-- Configuración del botón de Google -->
             <div id="g_id_onload"
                  data-client_id="1045651313029-cr80m30gc1111g792anbkqqktop780tk.apps.googleusercontent.com"
                  data-callback="handleCredentialResponse"
@@ -413,7 +418,7 @@
         </div>
     </div>
 
-    <!-- SCRIPT DE MANEJO DE REGISTRO -->
+    <!-- SCRIPT LÓGICA LOGIN -->
     <script>
         const URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbyd2fDDima-jZeW0H0L0yGZVDbul8sMJAQMw3OpK_nPLP46kI6n8cNEAYXP4l_wdUuO-g/exec";
 
