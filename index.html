@@ -70,93 +70,15 @@
             border-radius: 4px;
         }    
 
-        /* CONTENEDOR GENERAL CON BARRA LATERAL (LAYOUT 2 COLUMNAS) */
+        /* CONTENEDOR GENERAL */
         .contenedor-pagina {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 20px auto;
             padding: 0 15px;
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
-        }
-
-        /* BARRA NAVEGACIÓN LATERAL (SIDEBAR) */
-        aside.sidebar-navegacion {
-            width: 240px;
-            flex-shrink: 0;
-            background: white;
-            border-radius: 6px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-            padding: 15px;
-            border: 1px solid #e2e8f0;
-        }
-
-        .titulo-sidebar {
-            font-size: 0.95em;
-            text-transform: uppercase;
-            color: #718096;
-            margin: 0 0 10px 0;
-            padding-bottom: 5px;
-            border-bottom: 2px solid #e2e8f0;
-            font-weight: bold;
-        }
-
-        .menu-lateral {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .menu-lateral li {
-            margin-bottom: 6px;
-        }
-
-        .menu-lateral a {
-            display: block;
-            padding: 10px 12px;
-            color: #2d3748;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.9em;
-            border-radius: 4px;
-            transition: background-color 0.2s, color 0.2s;
-        }
-
-        .menu-lateral a:hover {
-            background-color: #edf2f7;
-            color: #2b6cb0;
-        }
-
-        .menu-lateral a.activo {
-            background-color: #1a365d;
-            color: white;
-        }
-
-        /* BOTÓN CONTACTA CON UN DELEGADO EN SIDEBAR */
-        .btn-delegado-sidebar {
-            display: block;
-            margin-top: 20px;
-            padding: 12px 10px;
-            background-color: #e53e3e;
-            color: white !important;
-            text-align: center;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2em;
-            line-height: 1.3;
-            border-radius: 6px;
-            transition: background-color 0.2s, transform 0.1s;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .btn-delegado-sidebar:hover {
-            background-color: #c53030;
-            transform: translateY(-1px);
         }
 
         /* CUERPO PRINCIPAL DE CONTENIDO (MAIN) */
         main.contenido-principal {
-            flex-grow: 1;
             background: white;
             border-radius: 6px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.08);
@@ -194,7 +116,7 @@
             font-size: 1.2em;
         }
 
-        /* REJILLA TARJETAS DE ACCESO RÁPIDO (SOLO IMÁGENES GRANDES) */
+        /* REJILLA TARJETAS DE ACCESO RÁPIDO */
         .grid-enlaces {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
@@ -266,12 +188,6 @@
 
         /* ADAPTACIÓN MÓVIL */
         @media (max-width: 768px) {
-            .contenedor-pagina {
-                flex-direction: column;
-            }
-            aside.sidebar-navegacion {
-                width: 100%;
-            }
             .grid-enlaces {
                 grid-template-columns: repeat(3, 1fr);
             }
@@ -291,7 +207,7 @@
         <div class="descripcion-portal">Portal Informativo de Derechos Laborales y Acción Sindical</div>
     </header>
 
-    <!-- BARRA DE NAVEGACIÓN HORIZONTAL SUPERIOR ESTÁNDAR (CLASE CORREGIDA) -->
+    <!-- BARRA DE NAVEGACIÓN HORIZONTAL SUPERIOR -->
     <nav class="menu-navegacion">
         <a href="index.html" class="activo">Inicio</a>
         <a href="guiaamarilla.html">Guía Amarilla</a>
@@ -301,26 +217,8 @@
         <a href="afiliacion.html">Afiliación</a>
     </nav>
 
-    <!-- CONTENEDOR CON BARRA LATERAL Y CONTENIDO -->
+    <!-- CONTENEDOR GENERAL -->
     <div class="contenedor-pagina">
-
-        <!-- BARRA DE NAVEGACIÓN LATERAL (SIDEBAR) -->
-        <aside class="sidebar-navegacion">
-            <div class="titulo-sidebar">Menú Principal</div>
-            <ul class="menu-lateral">
-                <li><a href="index.html" class="activo">🏠 Inicio</a></li>
-                <li><a href="guiaamarilla.html">📖 Guía Amarilla</a></li>
-                <li><a href="mutua.html">🏥 Mutua</a></li>
-                <li><a href="fleetlead.html">🏢 Fleet Leads</a></li>
-                <li><a href="afiliacion.html">✊ Afiliación</a></li>
-                <li><a href="contacto.html">✉️ Contacto</a></li>
-            </ul>
-
-            <!-- BOTÓN DIRECTO A CONTACTO -->
-            <a href="contacto.html" class="btn-delegado-sidebar">
-                Contacta con<br>un Delegado
-            </a>
-        </aside>
 
         <!-- CUERPO PRINCIPAL DE CONTENIDOS -->
         <main class="contenido-principal">
