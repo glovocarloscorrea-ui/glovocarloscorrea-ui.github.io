@@ -51,25 +51,24 @@
         .descripcion-portal { margin: 6px 0 0 0; font-size: 14px; color: #e2e8f0; }
 
         /* BARRA DE NAVEGACIÓN HORIZONTAL SUPERIOR */
-        nav.nav-superior {
-            background-color: #2b6cb0;
-            text-align: center;
+        .menu-navegacion { 
+            background-color: #2b6cb0; 
+            padding: 10px; 
+            text-align: center; 
         }
-        .nav-superior a {
+        .menu-navegacion a { 
+            color: white; 
+            margin: 0 5px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 14px; 
             display: inline-block;
-            color: white;
-            padding: 12px 20px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 15px;
-            transition: background-color 0.2s;
+            padding: 6px 10px;
         }
-        .nav-superior a:hover {
+        .menu-navegacion a.activo {
             background-color: #1a365d;
-        }
-        .nav-superior a.activo {
-            background-color: #1a365d;
-        }
+            border-radius: 4px;
+        }    
 
         /* CONTENEDOR GENERAL CON BARRA LATERAL (LAYOUT 2 COLUMNAS) */
         .contenedor-pagina {
