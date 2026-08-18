@@ -2,16 +2,17 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Guía Amarilla - Sección Sindical UGT | Madrid</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Sección Sindical UGT | Glovo Madrid</title>
 
-    <!-- REDIRECCIÓN AUTOMÁTICA FUERA DE WHATSAPP PARA ANDROID -->
+    <!-- REDIRECCIÓN AUTOMÁTICA Y MANEJO DE NAVEGADORES IN-APP (WHATSAPP) -->
     <script>
         (function() {
             var ua = navigator.userAgent || navigator.vendor || window.opera;
-            var isWhatsApp = ua.indexOf("WhatsApp") > -1;
+            var isWhatsApp = /WhatsApp/i.test(ua);
             var isAndroid = /Android/i.test(ua);
 
+            // Redirección forzada fuera del WebView en Android
             if (isWhatsApp && isAndroid) {
                 var currentUrl = window.location.href.replace(/^https?:\/\//, '');
                 window.location.href = "intent://" + currentUrl + "#Intent;scheme=https;package=com.android.chrome;end";
@@ -19,367 +20,249 @@
         })();
     </script>
 
-    <!-- Carga de la API oficial de Google Identity -->
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-
     <style>
-    /* ESTABLECER SCROLLBAR FIJO PARA EVITAR SALTOS DE PÁGINA */
-    html { 
-        overflow-y: scroll; 
-        scrollbar-gutter: stable;
-    }
+        /* ESTABLECER SCROLLBAR FIJO PARA EVITAR SALTOS DE PÁGINA */
+        html { 
+            overflow-y: scroll; 
+            scrollbar-gutter: stable;
+        }
 
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
+        * {
+            box-sizing: border-box;
+        }
 
-    body { 
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-        background-color: #f4f4f9; 
-        color: #333; 
-        line-height: 1.5;
-    }
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #f4f4f9; 
+            color: #333; 
+            line-height: 1.5;
+        }
 
-    /* CABECERA SECCIÓN SINDICAL */
-    header.cabecera-principal { 
-        background-color: #1e3654; 
-        color: white; 
-        padding: 15px 20px; 
-    }
-
-    .contenedor-cabecera {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 20px;
-    }
-
-    .bloque-izquierdo {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .logo-cabecera {
-        height: 130px;
-        width: auto;
-        object-fit: contain;
-    }
-
-    .logo-ugt-derecha {
-        height: 65px;
-        width: auto;
-        object-fit: contain;
-    }
-
-    .texto-cabecera {
-        text-align: left;
-    }
-
-    .titulo-principal { 
-        margin: 0; 
-        font-size: 22px; 
-        font-weight: bold; 
-        line-height: 1.2;
-    }
-
-    .subtitulo-empresa { 
-        margin: 6px 0 0 0; 
-        font-size: 16px; 
-        color: #ffffff; 
-        font-weight: 600; 
-    }
-
-    .descripcion-portal { 
-        margin: 8px 0 0 0; 
-        font-size: 14px; 
-        color: #e2e8f0; 
-    }
-
-    /* BARRA DE NAVEGACIÓN HORIZONTAL SUPERIOR */
-    .menu-navegacion { 
-        background-color: #2b6cb0; 
-        padding: 10px; 
-        text-align: center; 
-        white-space: nowrap;
-    }
-    .menu-navegacion a { 
-        color: white; 
-        margin: 0 5px; 
-        text-decoration: none; 
-        font-weight: bold; 
-        font-size: 14px; 
-        display: inline-block;
-        padding: 6px 10px;
-    }
-    .menu-navegacion a.activo {
-        background-color: #1a365d;
-        border-radius: 4px;
-    }
-
-    /* CONTENEDOR GENERAL DE LA PÁGINA */
-    .contenedor-pagina {
-        max-width: 1000px;
-        margin: 20px auto;
-        padding: 0 15px;
-    }
-
-    /* CUERPO PRINCIPAL DE CONTENIDO (MAIN) */
-    main.contenido-principal { 
-        padding: 20px; 
-        background: white; 
-        box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-        border-radius: 6px;
-        border: 1px solid #e2e8f0;
-    }
-
-    /* BANNER AMARILLA - ESTRUCTURA ADAPTABLE */
-    .contenedor-banner {
-        position: relative;
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .imagen-banner {
-        width: 100%;
-        height: auto;
-        display: block;
-        border-radius: 4px;
-    }
-
-    .boton-banner {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        right: 15px;
-        background-color: #e53e3e;
-        color: white;
-        padding: 10px 16px;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 13px;
-        border-radius: 4px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-        z-index: 10;
-        text-align: center;
-    }
-
-    /* ESTILOS ESPECÍFICOS GUÍA AMARILLA */
-    .lista-documentos {
-        list-style-type: disc;
-        padding-left: 20px;
-    }
-    .lista-documentos li {
-        margin-bottom: 12px;
-    }
-    .lista-documentos a {
-        text-decoration: none;
-        color: #000;
-        font-weight: bold;
-    }
-    .sublista-nomina {
-        list-style-type: circle;
-        padding-left: 25px;
-        margin-top: 6px;
-        font-weight: normal;
-        color: #555;
-    }
-    .sublista-nomina li {
-        margin-bottom: 4px;
-    }
-
-    /* PIE DE PÁGINA */
-    footer { 
-        text-align: center; 
-        padding: 15px; 
-        background-color: #1a365d; 
-        color: white; 
-        margin-top: 30px; 
-        font-size: 13px;
-    }
-    footer a { color: #90cdf4; text-decoration: none; }
-
-    /* MODAL DE IDENTIFICACIÓN Y ACCESO */
-    #modal-registro {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.75);
-        display: none; /* Se activa dinámicamente por JS solo si no está registrado */
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-        padding: 16px;
-        backdrop-filter: blur(3px);
-    }
-
-    .modal-contenido {
-        background: #ffffff;
-        width: 100%;
-        max-width: 400px;
-        border-radius: 10px;
-        padding: 26px 20px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-        text-align: center;
-    }
-
-    .modal-titulo {
-        color: #1a365d;
-        margin-top: 0;
-        font-size: 1.25rem;
-        font-weight: 700;
-        margin-bottom: 8px;
-    }
-
-    .modal-subtitulo {
-        font-size: 0.88rem;
-        color: #555;
-        margin-bottom: 20px;
-    }
-
-    .g_id_signin_wrapper {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-        min-height: 44px;
-    }
-
-    /* TARJETA DE AVISO iOS / WHATSAPP */
-    .banner-ios-whatsapp {
-        background-color: #fff5f5;
-        border: 1px solid #feb2b2;
-        border-radius: 8px;
-        padding: 14px;
-        margin-top: 15px;
-        text-align: left;
-    }
-
-    .banner-ios-titulo {
-        color: #c53030;
-        font-size: 0.85rem;
-        font-weight: 700;
-        margin-bottom: 6px;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-    }
-
-    .btn-safari-link {
-        display: block;
-        width: 100%;
-        background-color: #2b6cb0;
-        color: #ffffff;
-        text-decoration: none;
-        text-align: center;
-        padding: 12px;
-        border-radius: 6px;
-        font-weight: 700;
-        font-size: 0.88rem;
-        margin: 10px 0;
-    }
-
-    .banner-ios-instrucciones {
-        font-size: 0.76rem;
-        color: #742a2a;
-        line-height: 1.35;
-    }
-
-    /* ADAPTACIONES ESPECÍFICAS PARA MÓVIL */
-    @media (max-width: 768px) {
-        header.cabecera-principal {
-            padding: 10px 8px;
+        /* CABECERA SECCIÓN SINDICAL */
+        header.cabecera-principal { 
+            background-color: #1e3654; 
+            color: white; 
+            padding: 15px 20px; 
         }
 
         .contenedor-cabecera {
-            flex-direction: row;
-            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
             align-items: center;
-            gap: 6px;
+            justify-content: space-between;
+            gap: 20px;
         }
 
         .bloque-izquierdo {
-            flex-direction: row;
-            gap: 8px;
+            display: flex;
             align-items: center;
-            flex: 1;
-            min-width: 0;
+            gap: 20px;
         }
 
         .logo-cabecera {
-            height: 58px; 
-            flex-shrink: 0;
+            height: 130px;
+            width: auto;
+            object-fit: contain;
         }
 
         .logo-ugt-derecha {
-            height: 28px; 
-            flex-shrink: 0;
+            height: 65px;
+            width: auto;
+            object-fit: contain;
         }
 
         .texto-cabecera {
             text-align: left;
-            min-width: 0;
         }
 
-        .titulo-principal {
-            font-size: 13px;
-            line-height: 1.1;
-            white-space: nowrap; 
+        .titulo-principal { 
+            margin: 0; 
+            font-size: 22px; 
+            font-weight: bold; 
+            line-height: 1.2;
         }
 
-        .subtitulo-empresa {
-            font-size: 10.5px;
-            margin-top: 2px;
-            white-space: nowrap;
+        .subtitulo-empresa { 
+            margin: 6px 0 0 0; 
+            font-size: 16px; 
+            color: #ffffff; 
+            font-weight: 600; 
         }
 
-        .descripcion-portal {
-            display: none;
+        .descripcion-portal { 
+            margin: 8px 0 0 0; 
+            font-size: 14px; 
+            color: #e2e8f0; 
         }
 
-        .menu-navegacion {
-            display: flex;
-            overflow-x: auto;
-            justify-content: flex-start;
-            padding: 6px 4px;
-            -webkit-overflow-scrolling: touch;
+        /* BARRA DE NAVEGACIÓN HORIZONTAL SUPERIOR */
+        .menu-navegacion { 
+            background-color: #2b6cb0; 
+            padding: 10px; 
+            text-align: center; 
         }
-
-        .menu-navegacion a {
-            flex: 0 0 auto;
-            font-size: 12px;
-            padding: 5px 10px;
+        .menu-navegacion a { 
+            color: white; 
+            margin: 0 5px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 14px; 
+            display: inline-block;
+            padding: 6px 10px;
         }
+        .menu-navegacion a.activo {
+            background-color: #1a365d;
+            border-radius: 4px;
+        }    
 
+        /* CONTENEDOR GENERAL */
         .contenedor-pagina {
-            margin: 10px auto;
-            padding: 0 8px;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 15px;
         }
 
+        /* CUERPO PRINCIPAL DE CONTENIDO (MAIN) */
         main.contenido-principal {
-            padding: 12px;
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+            padding: 20px;
+            border: 1px solid #e2e8f0;
         }
 
-        .boton-banner {
-            position: static;
-            transform: none;
+        /* HERO / BANNER DE BIENVENIDA */
+        .hero-banner {
+            background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
+            color: white;
+            padding: 25px 20px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+        }
+        .hero-banner h2 { 
+            margin: 0 0 12px 0; 
+            font-size: 1.4em; 
+            line-height: 1.3;
+        }
+        .hero-banner p { 
+            margin: 0; 
+            font-size: 0.95em; 
+            color: #f7fafc; 
+            line-height: 1.6;
+        }
+
+        /* TÍTULOS DE SECCIÓN */
+        .seccion-titulo {
+            color: #1a365d;
+            border-bottom: 2px solid #2b6cb0;
+            padding-bottom: 6px;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        /* REJILLA TARJETAS DE ACCESO RÁPIDO */
+        .grid-enlaces {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .tarjeta-enlace {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 0;
+            background-color: #ffffff;
+            text-decoration: none;
             display: block;
-            margin-top: 8px;
+            overflow: hidden;
+            aspect-ratio: 1 / 1;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .tarjeta-enlace:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-color: #2b6cb0;
+        }
+
+        .tarjeta-enlace img {
             width: 100%;
-            padding: 12px 8px;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* BLOQUE DE NOTICIAS Y NOVEDADES */
+        .bloque-noticia {
+            background-color: #f7fafc;
+            border-left: 4px solid #2b6cb0;
+            padding: 12px 15px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        .bloque-noticia h4 { margin: 0 0 4px 0; color: #1a365d; font-size: 0.98em; }
+        .bloque-noticia p { margin: 0; font-size: 0.88em; color: #4a5568; line-height: 1.5; }
+        .fecha-noticia { font-size: 0.75em; color: #718096; font-weight: bold; margin-bottom: 4px; }
+
+        /* BLOQUE AFILIACIÓN INFERIOR */
+        .bloque-afiliacion-banner {
+            background-color: #f7fafc;
+            border: 1px solid #e2e8f0;
+            padding: 15px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        /* PIE DE PÁGINA */
+        footer { 
+            text-align: center; 
+            padding: 15px; 
+            background-color: #1a365d; 
+            color: white; 
+            margin-top: 30px; 
             font-size: 13px;
         }
+        footer a { color: #90cdf4; text-decoration: none; }
 
-        .lista-documentos, .sublista-nomina {
-            padding-left: 18px;
+        /* RESPONSIVE CABECERA Y CONTENIDO PARA MÓVILES */
+        @media (max-width: 768px) {
+            .contenedor-cabecera {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            .bloque-izquierdo {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .texto-cabecera {
+                text-align: center;
+            }
+            .logo-cabecera {
+                height: 75px;
+            }
+            .logo-ugt-derecha {
+                height: 60px;
+            }
+            .grid-enlaces {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .bloque-afiliacion-banner {
+                flex-direction: column;
+                text-align: center;
+            }
         }
-    }
-</style>
+    </style>
 </head>
 <body>
 
@@ -398,93 +281,90 @@
         </div>
     </header>
 
-    <!-- MENÚ DE NAVEGACIÓN -->
+    <!-- BARRA DE NAVEGACIÓN HORIZONTAL SUPERIOR -->
     <nav class="menu-navegacion">
-        <a href="index.html">Inicio</a>
-        <a href="guiaamarilla.html" class="activo">Guía Amarilla</a>
+        <a href="index.html" class="activo">Inicio</a>
+        <a href="guiaamarilla.html">Guía Amarilla</a>
         <a href="mutua.html">Mutua</a>
         <a href="fleetlead.html">Fleet Leads</a>
         <a href="contacto.html">Contacto</a>
         <a href="afiliacion.html">Afiliación</a>
     </nav>
 
-    <!-- CONTENEDOR GENERAL DE LA PÁGINA -->
+    <!-- CONTENEDOR GENERAL -->
     <div class="contenedor-pagina">
 
-        <!-- CONTENIDO PRINCIPAL -->
+        <!-- CUERPO PRINCIPAL DE CONTENIDOS -->
         <main class="contenido-principal">
             
-            <!-- BANNER ESPECÍFICO DE LA GUÍA AMARILLA -->
-            <div class="contenedor-banner">
-                <img src="bannerguiaamarilla.jpg" alt="Guía Amarilla Flota Interna" class="imagen-banner">
-                <a href="https://share.articulate.com/0WWD1wxiQ2wK-HrxYm7ff" target="_blank" class="boton-banner">
-                    Acceder a la Guía ➔
+            <!-- BIENVENIDA / HERO BANNER -->
+            <div class="hero-banner">
+                <h2>Bienvenido a la Sección Sindical UGT | Glovo Madrid</h2>
+                <p>Formamos parte de la representación legal de los trabajadores, del comité de empresa y del comité de seguridad y salud, nuestra misión es asesorarte y ayudarte ante incidencias con la empresa, nuestro objetivo principal es mejorar las condiciones laborales de todos los trabajadores de Glovo en Madrid.</p>
+            </div>
+
+            <!-- TARJETAS DE ACCESO RÁPIDO Y ENLACES DE INTERÉS -->
+            <h3 class="seccion-titulo">🔗 Enlaces y Herramientas de Interés</h3>
+            <div class="grid-enlaces">
+                
+               <!-- SMAC -->
+                <a href="https://www.comunidad.madrid/empleo/espacio-smac" target="_blank" class="tarjeta-enlace" title="SMAC - Servicio de Mediación, Arbitraje y Conciliación">
+                    <img src="smac.jpg" alt="SMAC - Servicio de Mediación, Arbitraje y Conciliación">
+                </a>
+
+                <!-- SOJ -->
+                <a href="https://soj.icam.es" target="_blank" class="tarjeta-enlace" title="SOJ - Servicio de Orientación Jurídica">
+                    <img src="soj.jpg" alt="SOJ - Servicio de Orientación Jurídica">
+                </a>
+
+                <!-- ITSS -->
+                <a href="https://oeitss.gob.es/tramites/personas-trabajadoras/denuncia" target="_blank" class="tarjeta-enlace" title="ITSS - Inspección de Trabajo y Seguridad Social">
+                    <img src="itss.jpg" alt="ITSS - Inspección de Trabajo y Seguridad Social">
+                </a>
+
+                <!-- JIRA -->
+                <a href="https://glovoapp.atlassian.net/servicedesk/customer/portals" target="_blank" class="tarjeta-enlace" title="Jira - Autogestión del empleado">
+                    <img src="jira.jpg" alt="Jira - Autogestión del empleado">
+                </a>
+
+                <!-- WORKDAY -->
+                <a href="https://wd3-identity.myworkday.com/wday/authgwy/deliveryhero/upc/login?redirect=n" target="_blank" class="tarjeta-enlace" title="Workday Glovo">
+                    <img src="workday.jpg" alt="Workday Glovo">
+                </a>
+
+                <!-- MUTUA -->
+                <a href="https://www.mutuauniversal.net/es/centros/" target="_blank" class="tarjeta-enlace" title="Mutua Universal">
+                    <img src="mutua.jpg" alt="Mutua Universal">
+                </a>
+                
+            </div> 
+
+            <!-- BLOQUE DE NOTICIAS Y ÚLTIMAS NOVEDADES -->
+            <h3 class="seccion-titulo">📢 Últimas Novedades y Comunicados</h3>
+            
+            <div class="bloque-noticia">
+                <div class="fecha-noticia">Sección Sindical UGT Glovo Madrid</div>
+                <h4>Control y Revisión de Conceptos Retributivos</h4>
+                <p>Recuerda revisar tus recibos de salario de acuerdo con la Guía Amarilla. Ante cualquier duda en la liquidación de horas, trienios o complementos, contacta con tu representación sindical.</p>
+            </div>
+
+            <div class="bloque-noticia">
+                <div class="fecha-noticia">Comité de Seguridad y Salud</div>
+                <h4>Prevención de Riesgos en Ruta</h4>
+                <p>Mantenemos activa la vigilancia de las condiciones de salud laboral e higiene. Es fundamental reportar cualquier incidencia en el equipo o situaciones de riesgo a los delegados de prevención.</p>
+            </div>
+
+            <!-- BLOQUE DE AFILIACIÓN INFERIOR -->
+            <div class="bloque-afiliacion-banner">
+                <div>
+                    <h4 style="margin: 0 0 5px 0; color: #1a365d; font-size: 1.05em;">Suma tu voz a la representación sindical</h4>
+                    <p style="margin: 0; font-size: 0.88em; color: #4a5568;">La afiliación fortalece la defensa colectiva y te garantiza asesoramiento jurídico especializado.</p>
+                </div>
+                <a href="afiliacion.html" style="text-decoration: none;">
+                    <img src="afiliate.jpg" alt="UGT ¡AFÍLIATE!" style="max-width: 180px; width: 100%; height: auto; display: block;">
                 </a>
             </div>
 
-            <p style="font-weight: bold; margin-bottom: 5px;">La Guía Amarilla contiene las políticas internas de la empresa</p>
-            <p style="font-weight: bold; margin-top: 0;">Como trabajador tienes el deber y el derecho de conocer estas políticas</p>
-
-            <hr style="border: 0; border-top: 1px solid #ccc; margin: 25px 0;">
-
-            <!-- DOCUMENTOS DENTRO DE LA GUÍA -->
-            <h3 style="font-weight: bold; letter-spacing: 0.5px; color: #2c5282; margin-bottom: 2px;">DOCUMENTOS DENTRO DE LA GUÍA</h3>
-            <p style="margin-top: 0; margin-bottom: 15px; font-size: 0.9em; color: #555;">(actualizado a Julio 2026)</p>
-
-            <hr style="border: 0; border-top: 1px solid #ccc; margin: 15px 0 20px 0;">
-
-            <ul class="lista-documentos">
-                <li>
-                    <a href="politicatiemposdeentrega.pdf" target="_blank"> Política de Tiempos de Entrega (.pdf)</a>
-                </li>
-                <li>
-                    <a href="comoentendernomina.pdf" target="_blank"> ¿Cómo entender mi Hoja de Salario? (.pdf)</a>
-                    <ul class="sublista-nomina">
-                        <li>Bajas Médicas</li>
-                        <li>¿Cómo se calcula el salario?</li>
-                        <li>¿Cómo se calcula la RUO?</li>
-                        <li>¿Cómo se calculan los Gastos de Locomoción?</li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="fichariesgos.pdf" target="_blank"> Persona Repartidora – Ficha informativa de riesgos (.pdf)</a>
-                </li>
-                <li>
-                    <a href="transportecargas.pdf" target="_blank"> Manipulación y transporte de cargas (.pdf)</a>
-                </li>
-                <li>
-                    <a href="prevensionverano.pdf" target="_blank"> Medidas preventivas para el verano (.pdf)</a>
-                </li>
-                <li>
-                    <a href="violenciarobo.pdf" target="_blank"> Actuación ante violencia, acoso, robo o agresión (.pdf)</a>
-                </li>
-                <li>
-                    <a href="solicitudesadhoc.pdf" target="_blank"> Solicitudes Ad Hoc – Empleados (.pdf)</a>
-                </li>
-                <li>
-                    <a href="modificarinfopersonal.pdf" target="_blank"> ¿Cómo modificar la información personal? – Empleados (.pdf)</a>
-                </li>
-                <li>
-                    <a href="workday.pdf" target="_blank"> Workday tutorial – ES (.pdf)</a>
-                </li>
-            </ul>
-
-            <hr style="border: 0; border-top: 1px solid #000; margin: 30px 0 20px 0;">
-
-            <!-- AVISO LEGAL Y NOTA INFORMATIVA -->
-            <h4 style="font-weight: bold; margin-bottom: 10px; font-size: 1.1em; color: #1a365d;">Aviso Legal y Nota Informativa</h4>
-
-            <p style="font-size: 0.95em; text-align: justify; margin-bottom: 12px;">
-                La publicación y difusión de la presente <em>Guía Amarilla</em> tiene un propósito puramente informativo. La consulta o conocimiento de sus contenidos por parte de la plantilla <strong>no implica, en ningún caso, la aceptación tácita o expresa de sus disposiciones.</strong>
-            </p>
-
-            <p style="font-size: 0.95em; text-align: justify; margin-bottom: 12px;">
-                La Sección Sindical de UGT en Glovoapp Spain Platform (Comunidad de Madrid) advierte que diversos puntos de esta normativa interna contravienen abiertamente las disposiciones del Convenio Colectivo de aplicación, así como los derechos laborales mínimos contemplados en el Real Decreto Legislativo 2/2015, de 23 de octubre, por el que se aprueba el Texto Refundido del Estatuto de los Trabajadores.
-            </p>
-
-            <p style="font-size: 0.95em; text-align: justify;">
-                En consecuencia, esta representación legal de las personas trabajadoras <strong>se reserva expresamente el ejercicio de cuantas acciones legales y de conflicto colectivo correspondan</strong>, incluyendo la interposición de las oportunas denuncias ante la Inspección Provincial de Trabajo y Seguridad Social por los incumplimientos detectados.
-            </p>
         </main>
     </div>
 
@@ -494,82 +374,88 @@
         <p>Contacto: <a href="mailto:ugt.glovomadrid@gmail.com">ugt.glovomadrid@gmail.com</a></p>
     </footer>
 
-    <!-- MODAL DE IDENTIFICACIÓN -->
-    <div id="modal-registro">
-        <div class="modal-contenido">
-            <h3 class="modal-titulo">Acceso Sección Sindical UGT</h3>
-            <p class="modal-subtitulo">Inicia sesión con tu cuenta de Google para validar tu acceso al portal de información laboral.</p>
-            
-            <!-- Configuración del botón de Google -->
-            <div id="g_id_onload"
-                 data-client_id="1045651313029-cr80m30gc1111g792anbkqqktop780tk.apps.googleusercontent.com"
-                 data-callback="handleCredentialResponse"
-                 data-auto_prompt="false">
-            </div>
-
-            <!-- Botón oficial de Google -->
-            <div class="g_id_signin_wrapper">
-                <div class="g_id_signin"
-                     data-type="standard"
-                     data-size="large"
-                     data-theme="outline"
-                     data-text="sign_in_with"
-                     data-shape="rectangular"
-                     data-logo_alignment="left">
-                </div>
-            </div>
-
-            <!-- Contenedor dinámico de avisos para iOS -->
-            <div id="contenedor-aviso-ios"></div>
-
-            <p style="font-size: 0.75em; color: #777; margin-top: 18px;">Identificación rápida de un solo clic para control interno de la plantilla.</p>
+    <!-- BANNER DE AVISO DE COOKIES Y ALMACENAMIENTO LOCAL (RGPD / LSSI-CE) -->
+    <div id="banner-cookies" style="position: fixed; bottom: 0; left: 0; width: 100%; background: #1e3654; color: white; padding: 15px 20px; box-shadow: 0 -2px 10px rgba(0,0,0,0.3); display: none; justify-content: space-between; align-items: center; z-index: 9998; flex-wrap: wrap; gap: 12px; font-size: 0.88em;">
+        <div style="max-width: 800px; line-height: 1.4;">
+            Utilizamos tecnologías de almacenamiento local y cookies técnicas estrictamente necesarias para verificar tu identificación a través de Google y gestionar tu sesión de forma segura en este portal.
+        </div>
+        <div>
+            <button onclick="aceptarCookies()" style="background-color: #2b6cb0; color: white; border: none; padding: 8px 18px; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 0.95em;">Aceptar</button>
         </div>
     </div>
 
-    <!-- SCRIPT LÓGICA DE CONTROL Y AUTENTICACIÓN -->
+    <!-- SCRIPT GOOGLE IDENTITY SERVICES (GSI) -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <!-- MODAL DE REGISTRO / ACCESO -->
+    <div id="modal-registro" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.75); display: flex; justify-content: center; align-items: center; z-index: 9999;">
+        <div style="background: white; padding: 30px; border-radius: 10px; max-width: 400px; width: 90%; box-shadow: 0 4px 15px rgba(0,0,0,0.3); text-align: center;">
+            <h3 style="color: #1a365d; margin-top: 0; font-size: 1.3em;">Acceso Sección Sindical UGT</h3>
+            <p style="font-size: 0.9em; color: #555; margin-bottom: 20px;">Inicia sesión con tu cuenta de Google para validar tu acceso al portal de información laboral.</p>
+            
+            <div id="g_id_onload"
+                 data-client_id="1045651313029-cr80m30gc1111g792anbkqqktop780tk.apps.googleusercontent.com"
+                 data-callback="handleCredentialResponse"
+                 data-auto_prompt="false"
+                 data-use_fedcm_for_prompt="true"
+                 data-auto_select="false">
+            </div>
+
+            <div class="g_id_signin"
+                 data-type="standard"
+                 data-size="large"
+                 data-theme="outline"
+                 data-text="sign_in_with"
+                 data-shape="rectangular"
+                 data-logo_alignment="left"
+                 style="display: flex; justify-content: center;">
+            </div>
+
+            <p style="font-size: 0.75em; color: #777; margin-top: 20px;">Identificación rápida de un solo clic para control interno de la plantilla.</p>
+        </div>
+    </div>
+
+    <!-- SCRIPT LÓGICA LOGIN Y COOKIES -->
     <script>
         const URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbyd2fDDima-jZeW0H0L0yGZVDbul8sMJAQMw3OpK_nPLP46kI6n8cNEAYXP4l_wdUuO-g/exec";
 
-        document.addEventListener("DOMContentLoaded", function() {
-            // Control contra el destello (FOUC): se comprueba el registro antes de mostrar el modal
-            if (localStorage.getItem('ugt_usuario_registrado') !== 'true') {
-                document.getElementById('modal-registro').style.display = 'flex';
+        const ua = navigator.userAgent || "";
+        const isIOSWhatsApp = /iPhone|iPad|iPod/i.test(ua) && ua.includes("WhatsApp");
+
+        // 1. Control de estado de cookies y modal de acceso
+        function inicializarEstadoNavegacion() {
+            try {
+                // Comprobar si ya aceptó las cookies
+                if (!localStorage.getItem('ugt_cookies_aceptadas')) {
+                    document.getElementById('banner-cookies').style.display = 'flex';
+                }
+
+                // Comprobar si ya está registrado/identificado
+                if (localStorage.getItem('ugt_usuario_registrado') === 'true') {
+                    document.getElementById('modal-registro').style.display = 'none';
+                }
+            } catch (e) {
+                console.warn("Storage no disponible o restringido en este navegador.");
             }
+        }
 
-            // Detección de entorno iOS en WhatsApp
-            const ua = navigator.userAgent || "";
-            const isIOS = /iPhone|iPad|iPod/i.test(ua);
-            const isWhatsApp = ua.includes("WhatsApp");
+        // 2. Función para aceptar cookies
+        function aceptarCookies() {
+            try {
+                localStorage.setItem('ugt_cookies_aceptadas', 'true');
+            } catch (e) {}
+            document.getElementById('banner-cookies').style.display = 'none';
+        }
 
-            if (isIOS && isWhatsApp) {
-                // Ocultar botón estándar que falla en WebViews de iOS
-                const wrapperBtn = document.querySelector('.g_id_signin_wrapper');
-                if (wrapperBtn) wrapperBtn.style.display = 'none';
+        // Aviso específico para usuarios que acceden desde WhatsApp en iOS
+        if (isIOSWhatsApp) {
+            const avisoiOS = document.createElement('div');
+            avisoiOS.style.cssText = "background-color: #fff5f5; border: 1px solid #feb2b2; padding: 10px; border-radius: 6px; margin-top: 15px; color: #c53030; font-size: 0.82em; text-align: left;";
+            avisoiOS.innerHTML = "<b>⚠️ ¿Problemas para acceder?</b><br>Si se queda en blanco o no permite seleccionar tu cuenta, pulsa los tres puntos (<b>...</b>) o el icono compartir y elige <b>'Abrir en Safari'</b>.";
+            document.querySelector('#modal-registro > div').appendChild(avisoiOS);
+        }
 
-                // Inyectar aviso con enlace directo a Safari
-                const contenedorAviso = document.getElementById('contenedor-aviso-ios');
-                const banner = document.createElement('div');
-                banner.className = 'banner-ios-whatsapp';
-                banner.innerHTML = `
-                    <div class="banner-ios-titulo">
-                        <span>⚠️</span>
-                        <span>Abrir en el navegador externo</span>
-                    </div>
-                    <p style="font-size: 0.8rem; color: #4a5568; margin-bottom: 6px;">
-                        Google bloquea el inicio de sesión dentro de WhatsApp en iPhone por seguridad.
-                    </p>
-                    <a href="${window.location.href}" target="_blank" rel="noopener" class="btn-safari-link">
-                        🌐 Abrir en Safari
-                    </a>
-                    <p class="banner-ios-instrucciones">
-                        Si el botón no salta automáticamente: pulsa los tres puntos (<b>...</b>) o el icono de la brújula y elige <b>"Abrir en Safari"</b>.
-                    </p>
-                `;
-                contenedorAviso.appendChild(banner);
-            }
-        });
-
-        // Decodificación de credenciales JWT
+        // Decodificador seguro de JWT (Token de Google)
         function parseJwt(token) {
             try {
                 var base64Url = token.split('.')[1];
@@ -584,7 +470,7 @@
             }
         }
 
-        // Callback de respuesta de Google GIS
+        // Respuesta tras inicio de sesión exitoso
         function handleCredentialResponse(response) {
             try {
                 const usuario = parseJwt(response.credential);
@@ -601,18 +487,20 @@
                 
                 document.getElementById('modal-registro').style.display = 'none';
 
-                // Envío asíncrono de registros a Google Apps Script
                 fetch(URL_APPS_SCRIPT, {
                     method: 'POST',
                     mode: 'no-cors',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(datos)
-                }).catch(err => console.log("Error de envío silencioso:", err));
+                }).catch(err => console.log("Envío de datos completado o en segundo plano:", err));
 
             } catch (error) {
                 document.getElementById('modal-registro').style.display = 'none';
             }
         }
+
+        // Iniciar comprobaciones al cargar el DOM
+        window.addEventListener('DOMContentLoaded', inicializarEstadoNavegacion);
     </script>
 </body>
 </html>
