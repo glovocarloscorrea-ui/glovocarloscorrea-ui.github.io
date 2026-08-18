@@ -20,7 +20,7 @@
     </script>
 
     <style>
-        /* ESTILOS GENERALES Y SCROLLBAR */
+        /* ESTABLECER SCROLLBAR FIJO PARA EVITAR SALTOS DE PÁGINA */
         html { 
             overflow-y: scroll; 
             scrollbar-gutter: stable;
@@ -39,16 +39,63 @@
             line-height: 1.5;
         }
 
-        /* CABECERA SUPERIOR */
-        header { 
-            background-color: #1a365d; 
+        /* CABECERA SECCIÓN SINDICAL (IDÉNTICA A AFILIACION.HTML) */
+        header.cabecera-principal { 
+            background-color: #1e3654; 
             color: white; 
-            padding: 20px 15px; 
-            text-align: center; 
+            padding: 15px 20px; 
         }
-        .titulo-principal { margin: 0; font-size: 22px; font-weight: bold; }
-        .subtitulo-empresa { margin: 4px 0 0 0; font-size: 16px; color: #cbd5e0; font-weight: 600; }
-        .descripcion-portal { margin: 6px 0 0 0; font-size: 14px; color: #e2e8f0; }
+
+        .contenedor-cabecera {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .bloque-izquierdo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-cabecera {
+            height: 130px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-ugt-derecha {
+            height: 65px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .texto-cabecera {
+            text-align: left;
+        }
+
+        .titulo-principal { 
+            margin: 0; 
+            font-size: 22px; 
+            font-weight: bold; 
+            line-height: 1.2;
+        }
+
+        .subtitulo-empresa { 
+            margin: 6px 0 0 0; 
+            font-size: 16px; 
+            color: #ffffff; 
+            font-weight: 600; 
+        }
+
+        .descripcion-portal { 
+            margin: 8px 0 0 0; 
+            font-size: 14px; 
+            color: #e2e8f0; 
+        }
 
         /* BARRA DE NAVEGACIÓN HORIZONTAL SUPERIOR */
         .menu-navegacion { 
@@ -186,8 +233,26 @@
         }
         footer a { color: #90cdf4; text-decoration: none; }
 
-        /* ADAPTACIÓN MÓVIL */
+        /* RESPONSIVE CABECERA Y CONTENIDO PARA MÓVILES */
         @media (max-width: 768px) {
+            .contenedor-cabecera {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            .bloque-izquierdo {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .texto-cabecera {
+                text-align: center;
+            }
+            .logo-cabecera {
+                height: 75px;
+            }
+            .logo-ugt-derecha {
+                height: 60px;
+            }
             .grid-enlaces {
                 grid-template-columns: repeat(3, 1fr);
             }
@@ -200,11 +265,19 @@
 </head>
 <body>
 
-    <!-- CABECERA PRINCIPAL -->
-    <header>
-        <h1 class="titulo-principal">Sección Sindical UGT | Madrid</h1>
-        <div class="subtitulo-empresa">Glovoapp Spain Platform</div>
-        <div class="descripcion-portal">Portal Informativo de Derechos Laborales y Acción Sindical</div>
+    <!-- CABECERA SECCIÓN SINDICAL (IGUAL A AFILIACION.HTML) -->
+    <header class="cabecera-principal">
+        <div class="contenedor-cabecera">
+            <div class="bloque-izquierdo">
+                <img src="seccionlogo.jpg" alt="Logo Sección Sindical UGT Madrid" class="logo-cabecera">
+                <div class="texto-cabecera">
+                    <h1 class="titulo-principal">Sección Sindical UGT | Madrid</h1>
+                    <div class="subtitulo-empresa">Glovoapp Spain Platform</div>
+                    <div class="descripcion-portal">Portal Informativo de Derechos Laborales y Acción Sindical</div>
+                </div>
+            </div>
+            <img src="ugtlogo.jpg" alt="Logo UGT Oficial" class="logo-ugt-derecha">
+        </div>
     </header>
 
     <!-- BARRA DE NAVEGACIÓN HORIZONTAL SUPERIOR -->
