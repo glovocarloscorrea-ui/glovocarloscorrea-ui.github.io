@@ -26,6 +26,10 @@
             scrollbar-gutter: stable;
         }
 
+        * {
+            box-sizing: border-box;
+        }
+
         body { 
             font-family: Arial, sans-serif; 
             margin: 0; 
@@ -35,18 +39,65 @@
             line-height: 1.5;
         }
 
-        /* CABECERA SECCIÓN SINDICAL */
-        header { 
-            background-color: #1a365d; 
+        /* CABECERA SECCIÓN SINDICAL (ESTRUCTURA DE DOS LOGOS) */
+        header.cabecera-principal { 
+            background-color: #1e3654; 
             color: white; 
-            padding: 20px 15px; 
-            text-align: center; 
+            padding: 15px 20px; 
         }
-        .titulo-principal { margin: 0; font-size: 22px; font-weight: bold; }
-        .subtitulo-empresa { margin: 4px 0 0 0; font-size: 16px; color: #cbd5e0; font-weight: 600; }
-        .descripcion-portal { margin: 6px 0 0 0; font-size: 14px; color: #e2e8f0; }
 
-        /* BARRA DE NAVEGACIÓN */
+        .contenedor-cabecera {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .bloque-izquierdo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-cabecera {
+            height: 130px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-ugt-derecha {
+            height: 65px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .texto-cabecera {
+            text-align: left;
+        }
+
+        .titulo-principal { 
+            margin: 0; 
+            font-size: 22px; 
+            font-weight: bold; 
+            line-height: 1.2;
+        }
+
+        .subtitulo-empresa { 
+            margin: 6px 0 0 0; 
+            font-size: 16px; 
+            color: #ffffff; 
+            font-weight: 600; 
+        }
+
+        .descripcion-portal { 
+            margin: 8px 0 0 0; 
+            font-size: 14px; 
+            color: #e2e8f0; 
+        }
+
+        /* BARRA DE NAVEGACIÓN HORIZONTAL SUPERIOR */
         .menu-navegacion { 
             background-color: #2b6cb0; 
             padding: 10px; 
@@ -66,14 +117,20 @@
             border-radius: 4px;
         }
 
-        /* CONTENEDOR PRINCIPAL */
-        main { 
-            padding: 15px; 
-            max-width: 800px; 
-            margin: 15px auto; 
+        /* CONTENEDOR GENERAL DE LA PÁGINA */
+        .contenedor-pagina {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        /* CUERPO PRINCIPAL DE CONTENIDO (MAIN) */
+        main.contenido-principal { 
+            padding: 20px; 
             background: white; 
             box-shadow: 0 2px 4px rgba(0,0,0,0.08);
             border-radius: 6px;
+            border: 1px solid #e2e8f0;
         }
 
         /* ESTILOS DE FICHAS DE DELEGADOS */
@@ -167,19 +224,49 @@
             padding: 15px; 
             background-color: #1a365d; 
             color: white; 
-            margin-top: 25px; 
+            margin-top: 30px; 
             font-size: 13px;
         }
-        footer a { color: #90cdf4; }
+        footer a { color: #90cdf4; text-decoration: none; }
+
+        /* RESPONSIVE CABECERA */
+        @media (max-width: 768px) {
+            .contenedor-cabecera {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            .bloque-izquierdo {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .texto-cabecera {
+                text-align: center;
+            }
+            .logo-cabecera {
+                height: 75px;
+            }
+            .logo-ugt-derecha {
+                height: 60px;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <!-- CABECERA SECCIÓN SINDICAL -->
-    <header>
-        <h1 class="titulo-principal">Sección Sindical UGT | Madrid</h1>
-        <div class="subtitulo-empresa">Glovoapp Spain Platform</div>
-        <div class="descripcion-portal">Portal Informativo de Derechos Laborales y Acción Sindical</div>
+    <!-- CABECERA SECCIÓN SINDICAL (NUEVA ESTRUCTURA CON DOS LOGOS) -->
+    <header class="cabecera-principal">
+        <div class="contenedor-cabecera">
+            <div class="bloque-izquierdo">
+                <img src="seccionlogo.jpg" alt="Logo Sección Sindical UGT Madrid" class="logo-cabecera">
+                <div class="texto-cabecera">
+                    <h1 class="titulo-principal">Sección Sindical UGT | Madrid</h1>
+                    <div class="subtitulo-empresa">Glovoapp Spain Platform</div>
+                    <div class="descripcion-portal">Portal Informativo de Derechos Laborales y Acción Sindical</div>
+                </div>
+            </div>
+            <img src="ugtlogo.jpg" alt="Logo UGT Oficial" class="logo-ugt-derecha">
+        </div>
     </header>
 
     <!-- MENÚ DE NAVEGACIÓN -->
@@ -192,77 +279,81 @@
         <a href="afiliacion.html">Afiliación</a>
     </nav>
 
-    <!-- CONTENEDOR PRINCIPAL -->
-    <main>
-        
-        <h2 class="seccion-titulo"> <span style="color: #e53e3e; font-size: 1.2em;">👤</span>Delegados de Personal y Representación Sindical</h2>
-        
-        <div class="contenedor-delegados">
-            <!-- Ficha Carlos Alberto -->
-            <div class="ficha-delegado">
-                <h3 class="nombre-delegado">Carlos Alberto Correa</h3>
-                <div class="cargo-delegado">Delegado de Personal y PRL</div>
-                <div class="zona-delegado">📍 Zona Madrid Central</div>
-                <div class="telefono-delegado">
-                    📞 <a href="tel:691372798">691 37 27 98</a>
-                </div>
-            </div>
+    <!-- CONTENEDOR GENERAL DE LA PÁGINA -->
+    <div class="contenedor-pagina">
 
-            <!-- Ficha Luis Andrés -->
-            <div class="ficha-delegado">
-                <h3 class="nombre-delegado">Luis Andrés Stefañuk</h3>
-                <div class="cargo-delegado">Delegado de Personal</div>
-                <div class="zona-delegado">📍 Zona Móstoles - Alcorcón</div>
-                <div class="telefono-delegado">
-                    📞 <a href="tel:654071043">654 07 10 43</a>
-                </div>
-            </div>
-
-            <!-- Ficha Luis Felipe -->
-            <div class="ficha-delegado">
-                <h3 class="nombre-delegado">Luis Felipe Motta</h3>
-                <div class="cargo-delegado">Delegado de Personal</div>
-                <div class="zona-delegado">📍 Zona Getafe - Leganés</div>
-                <div class="telefono-delegado">
-                    📞 <a href="tel:694299574">694 29 95 74</a>
-                </div>
-            </div>
-        </div>
-
-        <h2 class="seccion-titulo">🏢 Sede Regional UGT Madrid</h2>
-
-        <div class="info-sede">
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; margin-bottom: 10px;">
-                <!-- INFORMACIÓN DE CONTACTO DE LA SEDE -->
-                <div>
-                    <p><strong>Sector:</strong> FeSMC | Carreteras, Urbanos y Logística</p>
-                    <p><strong>Dirección:</strong> Av. de América, 25 - Planta 4, 28002 Madrid</p>
-                    <p><strong>Teléfono Sede:</strong> <a href="tel:915897100" style="color: #2b6cb0; text-decoration: none; font-weight: bold;">91 589 71 00</a></p>
-                    <p><strong>Teléfono Sector:</strong> <a href="tel:680206911" style="color: #2b6cb0; text-decoration: none; font-weight: bold;">680 20 69 11</a></p>
-                    <p><strong>Correo Sección Sindical:</strong> <a href="mailto:ugt.glovomadrid@gmail.com" style="color: #2b6cb0; text-decoration: none; font-weight: bold;">ugt.glovomadrid@gmail.com</a></p>
-                </div>
-
-                <!-- BOTÓN AFÍLIATE CON HIPERVÍNCULO A AFILIACION.HTML -->
-                <a href="afiliacion.html" style="text-decoration: none; display: inline-block;">
-                    <img src="afiliate.jpg" alt="UGT ¡AFÍLIATE!" style="max-width: 220px; width: 100%; height: auto; display: block;">
-                </a>
-            </div>
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="contenido-principal">
             
-            <!-- Mapa interactivo de Google Maps -->
-            <div class="mapa-contenedor">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.5682852504936!2d-3.676458823438883!3d40.43836197143644!2m3!1f0!1f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0d0d87a8b30b4291%3A0xd64850ad142b992!2sAv.%20de%20Am%C3%A9rica%2C%2025%20Planta%204%2C%2028002%20Madrid!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses" 
-                    width="100%" 
-                    height="100%" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-        </div>
+            <h2 class="seccion-titulo"><span style="color: #e53e3e; font-size: 1.2em;">👤</span> Delegados de Personal y Representación Sindical</h2>
+            
+            <div class="contenedor-delegados">
+                <!-- Ficha Carlos Alberto -->
+                <div class="ficha-delegado">
+                    <h3 class="nombre-delegado">Carlos Alberto Correa</h3>
+                    <div class="cargo-delegado">Delegado de Personal y PRL</div>
+                    <div class="zona-delegado">📍 Zona Madrid Central</div>
+                    <div class="telefono-delegado">
+                        📞 <a href="tel:691372798">691 37 27 98</a>
+                    </div>
+                </div>
 
-    </main>
+                <!-- Ficha Luis Andrés -->
+                <div class="ficha-delegado">
+                    <h3 class="nombre-delegado">Luis Andrés Stefañuk</h3>
+                    <div class="cargo-delegado">Delegado de Personal</div>
+                    <div class="zona-delegado">📍 Zona Móstoles - Alcorcón</div>
+                    <div class="telefono-delegado">
+                        📞 <a href="tel:654071043">654 07 10 43</a>
+                    </div>
+                </div>
+
+                <!-- Ficha Luis Felipe -->
+                <div class="ficha-delegado">
+                    <h3 class="nombre-delegado">Luis Felipe Motta</h3>
+                    <div class="cargo-delegado">Delegado de Personal</div>
+                    <div class="zona-delegado">📍 Zona Getafe - Leganés</div>
+                    <div class="telefono-delegado">
+                        📞 <a href="tel:694299574">694 29 95 74</a>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="seccion-titulo">🏢 Sede Regional UGT Madrid</h2>
+
+            <div class="info-sede">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; margin-bottom: 10px;">
+                    <!-- INFORMACIÓN DE CONTACTO DE LA SEDE -->
+                    <div>
+                        <p><strong>Sector:</strong> FeSMC | Carreteras, Urbanos y Logística</p>
+                        <p><strong>Dirección:</strong> Av. de América, 25 - Planta 4, 28002 Madrid</p>
+                        <p><strong>Teléfono Sede:</strong> <a href="tel:915897100" style="color: #2b6cb0; text-decoration: none; font-weight: bold;">91 589 71 00</a></p>
+                        <p><strong>Teléfono Sector:</strong> <a href="tel:680206911" style="color: #2b6cb0; text-decoration: none; font-weight: bold;">680 20 69 11</a></p>
+                        <p><strong>Correo Sección Sindical:</strong> <a href="mailto:ugt.glovomadrid@gmail.com" style="color: #2b6cb0; text-decoration: none; font-weight: bold;">ugt.glovomadrid@gmail.com</a></p>
+                    </div>
+
+                    <!-- BOTÓN AFÍLIATE CON HIPERVÍNCULO A AFILIACION.HTML -->
+                    <a href="afiliacion.html" style="text-decoration: none; display: inline-block;">
+                        <img src="afiliate.jpg" alt="UGT ¡AFÍLIATE!" style="max-width: 220px; width: 100%; height: auto; display: block;">
+                    </a>
+                </div>
+                
+                <!-- Mapa interactivo de Google Maps -->
+                <div class="mapa-contenedor">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.5682852504936!2d-3.676458823438883!3d40.43836197143644!2m3!1f0!1f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0d0d87a8b30b4291%3A0xd64850ad142b992!2sAv.%20de%20Am%C3%A9rica%2C%2025%20Planta%204%2C%2028002%20Madrid!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+        </main>
+    </div>
 
     <!-- PIE DE PÁGINA -->
     <footer>
