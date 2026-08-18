@@ -45,11 +45,45 @@
             color: white; 
             padding: 20px 15px; 
             text-align: center; 
-            border-bottom: 3px solid #2b6cb0;
         }
         .titulo-principal { margin: 0; font-size: 22px; font-weight: bold; }
         .subtitulo-empresa { margin: 4px 0 0 0; font-size: 16px; color: #cbd5e0; font-weight: 600; }
         .descripcion-portal { margin: 6px 0 0 0; font-size: 14px; color: #e2e8f0; }
+
+        /* BARRA DE NAVEGACIÓN HORIZONTAL SUPERIOR */
+        nav.nav-superior {
+            background-color: #2b6cb0;
+            border-bottom: 3px solid #1a365d;
+        }
+        .nav-superior ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .nav-superior li {
+            margin: 0;
+        }
+        .nav-superior a {
+            display: block;
+            padding: 12px 18px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95em;
+            transition: background-color 0.2s;
+        }
+        .nav-superior a:hover {
+            background-color: #1a365d;
+        }
+        .nav-superior a.activo {
+            background-color: #1a365d;
+            border-bottom: 3px solid #e53e3e;
+        }
 
         /* CONTENEDOR GENERAL CON BARRA LATERAL (LAYOUT 2 COLUMNAS) */
         .contenedor-pagina {
@@ -163,19 +197,19 @@
             font-size: 1.2em;
         }
 
-        /* REJILLA TARJETAS DE ACCESO RÁPIDO Y ENLACES (SMAC, SOJ, ITSS, WORKDAY, JIRA) */
+        /* REJILLA TARJETAS DE ACCESO RÁPIDO */
         .grid-enlaces {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
             gap: 15px;
             margin-bottom: 25px;
         }
 
         .tarjeta-enlace {
             border: 1px solid #e2e8f0;
-            border-radius: 6px;
-            padding: 12px 8px;
-            background-color: #f8fafc;
+            border-radius: 8px;
+            padding: 10px;
+            background-color: #ffffff;
             text-decoration: none;
             color: #1a365d;
             text-align: center;
@@ -187,28 +221,26 @@
         }
 
         .tarjeta-enlace:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.12);
             border-color: #2b6cb0;
         }
 
-        /* Espacio reservado para las imágenes de los enlaces */
         .tarjeta-enlace .img-contenedor {
-            width: 50px;
-            height: 50px;
+            width: 65px;
+            height: 65px;
             margin-bottom: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #edf2f7;
-            border-radius: 4px;
             overflow: hidden;
         }
 
         .tarjeta-enlace img {
-            max-width: 100%;
-            max-height: 100%;
+            width: 100%;
+            height: 100%;
             object-fit: contain;
+            border-radius: 6px;
         }
 
         .tarjeta-enlace span {
@@ -253,7 +285,7 @@
         }
         footer a { color: #90cdf4; text-decoration: none; }
 
-        /* ADAPTACIÓN MÓVIL (PANTALLAS PEQUEÑAS) */
+        /* ADAPTACIÓN MÓVIL */
         @media (max-width: 768px) {
             .contenedor-pagina {
                 flex-direction: column;
@@ -262,7 +294,7 @@
                 width: 100%;
             }
             .grid-enlaces {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(3, 1fr);
             }
             .bloque-afiliacion-banner {
                 flex-direction: column;
@@ -273,19 +305,31 @@
 </head>
 <body>
 
-    <!-- CABECERA -->
+    <!-- CABECERA PRINCIPAL -->
     <header>
         <h1 class="titulo-principal">Sección Sindical UGT | Madrid</h1>
         <div class="subtitulo-empresa">Glovoapp Spain Platform</div>
         <div class="descripcion-portal">Portal Informativo de Derechos Laborales y Acción Sindical</div>
     </header>
 
+    <!-- BARRA DE NAVEGACIÓN HORIZONTAL SUPERIOR -->
+    <nav class="nav-superior">
+        <ul>
+            <li><a href="index.html" class="activo">Inicio</a></li>
+            <li><a href="guiaamarilla.html">Guía Amarilla</a></li>
+            <li><a href="mutua.html">Mutua</a></li>
+            <li><a href="fleetlead.html">Fleet Leads</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="afiliacion.html">Afiliación</a></li>
+        </ul>
+    </nav>
+
     <!-- CONTENEDOR CON BARRA LATERAL Y CONTENIDO -->
     <div class="contenedor-pagina">
 
         <!-- BARRA DE NAVEGACIÓN LATERAL (SIDEBAR) -->
         <aside class="sidebar-navegacion">
-            <div class="titulo-sidebar">Navegación</div>
+            <div class="titulo-sidebar">Menú Principal</div>
             <ul class="menu-lateral">
                 <li><a href="index.html" class="activo">🏠 Inicio</a></li>
                 <li><a href="guiaamarilla.html">📖 Guía Amarilla</a></li>
@@ -311,15 +355,14 @@
                 <p>Formamos parte de la representación legal de los trabajadores, del comité de empresa y del comité de seguridad y salud, nuestra misión es asesorarte y ayudarte ante incidencias con la empresa, nuestro objetivo principal es mejorar las condiciones laborales de todos los trabajadores de Glovo en Madrid.</p>
             </div>
 
-            <!-- TARJETAS DE ACCESO RÁPIDO Y ENLACES DE INTERÉS -->
+            <!-- TARJETAS DE ACCESO RÁPIDO Y ENLACES DE INTERÉS CON LOGOS -->
             <h3 class="seccion-titulo">🔗 Enlaces y Herramientas de Interés</h3>
             <div class="grid-enlaces">
                 
                 <!-- SMAC -->
                 <a href="#" target="_blank" class="tarjeta-enlace">
                     <div class="img-contenedor">
-                        <!-- Sustituir src por la imagen del SMAC -->
-                        <span style="font-size: 1.5em;">⚖️</span>
+                        <img src="smac.jpg" alt="SMAC - Servicio de Mediación, Arbitraje y Conciliación">
                     </div>
                     <span>SMAC</span>
                 </a>
@@ -327,8 +370,7 @@
                 <!-- SOJ -->
                 <a href="#" target="_blank" class="tarjeta-enlace">
                     <div class="img-contenedor">
-                        <!-- Sustituir src por la imagen del SOJ -->
-                        <span style="font-size: 1.5em;">🏛️</span>
+                        <img src="soj.jpg" alt="SOJ - Servicio de Orientación Jurídica">
                     </div>
                     <span>SOJ</span>
                 </a>
@@ -336,29 +378,34 @@
                 <!-- ITSS -->
                 <a href="#" target="_blank" class="tarjeta-enlace">
                     <div class="img-contenedor">
-                        <!-- Sustituir src por la imagen de la ITSS -->
-                        <span style="font-size: 1.5em;">🛡️</span>
+                        <img src="itss.jpg" alt="ITSS - Inspección de Trabajo y Seguridad Social">
                     </div>
                     <span>ITSS</span>
                 </a>
 
-                <!-- WORKDAY -->
+                 <!-- JIRA -->
                 <a href="#" target="_blank" class="tarjeta-enlace">
                     <div class="img-contenedor">
-                        <!-- Sustituir src por la imagen de Workday -->
-                        <span style="font-size: 1.5em;">💼</span>
-                    </div>
-                    <span>Workday</span>
-                </a>
-
-                <!-- JIRA -->
-                <a href="#" target="_blank" class="tarjeta-enlace">
-                    <div class="img-contenedor">
-                        <!-- Sustituir src por la imagen de Jira -->
-                        <span style="font-size: 1.5em;">🛠️</span>
+                        <img src="jira.jpg" alt="Jira - Autogestión del empleado">
                     </div>
                     <span>Jira</span>
                 </a>
+                
+                <!-- WORKDAY -->
+                <a href="#" target="_blank" class="tarjeta-enlace">
+                    <div class="img-contenedor">
+                        <img src="workday.jpg" alt="Workday Glovo">
+                    </div>
+                    <span>Workday</span>
+                </a>
+                
+                <!-- MUTUA -->
+                <a href="mutua.html" class="tarjeta-enlace">
+                    <div class="img-contenedor">
+                        <img src="mutua.jpg" alt="Mutua Universal">
+                    </div>
+                    <span>Mutua</span>
+                </a>             
 
             </div>
 
