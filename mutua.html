@@ -4,7 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mutua y Accidente Laboral - Sección Sindical UGT | Madrid</title>
+
+    <!-- REDIRECCIÓN AUTOMÁTICA FUERA DE WHATSAPP PARA ANDROID -->
+    <script>
+        (function() {
+            var ua = navigator.userAgent || navigator.vendor || window.opera;
+            var isWhatsApp = ua.indexOf("WhatsApp") > -1;
+            var isAndroid = /Android/i.test(ua);
+
+            if (isWhatsApp && isAndroid) {
+                var currentUrl = window.location.href.replace(/^https?:\/\//, '');
+                window.location.href = "intent://" + currentUrl + "#Intent;scheme=https;package=com.android.chrome;end";
+            }
+        })();
+    </script>
+
     <style>
+        /* ESTABLECER SCROLLBAR FIJO PARA EVITAR SALTOS DE PÁGINA */
+        html { 
+            overflow-y: scroll; 
+            scrollbar-gutter: stable;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body { 
             font-family: Arial, sans-serif; 
             margin: 0; 
@@ -14,18 +39,65 @@
             line-height: 1.5;
         }
 
-        /* HEADER */
-        header { 
-            background-color: #1a365d; 
+        /* CABECERA SECCIÓN SINDICAL (ESTRUCTURA MÁS RECIENTE) */
+        header.cabecera-principal { 
+            background-color: #1e3654; 
             color: white; 
-            padding: 20px 15px; 
-            text-align: center; 
+            padding: 15px 20px; 
         }
-        .titulo-principal { margin: 0; font-size: 22px; font-weight: bold; }
-        .subtitulo-empresa { margin: 4px 0 0 0; font-size: 16px; color: #cbd5e0; font-weight: 600; }
-        .descripcion-portal { margin: 6px 0 0 0; font-size: 14px; color: #e2e8f0; }
 
-        /* NAVEGACIÓN */
+        .contenedor-cabecera {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .bloque-izquierdo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-cabecera {
+            height: 130px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-ugt-derecha {
+            height: 65px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .texto-cabecera {
+            text-align: left;
+        }
+
+        .titulo-principal { 
+            margin: 0; 
+            font-size: 22px; 
+            font-weight: bold; 
+            line-height: 1.2;
+        }
+
+        .subtitulo-empresa { 
+            margin: 6px 0 0 0; 
+            font-size: 16px; 
+            color: #ffffff; 
+            font-weight: 600; 
+        }
+
+        .descripcion-portal { 
+            margin: 8px 0 0 0; 
+            font-size: 14px; 
+            color: #e2e8f0; 
+        }
+
+        /* BARRA DE NAVEGACIÓN HORIZONTAL SUPERIOR */
         .menu-navegacion { 
             background-color: #2b6cb0; 
             padding: 10px; 
@@ -45,14 +117,20 @@
             border-radius: 4px;
         }
 
-        /* CONTENIDO PRINCIPAL */
-        main { 
-            padding: 15px; 
-            max-width: 800px; 
-            margin: 15px auto; 
+        /* CONTENEDOR GENERAL DE LA PÁGINA */
+        .contenedor-pagina {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        /* CUERPO PRINCIPAL DE CONTENIDO (MAIN) */
+        main.contenido-principal { 
+            padding: 20px; 
             background: white; 
             box-shadow: 0 2px 4px rgba(0,0,0,0.08);
             border-radius: 6px;
+            border: 1px solid #e2e8f0;
         }
 
         .titulo-seccion-principal {
@@ -150,28 +228,58 @@
         .centro-card strong { color: #2b6cb0; font-size: 14px; }
         .centro-card div { font-size: 13px; margin-top: 3px; color: #4a5568; }
 
-        /* FOOTER */
+        /* PIE DE PÁGINA */
         footer { 
             text-align: center; 
             padding: 15px; 
             background-color: #1a365d; 
             color: white; 
-            margin-top: 25px; 
+            margin-top: 30px; 
             font-size: 13px;
         }
-        footer a { color: #90cdf4; }
+        footer a { color: #90cdf4; text-decoration: none; }
+
+        /* RESPONSIVE CABECERA */
+        @media (max-width: 768px) {
+            .contenedor-cabecera {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            .bloque-izquierdo {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .texto-cabecera {
+                text-align: center;
+            }
+            .logo-cabecera {
+                height: 75px;
+            }
+            .logo-ugt-derecha {
+                height: 60px;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <!-- ENCABEZADO -->
-    <header>
-        <h1 class="titulo-principal">Sección Sindical UGT | Madrid</h1>
-        <div class="subtitulo-empresa">Glovoapp Spain Platform</div>
-        <div class="descripcion-portal">Portal Informativo de Derechos Laborales y Acción Sindical</div>
+    <!-- CABECERA SECCIÓN SINDICAL (NUEVA ESTRUCTURA DE DOS LOGOS) -->
+    <header class="cabecera-principal">
+        <div class="contenedor-cabecera">
+            <div class="bloque-izquierdo">
+                <img src="seccionlogo.jpg" alt="Logo Sección Sindical UGT Madrid" class="logo-cabecera">
+                <div class="texto-cabecera">
+                    <h1 class="titulo-principal">Sección Sindical UGT | Madrid</h1>
+                    <div class="subtitulo-empresa">Glovoapp Spain Platform</div>
+                    <div class="descripcion-portal">Portal Informativo de Derechos Laborales y Acción Sindical</div>
+                </div>
+            </div>
+            <img src="ugtlogo.jpg" alt="Logo UGT Oficial" class="logo-ugt-derecha">
+        </div>
     </header>
 
-    <!-- MENÚ -->
+    <!-- MENÚ DE NAVEGACIÓN -->
     <nav class="menu-navegacion">
         <a href="index.html">Inicio</a>
         <a href="guiaamarilla.html">Guía Amarilla</a>
@@ -181,172 +289,177 @@
         <a href="afiliacion.html">Afiliación</a>
     </nav>
 
-    <main>
+    <!-- CONTENEDOR GENERAL DE LA PÁGINA -->
+    <div class="contenedor-pagina">
 
-        <!-- TÍTULO PRINCIPAL DE LA SECCIÓN -->
-        <h2 class="titulo-seccion-principal">🚨 ¿Qué hacer en caso de accidente laboral?</h2>
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="contenido-principal">
 
-        <!-- EMERGENCIAS Y TELÉFONOS RÁPIDOS -->
-        <section class="alerta-urgente">
-            <h2>Acción Inmediata y Emergencias</h2>
-            
-            <p><strong>ACCIDENTE GRAVE:</strong> Llama inmediatamente al 112 y sigue sus indicaciones.</p>
-            <a href="tel:112" class="btn-telefono-112">📞 LLAMAR AL 112</a>
+            <!-- TÍTULO PRINCIPAL DE LA SECCIÓN -->
+            <h2 class="titulo-seccion-principal">🚨 ¿Qué hacer en caso de accidente laboral?</h2>
 
-            <p style="margin-top: 15px;"><strong>MUTUA UNIVERSAL (Atención 24h):</strong></p>
-            <a href="tel:900203203" class="btn-telefono-mutua">📞 LLAMAR MUTUA: 900 203 203</a>
-        </section>
+            <!-- EMERGENCIAS Y TELÉFONOS RÁPIDOS -->
+            <section class="alerta-urgente">
+                <h2>Acción Inmediata y Emergencias</h2>
+                
+                <p><strong>ACCIDENTE GRAVE:</strong> Llama inmediatamente al 112 y sigue sus indicaciones.</p>
+                <a href="tel:112" class="btn-telefono-112">📞 LLAMAR AL 112</a>
 
-        <!-- PASOS ANTE ACCIDENTE LEVE / EN RUTA -->
-        <section class="pasos-container">
-            <h2>📋 ¿Cómo proceder según el caso?</h2>
+                <p style="margin-top: 15px;"><strong>MUTUA UNIVERSAL (Atención 24h):</strong></p>
+                <a href="tel:900203203" class="btn-telefono-mutua">📞 LLAMAR MUTUA: 900 203 203</a>
+            </section>
 
-            <div class="paso-box">
-                <h3>1. Si tienes un pedido en curso:</h3>
-                <p>Reporta de inmediato el accidente a través de la App de Glovo. Esto reasignará la orden en curso y liberará tus horas de trabajo actuales y posteriores.</p>
-            </div>
+            <!-- PASOS ANTE ACCIDENTE LEVE / EN RUTA -->
+            <section class="pasos-container">
+                <h2>📋 ¿Cómo proceder según el caso?</h2>
 
-            <div class="paso-box">
-                <h3>2. Si te puedes desplazar y no requieres ambulancia:</h3>
-                <p>Informa por correo electrónico a los <a href="fleetlead.html" target="_blank">Fleet Leads (Jefes de Flota)</a> indicando lo ocurrido, la ubicación exacta del accidente y el pedido que tenías asignado. Con esto tramitarán el volante de asistencia a la Mutua para tu evaluación médica.</p>
-            </div>
-
-            <div class="paso-box">
-                <h3>3. Si eres trasladado al hospital en ambulancia:</h3>
-                <p>Al recibir el alta hospitalaria, solicita todos los informes médicos, el parte de baja (en caso de haber sido emitida) y el atestado policial (si intervino la policía). Envía toda esta documentación por correo a los <a href="fleetlead.html" target="_blank">Fleet Leads</a> para la emisión del volante de asistencia a la Mutua.</p>
-            </div>
-
-            <div class="paso-box">
-                <h3>4. Tramitación de la Baja Médica:</h3>
-                <p>En caso de accidente laboral, la baja médica debe ser emitida siempre por la Mutua, quienes lo comunicarán directamente a Glovo. No obstante, <strong>exige siempre la entrega del documento en papel/PDF de la baja médica</strong> para disponer de justificante oficial.</p>
-            </div>
-
-            <div class="nota-importante">
-                💡 IMPORTANTE: Puedes acudir y recibir atención inicial en la Mutua mientras Glovo gestiona y genera el volante de asistencia correspondiente.
-            </div>
-        </section>
-
-        <!-- HIPERVINCULO A LA MUTUA -->
-        <div style="text-align: center; margin: 25px 0;">
-            <a href="https://www.mutuauniversal.net/es/centros/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; display: inline-block; width: 100%; max-width: 400px;">
-                <div style="border: 2px solid #2b6cb0; background-color: #ffffff; padding: 15px; border-radius: 8px; box-shadow: 0 3px 6px rgba(0,0,0,0.1);">
-                    <img src="logomutuauniversal.jpg" alt="Mutua Universal" style="max-width: 220px; height: auto; display: block; margin: 0 auto 10px auto;">
-                    <span style="display: block; color: #1a365d; font-weight: bold; font-size: 15px;">
-                        🔍 Buscar otros centros de atención en el mapa ↗
-                    </span>
+                <div class="paso-box">
+                    <h3>1. Si tienes un pedido en curso:</h3>
+                    <p>Reporta de inmediato el accidente a través de la App de Glovo. Esto reasignará la orden en curso y liberará tus horas de trabajo actuales y posteriores.</p>
                 </div>
-            </a>
-        </div>
-    
-        <!-- CENTROS PROPIOS MUTUA UNIVERSAL -->
-        <section class="bloque-centros">
-            <h3>🏥 Centros Propios - Mutua Universal</h3>
 
-            <div class="centro-card">
-                <strong>Madrid (Dentro M30 - Abierto todos los días)</strong>
-                <div>📍 C/ Príncipe de Vergara 53 | 📞 <a href="tel:914261800">914 261 800</a></div>
-                <div>🕒 Horario: Todos los días</div>
+                <div class="paso-box">
+                    <h3>2. Si te puedes desplazar y no requieres ambulancia:</h3>
+                    <p>Informa por correo electrónico a los <a href="fleetlead.html" target="_blank">Fleet Leads (Jefes de Flota)</a> indicando lo ocurrido, la ubicación exacta del accidente y el pedido que tenías asignado. Con esto tramitarán el volante de asistencia a la Mutua para tu evaluación médica.</p>
+                </div>
+
+                <div class="paso-box">
+                    <h3>3. Si eres trasladado al hospital en ambulancia:</h3>
+                    <p>Al recibir el alta hospitalaria, solicita todos los informes médicos, el parte de baja (en caso de haber sido emitida) y el atestado policial (si intervino la policía). Envía toda esta documentación por correo a los <a href="fleetlead.html" target="_blank">Fleet Leads</a> para la emisión del volante de asistencia a la Mutua.</p>
+                </div>
+
+                <div class="paso-box">
+                    <h3>4. Tramitación de la Baja Médica:</h3>
+                    <p>En caso de accidente laboral, la baja médica debe ser emitida siempre por la Mutua, quienes lo comunicarán directamente a Glovo. No obstante, <strong>exige siempre la entrega del documento en papel/PDF de la baja médica</strong> para disponer de justificante oficial.</p>
+                </div>
+
+                <div class="nota-importante">
+                    💡 IMPORTANTE: Puedes acudir y recibir atención inicial en la Mutua mientras Glovo gestiona y genera el volante de asistencia correspondiente.
+                </div>
+            </section>
+
+            <!-- HIPERVINCULO A LA MUTUA -->
+            <div style="text-align: center; margin: 25px 0;">
+                <a href="https://www.mutuauniversal.net/es/centros/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; display: inline-block; width: 100%; max-width: 400px;">
+                    <div style="border: 2px solid #2b6cb0; background-color: #ffffff; padding: 15px; border-radius: 8px; box-shadow: 0 3px 6px rgba(0,0,0,0.1);">
+                        <img src="logomutuauniversal.jpg" alt="Mutua Universal" style="max-width: 220px; height: auto; display: block; margin: 0 auto 10px auto;">
+                        <span style="display: block; color: #1a365d; font-weight: bold; font-size: 15px;">
+                            🔍 Buscar otros centros de atención en el mapa ↗
+                        </span>
+                    </div>
+                </a>
             </div>
 
-            <div class="centro-card">
-                <strong>Madrid (Dentro M30)</strong>
-                <div>📍 C/ Santa Cruz de Marcenado 15 | 📞 <a href="tel:913220700">913 220 700</a></div>
-                <div>🕒 Horario: Lunes a Viernes</div>
-            </div>
+            <!-- CENTROS PROPIOS MUTUA UNIVERSAL -->
+            <section class="bloque-centros">
+                <h3>🏥 Centros Propios - Mutua Universal</h3>
 
-            <div class="centro-card">
-                <strong>Madrid (Fuera M30)</strong>
-                <div>📍 C/ Ulises 31 | 📞 <a href="tel:913220800">913 220 800</a></div>
-                <div>🕒 Horario: Lunes a Viernes</div>
-            </div>
+                <div class="centro-card">
+                    <strong>Madrid (Dentro M30 - Abierto todos los días)</strong>
+                    <div>📍 C/ Príncipe de Vergara 53 | 📞 <a href="tel:914261800">914 261 800</a></div>
+                    <div>🕒 Horario: Todos los días</div>
+                </div>
 
-            <div class="centro-card">
-                <strong>Alcorcón</strong>
-                <div>📍 C/ Islas Cíes 9 | 📞 <a href="tel:916211208">916 211 208</a></div>
-                <div>🕒 Horario: Lunes a Viernes</div>
-            </div>
+                <div class="centro-card">
+                    <strong>Madrid (Dentro M30)</strong>
+                    <div>📍 C/ Santa Cruz de Marcenado 15 | 📞 <a href="tel:913220700">913 220 700</a></div>
+                    <div>🕒 Horario: Lunes a Viernes</div>
+                </div>
 
-            <div class="centro-card">
-                <strong>Getafe</strong>
-                <div>📍 C/ Aviador de Francisco 7 | 📞 <a href="tel:916011310">916 601 1310</a></div>
-                <div>🕒 Horario: Lunes a Viernes</div>
-            </div>
+                <div class="centro-card">
+                    <strong>Madrid (Fuera M30)</strong>
+                    <div>📍 C/ Ulises 31 | 📞 <a href="tel:913220800">913 220 800</a></div>
+                    <div>🕒 Horario: Lunes a Viernes</div>
+                </div>
 
-            <div class="centro-card">
-                <strong>Alcobendas</strong>
-                <div>📍 C/ Severo Ochoa 45 | 📞 <a href="tel:914840613">914 840 613</a></div>
-                <div>🕒 Horario: Lunes a Viernes</div>
-            </div>
+                <div class="centro-card">
+                    <strong>Alcorcón</strong>
+                    <div>📍 C/ Islas Cíes 9 | 📞 <a href="tel:916211208">916 211 208</a></div>
+                    <div>🕒 Horario: Lunes a Viernes</div>
+                </div>
 
-            <div class="centro-card">
-                <strong>Móstoles</strong>
-                <div>📍 C/ Violeta 15 | 📞 <a href="tel:916659955">916 659 955</a></div>
-                <div>🕒 Horario: Lunes a Viernes</div>
-            </div>
+                <div class="centro-card">
+                    <strong>Getafe</strong>
+                    <div>📍 C/ Aviador de Francisco 7 | 📞 <a href="tel:916011310">916 601 1310</a></div>
+                    <div>🕒 Horario: Lunes a Viernes</div>
+                </div>
 
-            <div class="centro-card">
-                <strong>Las Rozas</strong>
-                <div>📍 C/ Pollenza 2 | 📞 <a href="tel:916366259">916 366 259</a></div>
-                <div>🕒 Horario: Lunes a Viernes</div>
-            </div>
-        </section>
+                <div class="centro-card">
+                    <strong>Alcobendas</strong>
+                    <div>📍 C/ Severo Ochoa 45 | 📞 <a href="tel:914840613">914 840 613</a></div>
+                    <div>🕒 Horario: Lunes a Viernes</div>
+                </div>
 
-        <!-- CENTROS HOSPITALARIOS CONCERTADOS -->
-        <section class="bloque-centros">
-            <h3>🏥 Centros Hospitalarios Concertados</h3>
+                <div class="centro-card">
+                    <strong>Móstoles</strong>
+                    <div>📍 C/ Violeta 15 | 📞 <a href="tel:916659955">916 659 955</a></div>
+                    <div>🕒 Horario: Lunes a Viernes</div>
+                </div>
 
-            <div class="centro-card">
-                <strong>Majadahonda</strong>
-                <div>📍 Ctra. de Pozuelo 61 | 📞 <a href="tel:916265680">916 265 680</a></div>
-                <div>🕒 Horario: Todos los días</div>
-            </div>
+                <div class="centro-card">
+                    <strong>Las Rozas</strong>
+                    <div>📍 C/ Pollenza 2 | 📞 <a href="tel:916366259">916 366 259</a></div>
+                    <div>🕒 Horario: Lunes a Viernes</div>
+                </div>
+            </section>
 
-            <div class="centro-card">
-                <strong>Coslada</strong>
-                <div>📍 C/ Joaquín de Cárdenas 2 | 📞 <a href="tel:916735011">916 735 011</a></div>
-                <div>🕒 Horario: Todos los días</div>
-            </div>
+            <!-- CENTROS HOSPITALARIOS CONCERTADOS -->
+            <section class="bloque-centros">
+                <h3>🏥 Centros Hospitalarios Concertados</h3>
 
-            <div class="centro-card">
-                <strong>Rivas Vaciamadrid</strong>
-                <div>📍 C/ Electrodo 68 | 📞 <a href="tel:914991761">914 991 761</a></div>
-                <div>🕒 Horario: Lunes a Viernes</div>
-            </div>
+                <div class="centro-card">
+                    <strong>Majadahonda</strong>
+                    <div>📍 Ctra. de Pozuelo 61 | 📞 <a href="tel:916265680">916 265 680</a></div>
+                    <div>🕒 Horario: Todos los días</div>
+                </div>
 
-            <div class="centro-card">
-                <strong>Pinto</strong>
-                <div>📍 C/ Coto de Doñana 18 | 📞 <a href="tel:916212001">916 212 001</a></div>
-                <div>🕒 Horario: Lunes a Viernes</div>
-            </div>
+                <div class="centro-card">
+                    <strong>Coslada</strong>
+                    <div>📍 C/ Joaquín de Cárdenas 2 | 📞 <a href="tel:916735011">916 735 011</a></div>
+                    <div>🕒 Horario: Todos los días</div>
+                </div>
 
-            <div class="centro-card">
-                <strong>San Sebastián de los Reyes</strong>
-                <div>📍 Av. de Tenerife 20 | 📞 <a href="tel:916531255">916 653 1255</a></div>
-                <div>🕒 Horario: Lunes a Viernes</div>
-            </div>
+                <div class="centro-card">
+                    <strong>Rivas Vaciamadrid</strong>
+                    <div>📍 C/ Electrodo 68 | 📞 <a href="tel:914991761">914 991 761</a></div>
+                    <div>🕒 Horario: Lunes a Viernes</div>
+                </div>
 
-            <div class="centro-card">
-                <strong>Torrejón de Ardoz</strong>
-                <div>📍 C/ Primavera 49 | 📞 <a href="tel:916749412">916 674 9412</a></div>
-                <div>🕒 Horario: Lunes a Viernes</div>
-            </div>
+                <div class="centro-card">
+                    <strong>Pinto</strong>
+                    <div>📍 C/ Coto de Doñana 18 | 📞 <a href="tel:916212001">916 212 001</a></div>
+                    <div>🕒 Horario: Lunes a Viernes</div>
+                </div>
 
-            <div class="centro-card">
-                <strong>Tres Cantos</strong>
-                <div>📍 C/ Viento 12 | 📞 <a href="tel:918041073">918 041 073</a></div>
-                <div>🕒 Horario: Lunes a Viernes</div>
-            </div>
+                <div class="centro-card">
+                    <strong>San Sebastián de los Reyes</strong>
+                    <div>📍 Av. de Tenerife 20 | 📞 <a href="tel:916531255">916 653 1255</a></div>
+                    <div>🕒 Horario: Lunes a Viernes</div>
+                </div>
 
-            <div class="centro-card">
-                <strong>Arganda del Rey</strong>
-                <div>📍 C/ de Madrid 28 | 📞 <a href="tel:918701831">918 870 1831</a></div>
-                <div>🕒 Horario: Lunes a Viernes</div>
-            </div>
-        </section>
+                <div class="centro-card">
+                    <strong>Torrejón de Ardoz</strong>
+                    <div>📍 C/ Primavera 49 | 📞 <a href="tel:916749412">916 674 9412</a></div>
+                    <div>🕒 Horario: Lunes a Viernes</div>
+                </div>
 
-    </main>
+                <div class="centro-card">
+                    <strong>Tres Cantos</strong>
+                    <div>📍 C/ Viento 12 | 📞 <a href="tel:918041073">918 041 073</a></div>
+                    <div>🕒 Horario: Lunes a Viernes</div>
+                </div>
 
-    <!-- FOOTER -->
+                <div class="centro-card">
+                    <strong>Arganda del Rey</strong>
+                    <div>📍 C/ de Madrid 28 | 📞 <a href="tel:918701831">918 870 1831</a></div>
+                    <div>🕒 Horario: Lunes a Viernes</div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- PIE DE PÁGINA -->
     <footer>
         <p>&copy; Sección Sindical UGT - Glovoapp Spain Platform | Madrid</p>
         <p>Contacto: <a href="mailto:ugt.glovomadrid@gmail.com">ugt.glovomadrid@gmail.com</a></p>
@@ -361,6 +474,7 @@
             <h3 style="color: #1a365d; margin-top: 0; font-size: 1.3em;">Acceso Sección Sindical UGT</h3>
             <p style="font-size: 0.9em; color: #555; margin-bottom: 20px;">Inicia sesión con tu cuenta de Google para validar tu acceso al portal de información laboral.</p>
             
+            <!-- Configuración del botón de Google -->
             <div id="g_id_onload"
                  data-client_id="1045651313029-cr80m30gc1111g792anbkqqktop780tk.apps.googleusercontent.com"
                  data-callback="handleCredentialResponse"
@@ -381,44 +495,64 @@
         </div>
     </div>
 
+    <!-- SCRIPT LÓGICA LOGIN -->
     <script>
         const URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbyd2fDDima-jZeW0H0L0yGZVDbul8sMJAQMw3OpK_nPLP46kI6n8cNEAYXP4l_wdUuO-g/exec";
+
+        const ua = navigator.userAgent || "";
+        const isIOSWhatsApp = /iPhone|iPad|iPod/i.test(ua) && ua.includes("WhatsApp");
 
         if (localStorage.getItem('ugt_usuario_registrado') === 'true') {
             document.getElementById('modal-registro').style.display = 'none';
         }
 
+        if (isIOSWhatsApp) {
+            const avisoiOS = document.createElement('p');
+            avisoiOS.style.cssText = "color: #c53030; font-size: 0.8em; font-weight: bold; margin-top: 10px;";
+            avisoiOS.innerHTML = "⚠️ Si tienes problemas para iniciar sesión, pulsa en los tres puntos (...) o el icono de la brújula y selecciona <b>'Abrir en Safari'</b>.";
+            document.querySelector('#modal-registro > div').appendChild(avisoiOS);
+        }
+
         function parseJwt(token) {
-            var base64Url = token.split('.')[1];
-            var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-            var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
-                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-            }).join(''));
-            return JSON.parse(jsonPayload);
+            try {
+                var base64Url = token.split('.')[1];
+                var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+                var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+                    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+                }).join(''));
+                return JSON.parse(jsonPayload);
+            } catch (e) {
+                console.error("Error al decodificar token", e);
+                return {};
+            }
         }
 
         function handleCredentialResponse(response) {
-            const usuario = parseJwt(response.credential);
+            try {
+                const usuario = parseJwt(response.credential);
 
-            const datos = {
-                name: usuario.name,
-                email: usuario.email,
-                sub: usuario.sub
-            };
+                const datos = {
+                    name: usuario.name || "Usuario",
+                    email: usuario.email || "",
+                    sub: usuario.sub || ""
+                };
 
-            fetch(URL_APPS_SCRIPT, {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(datos)
-            })
-            .then(() => {
-                localStorage.setItem('ugt_usuario_registrado', 'true');
+                try {
+                    localStorage.setItem('ugt_usuario_registrado', 'true');
+                } catch (e) {}
+                
                 document.getElementById('modal-registro').style.display = 'none';
-            })
-            .catch(error => {
-                alert("Error de conexión al validar el acceso.");
-            });
+
+                fetch(URL_APPS_SCRIPT, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(datos)
+                }).catch(err => console.log("Error de envío silencioso:", err));
+
+            } catch (error) {
+                document.getElementById('modal-registro').style.display = 'none';
+            }
         }
     </script>
 </body>
