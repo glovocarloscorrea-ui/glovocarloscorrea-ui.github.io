@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sección Sindical UGT | Madrid</title>
+    <title>Inicio - Sección Sindical UGT | Glovo Madrid</title>
 
     <!-- REDIRECCIÓN AUTOMÁTICA FUERA DE WHATSAPP PARA ANDROID -->
     <script>
@@ -20,211 +20,309 @@
     </script>
 
     <style>
-    /* ESTABLECER SCROLLBAR FIJO PARA EVITAR SALTOS DE PÁGINA */
-    html { 
-        overflow-y: scroll; 
-        scrollbar-gutter: stable;
-    }
+        /* ESTABLECER SCROLLBAR FIJO PARA EVITAR SALTOS DE PÁGINA */
+        html { 
+            overflow-y: scroll; 
+            scrollbar-gutter: stable;
+        }
 
-    * {
-        box-sizing: border-box;
-    }
+        * {
+            box-sizing: border-box;
+        }
 
-    body { 
-        font-family: Arial, sans-serif; 
-        margin: 0; 
-        padding: 0; 
-        background-color: #f4f4f9; 
-        color: #333; 
-        line-height: 1.5;
-    }
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #f4f4f9; 
+            color: #333; 
+            line-height: 1.5;
+        }
 
-    /* CABECERA SECCIÓN SINDICAL */
-    header.cabecera-principal { 
-        background-color: #1e3654; 
-        color: white; 
-        padding: 15px 20px; 
-    }
-
-    .contenedor-cabecera {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 20px;
-    }
-
-    .bloque-izquierdo {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .logo-cabecera {
-        height: 130px;
-        width: auto;
-        object-fit: contain;
-    }
-
-    .logo-ugt-derecha {
-        height: 65px;
-        width: auto;
-        object-fit: contain;
-    }
-
-    .texto-cabecera {
-        text-align: left;
-    }
-
-    .titulo-principal { 
-        margin: 0; 
-        font-size: 22px; 
-        font-weight: bold; 
-        line-height: 1.2;
-    }
-
-    .subtitulo-empresa { 
-        margin: 6px 0 0 0; 
-        font-size: 16px; 
-        color: #ffffff; 
-        font-weight: 600; 
-    }
-
-    .descripcion-portal { 
-        margin: 8px 0 0 0; 
-        font-size: 14px; 
-        color: #e2e8f0; 
-    }
-
-    /* BARRA DE NAVEGACIÓN HORIZONTAL SUPERIOR */
-    .menu-navegacion { 
-        background-color: #2b6cb0; 
-        padding: 10px; 
-        text-align: center; 
-        white-space: nowrap;
-    }
-    .menu-navegacion a { 
-        color: white; 
-        margin: 0 5px; 
-        text-decoration: none; 
-        font-weight: bold; 
-        font-size: 14px; 
-        display: inline-block;
-        padding: 6px 10px;
-    }
-    .menu-navegacion a.activo {
-        background-color: #1a365d;
-        border-radius: 4px;
-    }
-
-    /* CONTENEDOR GENERAL DE LA PÁGINA */
-    .contenedor-pagina {
-        max-width: 1000px;
-        margin: 20px auto;
-        padding: 0 15px;
-    }
-
-    /* CUERPO PRINCIPAL DE CONTENIDO (MAIN) */
-    main.contenido-principal { 
-        padding: 20px; 
-        background: white; 
-        box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-        border-radius: 6px;
-        border: 1px solid #e2e8f0;
-    }
-
-    /* PIE DE PÁGINA */
-    footer { 
-        text-align: center; 
-        padding: 15px; 
-        background-color: #1a365d; 
-        color: white; 
-        margin-top: 30px; 
-        font-size: 13px;
-    }
-    footer a { color: #90cdf4; text-decoration: none; }
-
-    /* ADAPTACIONES ESPECÍFICAS PARA MÓVIL */
-    @media (max-width: 768px) {
-        header.cabecera-principal {
-            padding: 10px 8px;
+        /* CABECERA SECCIÓN SINDICAL */
+        header.cabecera-principal { 
+            background-color: #1e3654; 
+            color: white; 
+            padding: 15px 20px; 
         }
 
         .contenedor-cabecera {
-            flex-direction: row;
-            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
             align-items: center;
-            gap: 6px;
+            justify-content: space-between;
+            gap: 20px;
         }
 
         .bloque-izquierdo {
-            flex-direction: row;
-            gap: 8px;
+            display: flex;
             align-items: center;
-            flex: 1;
-            min-width: 0;
+            gap: 20px;
         }
 
-        /* Logo de la sección ampliado */
         .logo-cabecera {
-            height: 58px; 
-            flex-shrink: 0;
+            height: 130px;
+            width: auto;
+            object-fit: contain;
         }
 
-        /* Logo de UGT reducido */
         .logo-ugt-derecha {
-            height: 28px; 
-            flex-shrink: 0;
+            height: 65px;
+            width: auto;
+            object-fit: contain;
         }
 
         .texto-cabecera {
             text-align: left;
-            min-width: 0;
         }
 
-        /* Texto en una sola línea */
-        .titulo-principal {
-            font-size: 13px;
-            line-height: 1.1;
-            white-space: nowrap; 
+        .titulo-principal { 
+            margin: 0; 
+            font-size: 22px; 
+            font-weight: bold; 
+            line-height: 1.2;
         }
 
-        .subtitulo-empresa {
-            font-size: 10.5px;
-            margin-top: 2px;
-            white-space: nowrap;
+        .subtitulo-empresa { 
+            margin: 6px 0 0 0; 
+            font-size: 16px; 
+            color: #ffffff; 
+            font-weight: 600; 
         }
 
-        .descripcion-portal {
-            display: none;
+        .descripcion-portal { 
+            margin: 8px 0 0 0; 
+            font-size: 14px; 
+            color: #e2e8f0; 
         }
 
-        /* Navegación deslizable */
-        .menu-navegacion {
-            display: flex;
-            overflow-x: auto;
-            justify-content: flex-start;
-            padding: 6px 4px;
-            -webkit-overflow-scrolling: touch;
+        /* BARRA DE NAVEGACIÓN HORIZONTAL SUPERIOR */
+        .menu-navegacion { 
+            background-color: #2b6cb0; 
+            padding: 10px; 
+            text-align: center; 
         }
-
-        .menu-navegacion a {
-            flex: 0 0 auto;
-            font-size: 12px;
-            padding: 5px 10px;
+        .menu-navegacion a { 
+            color: white; 
+            margin: 0 5px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 14px; 
+            display: inline-block;
+            padding: 6px 10px;
         }
+        .menu-navegacion a.activo {
+            background-color: #1a365d;
+            border-radius: 4px;
+        }    
 
+        /* CONTENEDOR GENERAL */
         .contenedor-pagina {
-            margin: 10px auto;
-            padding: 0 8px;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 15px;
         }
 
+        /* CUERPO PRINCIPAL DE CONTENIDO (MAIN) */
         main.contenido-principal {
-            padding: 12px;
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+            padding: 20px;
+            border: 1px solid #e2e8f0;
         }
-    }
-</style>
+
+        /* HERO / BANNER DE BIENVENIDA */
+        .hero-banner {
+            background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
+            color: white;
+            padding: 25px 20px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+        }
+        .hero-banner h2 { 
+            margin: 0 0 12px 0; 
+            font-size: 1.4em; 
+            line-height: 1.3;
+        }
+        .hero-banner p { 
+            margin: 0; 
+            font-size: 0.95em; 
+            color: #f7fafc; 
+            line-height: 1.6;
+        }
+
+        /* TÍTULOS DE SECCIÓN */
+        .seccion-titulo {
+            color: #1a365d;
+            border-bottom: 2px solid #2b6cb0;
+            padding-bottom: 6px;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        /* REJILLA TARJETAS DE ACCESO RÁPIDO */
+        .grid-enlaces {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .tarjeta-enlace {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 0;
+            background-color: #ffffff;
+            text-decoration: none;
+            display: block;
+            overflow: hidden;
+            aspect-ratio: 1 / 1;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .tarjeta-enlace:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-color: #2b6cb0;
+        }
+
+        .tarjeta-enlace img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* BLOQUE DE NOTICIAS Y NOVEDADES */
+        .bloque-noticia {
+            background-color: #f7fafc;
+            border-left: 4px solid #2b6cb0;
+            padding: 12px 15px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        .bloque-noticia h4 { margin: 0 0 4px 0; color: #1a365d; font-size: 0.98em; }
+        .bloque-noticia p { margin: 0; font-size: 0.88em; color: #4a5568; line-height: 1.5; }
+        .fecha-noticia { font-size: 0.75em; color: #718096; font-weight: bold; margin-bottom: 4px; }
+
+        /* BLOQUE AFILIACIÓN INFERIOR */
+        .bloque-afiliacion-banner {
+            background-color: #f7fafc;
+            border: 1px solid #e2e8f0;
+            padding: 15px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        /* PIE DE PÁGINA */
+        footer { 
+            text-align: center; 
+            padding: 15px; 
+            background-color: #1a365d; 
+            color: white; 
+            margin-top: 30px; 
+            font-size: 13px;
+        }
+        footer a { color: #90cdf4; text-decoration: none; }
+
+        /* OPTIMIZACIONES RESPONSIVE PARA MÓVILES (HASTA 768px) */
+        @media (max-width: 768px) {
+            header.cabecera-principal {
+                padding: 8px 10px;
+            }
+
+            .contenedor-cabecera {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                gap: 6px;
+            }
+
+            .bloque-izquierdo {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 8px;
+                flex: 1;
+                min-width: 0;
+            }
+
+            .logo-cabecera {
+                height: 48px;
+                width: auto;
+                flex-shrink: 0;
+            }
+
+            .logo-ugt-derecha {
+                height: 38px;
+                width: auto;
+                flex-shrink: 0;
+            }
+
+            .texto-cabecera {
+                text-align: left;
+                min-width: 0;
+                flex: 1;
+            }
+
+            .titulo-principal {
+                font-size: 13px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .subtitulo-empresa {
+                font-size: 11px;
+                margin-top: 1px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .descripcion-portal {
+                font-size: 9.5px;
+                margin-top: 1px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .menu-navegacion {
+                display: flex;
+                overflow-x: auto;
+                white-space: nowrap;
+                padding: 6px 8px;
+                justify-content: flex-start;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .menu-navegacion a {
+                font-size: 12px;
+                padding: 5px 8px;
+                flex-shrink: 0;
+            }
+
+            .grid-enlaces {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+            }
+
+            .bloque-afiliacion-banner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -243,7 +341,7 @@
         </div>
     </header>
 
-    <!-- MENÚ DE NAVEGACIÓN -->
+    <!-- BARRA DE NAVEGACIÓN HORIZONTAL SUPERIOR -->
     <nav class="menu-navegacion">
         <a href="index.html" class="activo">Inicio</a>
         <a href="guiaamarilla.html">Guía Amarilla</a>
@@ -253,14 +351,80 @@
         <a href="afiliacion.html">Afiliación</a>
     </nav>
 
-    <!-- CONTENEDOR GENERAL DE LA PÁGINA -->
+    <!-- CONTENEDOR GENERAL -->
     <div class="contenedor-pagina">
 
-        <!-- CONTENIDO PRINCIPAL -->
+        <!-- CUERPO PRINCIPAL DE CONTENIDOS -->
         <main class="contenido-principal">
-            <h2>Bienvenidos al Portal Informativo</h2>
-            <p>Este es el espacio oficial de la Sección Sindical de UGT en Glovoapp Spain Platform (Comunidad de Madrid).</p>
-            <p>A través de este portal podrás consultar la normativa interna de la empresa, guías de derechos laborales, contactos de la representación sindical e información de interés para la plantilla.</p>
+            
+            <!-- BIENVENIDA / HERO BANNER -->
+            <div class="hero-banner">
+                <h2>Bienvenido a la Sección Sindical UGT | Glovo Madrid</h2>
+                <p>Formamos parte de la representación legal de los trabajadores, del comité de empresa y del comité de seguridad y salud, nuestra misión es asesorarte y ayudarte ante incidencias con la empresa, nuestro objetivo principal es mejorar las condiciones laborales de todos los trabajadores de Glovo en Madrid.</p>
+            </div>
+
+            <!-- TARJETAS DE ACCESO RÁPIDO Y ENLACES DE INTERÉS (SOLO IMÁGENES) -->
+            <h3 class="seccion-titulo">🔗 Enlaces y Herramientas de Interés</h3>
+            <div class="grid-enlaces">
+                
+               <!-- SMAC -->
+                <a href="https://www.comunidad.madrid/empleo/espacio-smac" target="_blank" class="tarjeta-enlace" title="SMAC - Servicio de Mediación, Arbitraje y Conciliación">
+                    <img src="smac.jpg" alt="SMAC - Servicio de Mediación, Arbitraje y Conciliación">
+                </a>
+
+                <!-- SOJ -->
+                <a href="https://soj.icam.es" target="_blank" class="tarjeta-enlace" title="SOJ - Servicio de Orientación Jurídica">
+                    <img src="soj.jpg" alt="SOJ - Servicio de Orientación Jurídica">
+                </a>
+
+                <!-- ITSS -->
+                <a href="https://oeitss.gob.es/tramites/personas-trabajadoras/denuncia" target="_blank" class="tarjeta-enlace" title="ITSS - Inspección de Trabajo y Seguridad Social">
+                    <img src="itss.jpg" alt="ITSS - Inspección de Trabajo y Seguridad Social">
+                </a>
+
+                <!-- JIRA -->
+                <a href="https://glovoapp.atlassian.net/servicedesk/customer/portals" target="_blank" class="tarjeta-enlace" title="Jira - Autogestión del empleado">
+                    <img src="jira.jpg" alt="Jira - Autogestión del empleado">
+                </a>
+
+                <!-- WORKDAY -->
+                <a href="https://wd3-identity.myworkday.com/wday/authgwy/deliveryhero/upc/login?redirect=n" target="_blank" class="tarjeta-enlace" title="Workday Glovo">
+                    <img src="workday.jpg" alt="Workday Glovo">
+                </a>
+
+                <!-- MUTUA -->
+                <a href="https://www.mutuauniversal.net/es/centros/" target="_blank" class="tarjeta-enlace" title="Mutua Universal">
+                    <img src="mutua.jpg" alt="Mutua Universal">
+                </a>
+                
+            </div> 
+
+            <!-- BLOQUE DE NOTICIAS Y ULTIMAS NOVEDADES -->
+            <h3 class="seccion-titulo">📢 Últimas Novedades y Comunicados</h3>
+            
+            <div class="bloque-noticia">
+                <div class="fecha-noticia">Sección Sindical UGT Glovo Madrid</div>
+                <h4>Control y Revisión de Conceptos Retributivos</h4>
+                <p>Recuerda revisar tus recibos de salario de acuerdo con la Guía Amarilla. Ante cualquier duda en la liquidación de horas, trienios o complementos, contacta con tu representación sindical.</p>
+            </div>
+
+            <div class="bloque-noticia">
+                <div class="fecha-noticia">Comité de Seguridad y Salud</div>
+                <h4>Prevención de Riesgos en Ruta</h4>
+                <p>Mantenemos activa la vigilancia de las condiciones de salud laboral e higiene. Es fundamental reportar cualquier incidencia en el equipo o situaciones de riesgo a los delegados de prevención.</p>
+            </div>
+
+            <!-- BLOQUE DE AFILIACIÓN INFERIOR -->
+            <div class="bloque-afiliacion-banner">
+                <div>
+                    <h4 style="margin: 0 0 5px 0; color: #1a365d; font-size: 1.05em;">Suma tu voz a la representación sindical</h4>
+                    <p style="margin: 0; font-size: 0.88em; color: #4a5568;">La afiliación fortalece la defensa colectiva y te garantiza asesoramiento jurídico especializado.</p>
+                </div>
+                <a href="afiliacion.html" style="text-decoration: none;">
+                    <img src="afiliate.jpg" alt="UGT ¡AFÍLIATE!" style="max-width: 180px; width: 100%; height: auto; display: block;">
+                </a>
+            </div>
+
         </main>
     </div>
 
@@ -270,16 +434,15 @@
         <p>Contacto: <a href="mailto:ugt.glovomadrid@gmail.com">ugt.glovomadrid@gmail.com</a></p>
     </footer>
 
-    <!-- SCRIPT OFICIAL DE GOOGLE IDENTITY -->
+    <!-- SCRIPT GOOGLE IDENTITY -->
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 
-    <!-- MODAL CON BOTÓN OFICIAL DE GOOGLE -->
+    <!-- MODAL DE REGISTRO / ACCESO -->
     <div id="modal-registro" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.75); display: flex; justify-content: center; align-items: center; z-index: 9999;">
         <div style="background: white; padding: 30px; border-radius: 10px; max-width: 400px; width: 90%; box-shadow: 0 4px 15px rgba(0,0,0,0.3); text-align: center;">
             <h3 style="color: #1a365d; margin-top: 0; font-size: 1.3em;">Acceso Sección Sindical UGT</h3>
             <p style="font-size: 0.9em; color: #555; margin-bottom: 20px;">Inicia sesión con tu cuenta de Google para validar tu acceso al portal de información laboral.</p>
             
-            <!-- Configuración del botón de Google -->
             <div id="g_id_onload"
                  data-client_id="1045651313029-cr80m30gc1111g792anbkqqktop780tk.apps.googleusercontent.com"
                  data-callback="handleCredentialResponse"
