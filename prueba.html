@@ -39,7 +39,7 @@
             line-height: 1.5;
         }
 
-        /* CABECERA SECCIÓN SINDICAL (EXACTA A GUIAAMARILLA.HTML) */
+        /* CABECERA SECCIÓN SINDICAL */
         header.cabecera-principal { 
             background-color: #1e3654; 
             color: white; 
@@ -89,6 +89,13 @@
             font-size: 16px; 
             color: #ffffff; 
             font-weight: 600; 
+        }
+
+        /* TERCERA LÍNEA EN ESCRITORIO */
+        .descripcion-portal {
+            margin: 4px 0 0 0;
+            font-size: 13px;
+            color: #cbd5e0;
         }
 
         /* BARRA DE NAVEGACIÓN HORIZONTAL SUPERIOR */
@@ -257,14 +264,15 @@
                 flex: 1;
             }
 
+            /* TAMAÑOS EXACTOS DE LOGOS COMO EN GUIAAMARILLA */
             .logo-cabecera {
-                height: 48px;
+                height: 40px;
                 width: auto;
                 flex-shrink: 0;
             }
 
             .logo-ugt-derecha {
-                height: 38px;
+                height: 32px;
                 width: auto;
                 flex-shrink: 0;
             }
@@ -282,6 +290,11 @@
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
+            }
+
+            /* OCULTAR TERCERA LÍNEA SOLO EN MÓVIL */
+            .descripcion-portal {
+                display: none;
             }
 
             .menu-navegacion {
@@ -312,7 +325,7 @@
 </head>
 <body>
 
-    <!-- CABECERA SECCIÓN SINDICAL (EXACTA A GUIAAMARILLA.HTML) -->
+    <!-- CABECERA SECCIÓN SINDICAL -->
     <header class="cabecera-principal">
         <div class="contenedor-cabecera">
             <div class="bloque-izquierdo">
@@ -320,6 +333,7 @@
                 <div class="texto-cabecera">
                     <h1 class="titulo-principal">Sección Sindical UGT | Madrid</h1>
                     <div class="subtitulo-empresa">Glovoapp Spain Platform</div>
+                    <div class="descripcion-portal">Portal Informativo de Derechos Laborales y Acción Sindical</div>
                 </div>
             </div>
             <img src="ugtlogo.jpg" alt="Logo UGT Oficial" class="logo-ugt-derecha">
