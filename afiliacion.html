@@ -35,16 +35,51 @@
             line-height: 1.5;
         }
 
-        /* CABECERA SECCIÓN SINDICAL */
-        header { 
-            background-color: #1a365d; 
+        /* CABECERA SECCIÓN SINDICAL (NUEVO DISEÑO CON LOGO) */
+        header.cabecera-principal { 
+            background-color: #1e3654; 
             color: white; 
-            padding: 20px 15px; 
-            text-align: center; 
+            padding: 15px 20px; 
         }
-        .titulo-principal { margin: 0; font-size: 22px; font-weight: bold; }
-        .subtitulo-empresa { margin: 4px 0 0 0; font-size: 16px; color: #cbd5e0; font-weight: 600; }
-        .descripcion-portal { margin: 6px 0 0 0; font-size: 14px; color: #e2e8f0; }
+
+        .contenedor-cabecera {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 25px;
+        }
+
+        .logo-cabecera {
+            height: 90px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .texto-cabecera {
+            text-align: left;
+        }
+
+        .titulo-principal { 
+            margin: 0; 
+            font-size: 22px; 
+            font-weight: bold; 
+            line-height: 1.2;
+        }
+
+        .subtitulo-empresa { 
+            margin: 6px 0 0 0; 
+            font-size: 16px; 
+            color: #ffffff; 
+            font-weight: 600; 
+        }
+
+        .descripcion-portal { 
+            margin: 8px 0 0 0; 
+            font-size: 14px; 
+            color: #e2e8f0; 
+        }
 
         /* BARRA DE NAVEGACIÓN */
         .menu-navegacion { 
@@ -105,15 +140,35 @@
             font-size: 13px;
         }
         footer a { color: #90cdf4; }
+
+        /* RESPONSIVE CABECERA PARA MÓVILES */
+        @media (max-width: 600px) {
+            .contenedor-cabecera {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            .texto-cabecera {
+                text-align: center;
+            }
+            .logo-cabecera {
+                height: 75px;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <!-- CABECERA SECCIÓN SINDICAL -->
-    <header>
-        <h1 class="titulo-principal">Sección Sindical UGT | Madrid</h1>
-        <div class="subtitulo-empresa">Glovoapp Spain Platform</div>
-        <div class="descripcion-portal">Portal Informativo de Derechos Laborales y Acción Sindical</div>
+    <!-- CABECERA SECCIÓN SINDICAL CON LOGO -->
+    <header class="cabecera-principal">
+        <div class="contenedor-cabecera">
+            <img src="logoseccion.jpg" alt="Logo UGT Madrid Glovo" class="logo-cabecera">
+            <div class="texto-cabecera">
+                <h1 class="titulo-principal">Sección Sindical UGT | Madrid</h1>
+                <div class="subtitulo-empresa">Glovoapp Spain Platform</div>
+                <div class="descripcion-portal">Portal Informativo de Derechos Laborales y Acción Sindical</div>
+            </div>
+        </div>
     </header>
 
     <!-- MENÚ DE NAVEGACIÓN -->
