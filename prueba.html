@@ -148,9 +148,11 @@
         border-radius: 4px;
     }
 
+    /* BOTÓN CENTRADO VERTICALMENTE EN ESCRITORIO */
     .boton-banner {
         position: absolute;
-        top: 15px;
+        top: 50%;
+        transform: translateY(-50%);
         right: 15px;
         background-color: #e53e3e;
         color: white;
@@ -199,53 +201,62 @@
     }
     footer a { color: #90cdf4; text-decoration: none; }
 
-    /* OPTIMIZACIÓN ULTRA-COMPACTA PARA MÓVILES */
+    /* ADAPTACIONES ESPECÍFICAS PARA MÓVIL */
     @media (max-width: 768px) {
         header.cabecera-principal {
-            padding: 10px 12px;
+            padding: 10px 8px;
         }
 
         .contenedor-cabecera {
-            flex-direction: row; /* Mantener horizontal en móvil */
+            flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
         }
 
         .bloque-izquierdo {
             flex-direction: row;
-            gap: 10px;
+            gap: 8px;
             align-items: center;
+            flex: 1;
+            min-width: 0; /* Para evitar desbordamientos flexbox */
         }
 
+        /* 3. Aumentar tamaño del logo de la sección */
         .logo-cabecera {
-            height: 48px; /* Logo izquierdo compacto */
+            height: 58px; 
+            flex-shrink: 0;
         }
 
+        /* 3. Reducir tamaño del logo de UGT */
         .logo-ugt-derecha {
-            height: 35px; /* Logo derecho compacto */
+            height: 28px; 
+            flex-shrink: 0;
         }
 
         .texto-cabecera {
             text-align: left;
+            min-width: 0;
         }
 
+        /* 2. Forzar texto en una sola línea */
         .titulo-principal {
-            font-size: 14px;
+            font-size: 13px;
             line-height: 1.1;
+            white-space: nowrap; 
         }
 
         .subtitulo-empresa {
-            font-size: 11px;
+            font-size: 10.5px;
             margin-top: 2px;
+            white-space: nowrap;
         }
 
-        /* Ocultar la descripción larga solo en pantallas pequeñas para ahorrar altura */
         .descripcion-portal {
             display: none;
         }
 
-        /* Navegación deslizable ultra-compacta */
+        /* Navegación deslizable */
         .menu-navegacion {
             display: flex;
             overflow-x: auto;
@@ -269,9 +280,10 @@
             padding: 12px;
         }
 
-        /* Adaptación del Banner y Botón en móvil */
+        /* Botón ocupa ancho completo debajo de la imagen en móvil */
         .boton-banner {
             position: static;
+            transform: none;
             display: block;
             margin-top: 8px;
             width: 100%;
