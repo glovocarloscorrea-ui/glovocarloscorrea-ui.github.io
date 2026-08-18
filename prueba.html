@@ -39,7 +39,7 @@
             line-height: 1.5;
         }
 
-        /* CABECERA SECCIÓN SINDICAL */
+        /* CABECERA SECCIÓN SINDICAL (IDÉNTICA A AFILIACION.HTML Y GUIAAMARILLA.HTML) */
         header.cabecera-principal { 
             background-color: #1e3654; 
             color: white; 
@@ -233,7 +233,7 @@
         }
         footer a { color: #90cdf4; text-decoration: none; }
 
-        /* OPTIMIZACIONES RESPONSIVE PARA MÓVILES (HASTA 768px) */
+        /* RESPONSIVE CABECERA Y CONTENIDO PARA MÓVILES */
         @media (max-width: 768px) {
             header.cabecera-principal {
                 padding: 8px 10px;
@@ -245,6 +245,7 @@
                 align-items: center;
                 justify-content: space-between;
                 gap: 6px;
+                text-align: left;
             }
 
             .bloque-izquierdo {
@@ -254,6 +255,12 @@
                 gap: 8px;
                 flex: 1;
                 min-width: 0;
+            }
+
+            .texto-cabecera {
+                text-align: left;
+                min-width: 0;
+                flex: 1;
             }
 
             .logo-cabecera {
@@ -266,12 +273,6 @@
                 height: 38px;
                 width: auto;
                 flex-shrink: 0;
-            }
-
-            .texto-cabecera {
-                text-align: left;
-                min-width: 0;
-                flex: 1;
             }
 
             .titulo-principal {
@@ -314,7 +315,6 @@
 
             .grid-enlaces {
                 grid-template-columns: repeat(3, 1fr);
-                gap: 10px;
             }
 
             .bloque-afiliacion-banner {
@@ -326,7 +326,7 @@
 </head>
 <body>
 
-    <!-- CABECERA SECCIÓN SINDICAL -->
+    <!-- CABECERA SECCIÓN SINDICAL (IGUAL A AFILIACION.HTML) -->
     <header class="cabecera-principal">
         <div class="contenedor-cabecera">
             <div class="bloque-izquierdo">
