@@ -20,260 +20,274 @@
     </script>
 
     <style>
-        /* ESTABLECER SCROLLBAR FIJO PARA EVITAR SALTOS DE PÁGINA */
-        html { 
-            overflow-y: scroll; 
-            scrollbar-gutter: stable;
-        }
+    /* ESTABLECER SCROLLBAR FIJO PARA EVITAR SALTOS DE PÁGINA */
+    html { 
+        overflow-y: scroll; 
+        scrollbar-gutter: stable;
+    }
 
-        * {
-            box-sizing: border-box;
-        }
+    * {
+        box-sizing: border-box;
+    }
 
-        body { 
-            font-family: Arial, sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            background-color: #f4f4f9; 
-            color: #333; 
-            line-height: 1.5;
-        }
+    body { 
+        font-family: Arial, sans-serif; 
+        margin: 0; 
+        padding: 0; 
+        background-color: #f4f4f9; 
+        color: #333; 
+        line-height: 1.5;
+    }
 
-        /* CABECERA SECCIÓN SINDICAL */
-        header.cabecera-principal { 
-            background-color: #1e3654; 
-            color: white; 
-            padding: 15px 20px; 
+    /* CABECERA SECCIÓN SINDICAL */
+    header.cabecera-principal { 
+        background-color: #1e3654; 
+        color: white; 
+        padding: 15px 20px; 
+    }
+
+    .contenedor-cabecera {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .bloque-izquierdo {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .logo-cabecera {
+        height: 130px;
+        width: auto;
+        object-fit: contain;
+    }
+
+    .logo-ugt-derecha {
+        height: 65px;
+        width: auto;
+        object-fit: contain;
+    }
+
+    .texto-cabecera {
+        text-align: left;
+    }
+
+    .titulo-principal { 
+        margin: 0; 
+        font-size: 22px; 
+        font-weight: bold; 
+        line-height: 1.2;
+    }
+
+    .subtitulo-empresa { 
+        margin: 6px 0 0 0; 
+        font-size: 16px; 
+        color: #ffffff; 
+        font-weight: 600; 
+    }
+
+    .descripcion-portal { 
+        margin: 8px 0 0 0; 
+        font-size: 14px; 
+        color: #e2e8f0; 
+    }
+
+    /* BARRA DE NAVEGACIÓN HORIZONTAL SUPERIOR */
+    .menu-navegacion { 
+        background-color: #2b6cb0; 
+        padding: 10px; 
+        text-align: center; 
+        white-space: nowrap;
+    }
+    .menu-navegacion a { 
+        color: white; 
+        margin: 0 5px; 
+        text-decoration: none; 
+        font-weight: bold; 
+        font-size: 14px; 
+        display: inline-block;
+        padding: 6px 10px;
+    }
+    .menu-navegacion a.activo {
+        background-color: #1a365d;
+        border-radius: 4px;
+    }
+
+    /* CONTENEDOR GENERAL DE LA PÁGINA */
+    .contenedor-pagina {
+        max-width: 1000px;
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+
+    /* CUERPO PRINCIPAL DE CONTENIDO (MAIN) */
+    main.contenido-principal { 
+        padding: 20px; 
+        background: white; 
+        box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        border-radius: 6px;
+        border: 1px solid #e2e8f0;
+    }
+
+    /* BANNER AMARILLA - ESTRUCTURA ADAPTABLE */
+    .contenedor-banner {
+        position: relative;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .imagen-banner {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 4px;
+    }
+
+    .boton-banner {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: #e53e3e;
+        color: white;
+        padding: 10px 16px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 13px;
+        border-radius: 4px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        z-index: 10;
+        text-align: center;
+    }
+
+    /* ESTILOS ESPECÍFICOS GUÍA AMARILLA */
+    .lista-documentos {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+    .lista-documentos li {
+        margin-bottom: 12px;
+    }
+    .lista-documentos a {
+        text-decoration: none;
+        color: #000;
+        font-weight: bold;
+    }
+    .sublista-nomina {
+        list-style-type: circle;
+        padding-left: 25px;
+        margin-top: 6px;
+        font-weight: normal;
+        color: #555;
+    }
+    .sublista-nomina li {
+        margin-bottom: 4px;
+    }
+
+    /* PIE DE PÁGINA */
+    footer { 
+        text-align: center; 
+        padding: 15px; 
+        background-color: #1a365d; 
+        color: white; 
+        margin-top: 30px; 
+        font-size: 13px;
+    }
+    footer a { color: #90cdf4; text-decoration: none; }
+
+    /* OPTIMIZACIÓN ULTRA-COMPACTA PARA MÓVILES */
+    @media (max-width: 768px) {
+        header.cabecera-principal {
+            padding: 10px 12px;
         }
 
         .contenedor-cabecera {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
+            flex-direction: row; /* Mantener horizontal en móvil */
             justify-content: space-between;
-            gap: 20px;
+            align-items: center;
+            gap: 8px;
         }
 
         .bloque-izquierdo {
-            display: flex;
+            flex-direction: row;
+            gap: 10px;
             align-items: center;
-            gap: 20px;
         }
 
         .logo-cabecera {
-            height: 130px;
-            width: auto;
-            object-fit: contain;
+            height: 48px; /* Logo izquierdo compacto */
         }
 
         .logo-ugt-derecha {
-            height: 65px;
-            width: auto;
-            object-fit: contain;
+            height: 35px; /* Logo derecho compacto */
         }
 
         .texto-cabecera {
             text-align: left;
         }
 
-        .titulo-principal { 
-            margin: 0; 
-            font-size: 22px; 
-            font-weight: bold; 
-            line-height: 1.2;
+        .titulo-principal {
+            font-size: 14px;
+            line-height: 1.1;
         }
 
-        .subtitulo-empresa { 
-            margin: 6px 0 0 0; 
-            font-size: 16px; 
-            color: #ffffff; 
-            font-weight: 600; 
+        .subtitulo-empresa {
+            font-size: 11px;
+            margin-top: 2px;
         }
 
-        .descripcion-portal { 
-            margin: 8px 0 0 0; 
-            font-size: 14px; 
-            color: #e2e8f0; 
+        /* Ocultar la descripción larga solo en pantallas pequeñas para ahorrar altura */
+        .descripcion-portal {
+            display: none;
         }
 
-        /* BARRA DE NAVEGACIÓN HORIZONTAL SUPERIOR */
-        .menu-navegacion { 
-            background-color: #2b6cb0; 
-            padding: 10px; 
-            text-align: center; 
-            white-space: nowrap;
-        }
-        .menu-navegacion a { 
-            color: white; 
-            margin: 0 5px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            font-size: 14px; 
-            display: inline-block;
-            padding: 6px 10px;
-        }
-        .menu-navegacion a.activo {
-            background-color: #1a365d;
-            border-radius: 4px;
+        /* Navegación deslizable ultra-compacta */
+        .menu-navegacion {
+            display: flex;
+            overflow-x: auto;
+            justify-content: flex-start;
+            padding: 6px 4px;
+            -webkit-overflow-scrolling: touch;
         }
 
-        /* CONTENEDOR GENERAL DE LA PÁGINA */
+        .menu-navegacion a {
+            flex: 0 0 auto;
+            font-size: 12px;
+            padding: 5px 10px;
+        }
+
         .contenedor-pagina {
-            max-width: 1000px;
-            margin: 20px auto;
-            padding: 0 15px;
+            margin: 10px auto;
+            padding: 0 8px;
         }
 
-        /* CUERPO PRINCIPAL DE CONTENIDO (MAIN) */
-        main.contenido-principal { 
-            padding: 20px; 
-            background: white; 
-            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-            border-radius: 6px;
-            border: 1px solid #e2e8f0;
+        main.contenido-principal {
+            padding: 12px;
         }
 
-        /* BANNER AMARILLA - ESTRUCTURA ADAPTABLE */
-        .contenedor-banner {
-            position: relative;
-            width: 100%;
-            margin-bottom: 20px;
-        }
-
-        .imagen-banner {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 4px;
-        }
-
+        /* Adaptación del Banner y Botón en móvil */
         .boton-banner {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background-color: #e53e3e;
-            color: white;
-            padding: 10px 16px;
-            text-decoration: none;
-            font-weight: bold;
+            position: static;
+            display: block;
+            margin-top: 8px;
+            width: 100%;
+            padding: 10px 8px;
             font-size: 13px;
-            border-radius: 4px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-            z-index: 10;
-            text-align: center;
         }
 
-        /* ESTILOS ESPECÍFICOS GUÍA AMARILLA */
         .lista-documentos {
-            list-style-type: disc;
-            padding-left: 20px;
+            padding-left: 18px;
         }
-        .lista-documentos li {
-            margin-bottom: 12px;
-        }
-        .lista-documentos a {
-            text-decoration: none;
-            color: #000;
-            font-weight: bold;
-        }
+
         .sublista-nomina {
-            list-style-type: circle;
-            padding-left: 25px;
-            margin-top: 6px;
-            font-weight: normal;
-            color: #555;
+            padding-left: 18px;
         }
-        .sublista-nomina li {
-            margin-bottom: 4px;
-        }
-
-        /* PIE DE PÁGINA */
-        footer { 
-            text-align: center; 
-            padding: 15px; 
-            background-color: #1a365d; 
-            color: white; 
-            margin-top: 30px; 
-            font-size: 13px;
-        }
-        footer a { color: #90cdf4; text-decoration: none; }
-
-        /* ADAPTACIÓN ESPECÍFICA PARA DISPOSITIVOS MÓVILES */
-        @media (max-width: 768px) {
-            header.cabecera-principal {
-                padding: 15px 10px;
-            }
-
-            .contenedor-cabecera {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
-            .bloque-izquierdo {
-                flex-direction: column;
-                gap: 10px;
-            }
-            .texto-cabecera {
-                text-align: center;
-            }
-            .logo-cabecera {
-                height: 85px;
-            }
-            .logo-ugt-derecha {
-                height: 55px;
-            }
-            .titulo-principal {
-                font-size: 19px;
-            }
-            .subtitulo-empresa {
-                font-size: 15px;
-            }
-            .descripcion-portal {
-                font-size: 13px;
-            }
-
-            /* Navegación deslizable en móvil */
-            .menu-navegacion {
-                display: flex;
-                overflow-x: auto;
-                justify-content: flex-start;
-                padding: 8px 5px;
-                -webkit-overflow-scrolling: touch;
-            }
-            .menu-navegacion a {
-                flex: 0 0 auto;
-                font-size: 13px;
-                padding: 6px 12px;
-            }
-
-            .contenedor-pagina {
-                margin: 10px auto;
-                padding: 0 8px;
-            }
-
-            main.contenido-principal {
-                padding: 15px;
-            }
-
-            /* Adaptación del Banner y Botón en móvil */
-            .boton-banner {
-                position: static;
-                display: block;
-                margin-top: 10px;
-                width: 100%;
-                padding: 12px 10px;
-                font-size: 14px;
-            }
-
-            .lista-documentos {
-                padding-left: 18px;
-            }
-            .sublista-nomina {
-                padding-left: 18px;
-            }
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
 
