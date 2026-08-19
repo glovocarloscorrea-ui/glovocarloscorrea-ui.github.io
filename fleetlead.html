@@ -379,6 +379,16 @@
         .lista-documentos, .sublista-nomina {
             padding-left: 18px;
         }
+
+        /* MODIFICACIÓN: Disposición en una sola columna para la sección de fleet leads */
+        .contenedor-fleet-leads,
+        .red-fleet-leads,
+        .tarjetas-fleet-leads,
+        .grid-fleet-leads {
+            grid-template-columns: 1fr !important;
+            flex-direction: column !important;
+            width: 100% !important;
+        }
     }
     </style>
 </head>
