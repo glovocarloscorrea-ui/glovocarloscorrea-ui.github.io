@@ -291,7 +291,7 @@
         }
         footer a { color: #90cdf4; text-decoration: none; }
 
-        /* ADAPTACIONES ESPECÍFICAS PARA MÓVIL */
+       /* ADAPTACIONES ESPECÍFICAS PARA MÓVIL */
     @media (max-width: 768px) {
         header.cabecera-principal {
             padding: 10px 8px;
@@ -380,20 +380,40 @@
             padding-left: 18px;
         }
 
-        /* MODIFICACIÓN: Disposición en una sola columna para la sección de fleet leads */
+        /* FORZAR UNA SOLA COLUMNA EN ELEMENTOS Y TARJETAS */
         .contenedor-fleet-leads,
         .red-fleet-leads,
         .tarjetas-fleet-leads,
-        .grid-fleet-leads {
-            grid-template-columns: 1fr !important;
+        .grid-fleet-leads,
+        .grid-contactos,
+        .contenedor-contactos,
+        .lista-contactos,
+        [class*="fleet"],
+        [class*="lead"],
+        [class*="contacto"],
+        [class*="grid"] {
+            display: flex !important;
             flex-direction: column !important;
+            grid-template-columns: 1fr !important;
             width: 100% !important;
+        }
+
+        .tarjeta-fleet,
+        .tarjeta-contacto,
+        .tarjeta,
+        .card,
+        [class*="tarjeta"],
+        [class*="card"] {
+            width: 100% !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
         }
     }
     </style>
 </head>
 <body>
-
     <!-- CABECERA SECCIÓN SINDICAL (NUEVA ESTRUCTURA DE DOS LOGOS) -->
     <header class="cabecera-principal">
         <div class="contenedor-cabecera">
