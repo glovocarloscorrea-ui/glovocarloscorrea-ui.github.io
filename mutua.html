@@ -19,6 +19,9 @@
         })();
     </script>
 
+    <!-- Carga de la API oficial de Google Identity -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    
     <style>
         /* ESTABLECER SCROLLBAR FIJO PARA EVITAR SALTOS DE PÁGINA */
         html { 
@@ -28,94 +31,95 @@
 
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body { 
-            font-family: Arial, sans-serif; 
-            margin: 0; 
-            padding: 0; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
             background-color: #f4f4f9; 
             color: #333; 
             line-height: 1.5;
         }
 
-        /* CABECERA SECCIÓN SINDICAL (ESTRUCTURA MÁS RECIENTE) */
-        header.cabecera-principal { 
-            background-color: #1e3654; 
-            color: white; 
-            padding: 15px 20px; 
-        }
+         /* CABECERA SECCIÓN SINDICAL */
+    header.cabecera-principal { 
+        background-color: #1e3654; 
+        color: white; 
+        padding: 15px 20px; 
+    }
 
-        .contenedor-cabecera {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-        }
+    .contenedor-cabecera {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
 
-        .bloque-izquierdo {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
+    .bloque-izquierdo {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
 
-        .logo-cabecera {
-            height: 130px;
-            width: auto;
-            object-fit: contain;
-        }
+    .logo-cabecera {
+        height: 130px;
+        width: auto;
+        object-fit: contain;
+    }
 
-        .logo-ugt-derecha {
-            height: 65px;
-            width: auto;
-            object-fit: contain;
-        }
+    .logo-ugt-derecha {
+        height: 65px;
+        width: auto;
+        object-fit: contain;
+    }
 
-        .texto-cabecera {
-            text-align: left;
-        }
+    .texto-cabecera {
+        text-align: left;
+    }
 
-        .titulo-principal { 
-            margin: 0; 
-            font-size: 22px; 
-            font-weight: bold; 
-            line-height: 1.2;
-        }
+    .titulo-principal { 
+        margin: 0; 
+        font-size: 22px; 
+        font-weight: bold; 
+        line-height: 1.2;
+    }
 
-        .subtitulo-empresa { 
-            margin: 6px 0 0 0; 
-            font-size: 16px; 
-            color: #ffffff; 
-            font-weight: 600; 
-        }
+    .subtitulo-empresa { 
+        margin: 6px 0 0 0; 
+        font-size: 16px; 
+        color: #ffffff; 
+        font-weight: 600; 
+    }
 
-        .descripcion-portal { 
-            margin: 8px 0 0 0; 
-            font-size: 14px; 
-            color: #e2e8f0; 
-        }
+    .descripcion-portal { 
+        margin: 8px 0 0 0; 
+        font-size: 14px; 
+        color: #e2e8f0; 
+    }
 
-        /* BARRA DE NAVEGACIÓN HORIZONTAL SUPERIOR */
-        .menu-navegacion { 
-            background-color: #2b6cb0; 
-            padding: 10px; 
-            text-align: center; 
-        }
-        .menu-navegacion a { 
-            color: white; 
-            margin: 0 5px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            font-size: 14px; 
-            display: inline-block;
-            padding: 6px 10px;
-        }
-        .menu-navegacion a.activo {
-            background-color: #1a365d;
-            border-radius: 4px;
-        }
+    /* BARRA DE NAVEGACIÓN HORIZONTAL SUPERIOR */
+    .menu-navegacion { 
+        background-color: #2b6cb0; 
+        padding: 10px; 
+        text-align: center; 
+        white-space: nowrap;
+    }
+    .menu-navegacion a { 
+        color: white; 
+        margin: 0 5px; 
+        text-decoration: none; 
+        font-weight: bold; 
+        font-size: 14px; 
+        display: inline-block;
+        padding: 6px 10px;
+    }
+    .menu-navegacion a.activo {
+        background-color: #1a365d;
+        border-radius: 4px;
+    }
 
         /* CONTENEDOR GENERAL DE LA PÁGINA */
         .contenedor-pagina {
@@ -239,28 +243,183 @@
         }
         footer a { color: #90cdf4; text-decoration: none; }
 
-        /* RESPONSIVE CABECERA */
-        @media (max-width: 768px) {
-            .contenedor-cabecera {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
-            .bloque-izquierdo {
-                flex-direction: column;
-                gap: 10px;
-            }
-            .texto-cabecera {
-                text-align: center;
-            }
-            .logo-cabecera {
-                height: 75px;
-            }
-            .logo-ugt-derecha {
-                height: 60px;
-            }
+        /* MODAL DE IDENTIFICACIÓN Y ACCESO */
+    #modal-registro {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.75);
+        display: none; /* Se activa dinámicamente por JS solo si no está registrado */
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        padding: 16px;
+        backdrop-filter: blur(3px);
+    }
+
+    .modal-contenido {
+        background: #ffffff;
+        width: 100%;
+        max-width: 400px;
+        border-radius: 10px;
+        padding: 26px 20px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        text-align: center;
+    }
+
+    .modal-titulo {
+        color: #1a365d;
+        margin-top: 0;
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .modal-subtitulo {
+        font-size: 0.88rem;
+        color: #555;
+        margin-bottom: 20px;
+    }
+
+    .g_id_signin_wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        min-height: 44px;
+    }
+
+    /* TARJETA DE AVISO iOS / WHATSAPP */
+    .banner-ios-whatsapp {
+        background-color: #fff5f5;
+        border: 1px solid #feb2b2;
+        border-radius: 8px;
+        padding: 14px;
+        margin-top: 15px;
+        text-align: left;
+    }
+
+    .banner-ios-titulo {
+        color: #c53030;
+        font-size: 0.85rem;
+        font-weight: 700;
+        margin-bottom: 6px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .btn-safari-link {
+        display: block;
+        width: 100%;
+        background-color: #2b6cb0;
+        color: #ffffff;
+        text-decoration: none;
+        text-align: center;
+        padding: 12px;
+        border-radius: 6px;
+        font-weight: 700;
+        font-size: 0.88rem;
+        margin: 10px 0;
+    }
+
+    .banner-ios-instrucciones {
+        font-size: 0.76rem;
+        color: #742a2a;
+        line-height: 1.35;
+    }
+
+    /* ADAPTACIONES ESPECÍFICAS PARA MÓVIL */
+    @media (max-width: 768px) {
+        header.cabecera-principal {
+            padding: 10px 8px;
         }
-    </style>
+
+        .contenedor-cabecera {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .bloque-izquierdo {
+            flex-direction: row;
+            gap: 8px;
+            align-items: center;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .logo-cabecera {
+            height: 58px; 
+            flex-shrink: 0;
+        }
+
+        .logo-ugt-derecha {
+            height: 28px; 
+            flex-shrink: 0;
+        }
+
+        .texto-cabecera {
+            text-align: left;
+            min-width: 0;
+        }
+
+        .titulo-principal {
+            font-size: 13px;
+            line-height: 1.1;
+            white-space: nowrap; 
+        }
+
+        .subtitulo-empresa {
+            font-size: 10.5px;
+            margin-top: 2px;
+            white-space: nowrap;
+        }
+
+        .descripcion-portal {
+            display: none;
+        }
+
+        .menu-navegacion {
+            display: flex;
+            overflow-x: auto;
+            justify-content: flex-start;
+            padding: 6px 4px;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .menu-navegacion a {
+            flex: 0 0 auto;
+            font-size: 12px;
+            padding: 5px 10px;
+        }
+
+        .contenedor-pagina {
+            margin: 10px auto;
+            padding: 0 8px;
+        }
+
+        main.contenido-principal {
+            padding: 12px;
+        }
+
+        .boton-banner {
+            position: static;
+            transform: none;
+            display: block;
+            margin-top: 8px;
+            width: 100%;
+            padding: 12px 8px;
+            font-size: 13px;
+        }
+
+        .lista-documentos, .sublista-nomina {
+            padding-left: 18px;
+        }
+    }
+</style>
 </head>
 <body>
 
@@ -468,11 +627,11 @@
     <!-- SCRIPT OFICIAL DE GOOGLE IDENTITY -->
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 
-    <!-- MODAL CON BOTÓN OFICIAL DE GOOGLE -->
-    <div id="modal-registro" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.75); display: flex; justify-content: center; align-items: center; z-index: 9999;">
-        <div style="background: white; padding: 30px; border-radius: 10px; max-width: 400px; width: 90%; box-shadow: 0 4px 15px rgba(0,0,0,0.3); text-align: center;">
-            <h3 style="color: #1a365d; margin-top: 0; font-size: 1.3em;">Acceso Sección Sindical UGT</h3>
-            <p style="font-size: 0.9em; color: #555; margin-bottom: 20px;">Inicia sesión con tu cuenta de Google para validar tu acceso al portal de información laboral.</p>
+     <!-- MODAL DE IDENTIFICACIÓN -->
+    <div id="modal-registro">
+        <div class="modal-contenido">
+            <h3 class="modal-titulo">Acceso Sección Sindical UGT</h3>
+            <p class="modal-subtitulo">Inicia sesión con tu cuenta de Google para validar tu acceso al portal de información laboral.</p>
             
             <!-- Configuración del botón de Google -->
             <div id="g_id_onload"
@@ -481,38 +640,69 @@
                  data-auto_prompt="false">
             </div>
 
-            <div class="g_id_signin"
-                 data-type="standard"
-                 data-size="large"
-                 data-theme="outline"
-                 data-text="sign_in_with"
-                 data-shape="rectangular"
-                 data-logo_alignment="left"
-                 style="display: flex; justify-content: center;">
+            <!-- Botón oficial de Google -->
+            <div class="g_id_signin_wrapper">
+                <div class="g_id_signin"
+                     data-type="standard"
+                     data-size="large"
+                     data-theme="outline"
+                     data-text="sign_in_with"
+                     data-shape="rectangular"
+                     data-logo_alignment="left">
+                </div>
             </div>
 
-            <p style="font-size: 0.75em; color: #777; margin-top: 20px;">Identificación rápida de un solo clic para control interno de la plantilla.</p>
+            <!-- Contenedor dinámico de avisos para iOS -->
+            <div id="contenedor-aviso-ios"></div>
+
+            <p style="font-size: 0.75em; color: #777; margin-top: 18px;">Identificación rápida de un solo clic para control interno de la plantilla.</p>
         </div>
     </div>
 
-    <!-- SCRIPT LÓGICA LOGIN -->
+    <!-- SCRIPT LÓGICA DE CONTROL Y AUTENTICACIÓN -->
     <script>
         const URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbyd2fDDima-jZeW0H0L0yGZVDbul8sMJAQMw3OpK_nPLP46kI6n8cNEAYXP4l_wdUuO-g/exec";
 
-        const ua = navigator.userAgent || "";
-        const isIOSWhatsApp = /iPhone|iPad|iPod/i.test(ua) && ua.includes("WhatsApp");
+        document.addEventListener("DOMContentLoaded", function() {
+            // Control contra el destello (FOUC): se comprueba el registro antes de mostrar el modal
+            if (localStorage.getItem('ugt_usuario_registrado') !== 'true') {
+                document.getElementById('modal-registro').style.display = 'flex';
+            }
 
-        if (localStorage.getItem('ugt_usuario_registrado') === 'true') {
-            document.getElementById('modal-registro').style.display = 'none';
-        }
+            // Detección de entorno iOS en WhatsApp
+            const ua = navigator.userAgent || "";
+            const isIOS = /iPhone|iPad|iPod/i.test(ua);
+            const isWhatsApp = ua.includes("WhatsApp");
 
-        if (isIOSWhatsApp) {
-            const avisoiOS = document.createElement('p');
-            avisoiOS.style.cssText = "color: #c53030; font-size: 0.8em; font-weight: bold; margin-top: 10px;";
-            avisoiOS.innerHTML = "⚠️ Si tienes problemas para iniciar sesión, pulsa en los tres puntos (...) o el icono de la brújula y selecciona <b>'Abrir en Safari'</b>.";
-            document.querySelector('#modal-registro > div').appendChild(avisoiOS);
-        }
+            if (isIOS && isWhatsApp) {
+                // Ocultar botón estándar que falla en WebViews de iOS
+                const wrapperBtn = document.querySelector('.g_id_signin_wrapper');
+                if (wrapperBtn) wrapperBtn.style.display = 'none';
 
+                // Inyectar aviso con enlace directo a Safari
+                const contenedorAviso = document.getElementById('contenedor-aviso-ios');
+                const banner = document.createElement('div');
+                banner.className = 'banner-ios-whatsapp';
+                banner.innerHTML = `
+                    <div class="banner-ios-titulo">
+                        <span>⚠️</span>
+                        <span>Abrir en el navegador externo</span>
+                    </div>
+                    <p style="font-size: 0.8rem; color: #4a5568; margin-bottom: 6px;">
+                        Google bloquea el inicio de sesión dentro de WhatsApp en iPhone por seguridad.
+                    </p>
+                    <a href="${window.location.href}" target="_blank" rel="noopener" class="btn-safari-link">
+                        🌐 Abrir en Safari
+                    </a>
+                    <p class="banner-ios-instrucciones">
+                        Si el botón no salta automáticamente: pulsa los tres puntos (<b>...</b>) o el icono de la brújula y elige <b>"Abrir en Safari"</b>.
+                    </p>
+                `;
+                contenedorAviso.appendChild(banner);
+            }
+        });
+
+        // Decodificación de credenciales JWT
         function parseJwt(token) {
             try {
                 var base64Url = token.split('.')[1];
@@ -527,6 +717,7 @@
             }
         }
 
+        // Callback de respuesta de Google GIS
         function handleCredentialResponse(response) {
             try {
                 const usuario = parseJwt(response.credential);
@@ -543,6 +734,7 @@
                 
                 document.getElementById('modal-registro').style.display = 'none';
 
+                // Envío asíncrono de registros a Google Apps Script
                 fetch(URL_APPS_SCRIPT, {
                     method: 'POST',
                     mode: 'no-cors',
