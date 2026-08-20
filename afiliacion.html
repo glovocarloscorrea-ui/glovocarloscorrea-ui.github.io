@@ -500,7 +500,71 @@
             }
         }
     </script>
-</body>
-</html>
+
+    <!-- FALDÓN Y MODAL INVASIVO DE COOKIES -->
+<div id="banner-cookies" style="
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 9998;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 15px;
+    backdrop-filter: blur(4px);
+">
+    <div style="
+        background-color: #1a365d;
+        color: #ffffff;
+        width: 100%;
+        max-width: 800px;
+        padding: 20px 25px;
+        border-radius: 8px;
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
+        border: 1px solid #2b6cb0;
+        margin-bottom: 10px;
+    ">
+        <h3 style="margin: 0 0 10px 0; font-size: 16px; color: #90cdf4; font-weight: bold;">
+            Aviso de Uso de Cookies y Almacenamiento Local
+        </h3>
+        <p style="margin: 0 0 15px 0; font-size: 13px; line-height: 1.5; color: #e2e8f0;">
+            Este portal web utiliza cookies técnicas y de almacenamiento local necesarias para garantizar el correcto funcionamiento del sistema, la gestión de la autenticación de usuarios y la seguridad en la navegación de la Sección Sindical.
+        </p>
+        <div style="text-align: right;">
+            <button id="btn-aceptar-cookies" style="
+                background-color: #2b6cb0;
+                color: #ffffff;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                font-weight: bold;
+                font-size: 14px;
+                cursor: pointer;
+                width: 100%;
+                max-width: 220px;
+            ">
+                Aceptar y Continuar
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Comprobar la clave con la nueva denominación
+        if (localStorage.getItem('ssugtmad_cookies_aceptadas') !== 'true') {
+            document.getElementById('banner-cookies').style.display = 'flex';
+        }
+
+        // Evento de aceptación del usuario
+        document.getElementById('btn-aceptar-cookies').addEventListener('click', function() {
+            localStorage.setItem('ssugtmad_cookies_aceptadas', 'true');
+            document.getElementById('banner-cookies').style.display = 'none';
+        });
+    });
+</script>
 </body>
 </html>
