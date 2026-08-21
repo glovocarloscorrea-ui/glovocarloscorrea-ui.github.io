@@ -45,6 +45,7 @@
             background-color: #1e3654; 
             color: white; 
             padding: 15px 20px; 
+            position: relative;
         }
 
         .contenedor-cabecera {
@@ -54,6 +55,7 @@
             align-items: center;
             justify-content: space-between;
             gap: 20px;
+            position: relative;
         }
 
         .bloque-izquierdo {
@@ -98,12 +100,46 @@
             color: #e2e8f0; 
         }
 
-        /* BARRA DE NAVEGACIÓN HORIZONTAL SUPERIOR CON TRADUCTOR */
+        /* BOTÓN TRADUCTOR INGLÉS EN CABECERA SUPERIOR DERECHA */
+        .bloque-traductor-en {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            z-index: 10;
+        }
+
+        .gtranslate_wrapper a.btn-idioma-en {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 12px;
+            padding: 3px 8px;
+            background-color: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+
+        .gtranslate_wrapper a.btn-idioma-en:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .gtranslate_wrapper img {
+            width: 18px;
+            height: 13px;
+            display: block;
+            border-radius: 2px;
+        }
+
+        /* BARRA DE NAVEGACIÓN HORIZONTAL SUPERIOR */
         .menu-navegacion { 
             background-color: #2b6cb0; 
             padding: 8px 15px; 
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
             flex-wrap: wrap;
             gap: 10px;
@@ -129,24 +165,6 @@
             background-color: #1a365d;
             border-radius: 4px;
         }   
-
-        /* ESTILOS PARA EL SELECTOR DE IDIOMA */
-        #google_translate_element {
-            display: inline-block;
-        }
-        .goog-te-gadget-simple {
-            background-color: #1a365d !important;
-            border: 1px solid #90cdf4 !important;
-            padding: 4px 8px !important;
-            border-radius: 4px !important;
-            font-size: 13px !important;
-        }
-        .goog-te-gadget-simple span, .goog-te-menu-value span {
-            color: #ffffff !important;
-        }
-        .goog-te-gadget-icon {
-            display: none !important;
-        }
 
         /* CONTENEDOR GENERAL */
         .contenedor-pagina {
@@ -270,6 +288,11 @@
                 flex-direction: column;
                 text-align: center;
                 gap: 15px;
+                padding-top: 25px;
+            }
+            .bloque-traductor-en {
+                top: -5px;
+                right: 0px;
             }
             .bloque-izquierdo {
                 flex-direction: column;
@@ -302,6 +325,20 @@
     <!-- CABECERA SECCIÓN SINDICAL -->
     <header class="cabecera-principal">
         <div class="contenedor-cabecera">
+            
+            <!-- TRADUCTOR SÓLO INGLÉS (EN + BANDERA) -->
+            <div class="bloque-traductor-en">
+                <div id="block-gtranslate">
+                    <div class="gtranslate_wrapper">
+                        <a href="#" title="English" data-gt-lang="en" class="glink nturl btn-idioma-en">
+                            <span>EN</span>
+                            <img loading="lazy" src="https://cdn.gtranslate.net/flags/svg/en.svg" alt="English">
+                        </a>
+                    </div>
+                    <div id="google_translate_element2"></div>
+                </div>
+            </div>
+
             <div class="bloque-izquierdo">
                 <img src="seccionlogo.jpg" alt="Logo Sección Sindical UGT Madrid" class="logo-cabecera">
                 <div class="texto-cabecera">
@@ -314,7 +351,7 @@
         </div>
     </header>
 
-    <!-- BARRA DE NAVEGACIÓN CON SELECTOR DE IDIOMA INTEGRADO -->
+    <!-- BARRA DE NAVEGACIÓN -->
     <nav class="menu-navegacion">
         <div class="enlaces-menu">
             <a href="index.html" class="activo">Inicio</a>
@@ -324,9 +361,6 @@
             <a href="contacto.html">Contacto</a>
             <a href="afiliacion.html">Afiliación</a>
         </div>
-        
-        <!-- TRADUCTOR GOOGLE -->
-        <div id="google_translate_element"></div>
     </nav>
 
     <!-- CONTENEDOR GENERAL -->
@@ -458,17 +492,8 @@
         </div>
     </div>
 
-    <!-- SCRIPT INICIALIZADOR DE GOOGLE TRANSLATE -->
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-          new google.translate.TranslateElement({
-            pageLanguage: 'es',
-            includedLanguages: 'en,es,fr,it,ur,ar',
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-          }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- SCRIPT GTRANSLATE (CARRGA DE BANDERAS Y LÓGICA DE TRADUCCIÓN LIMPIA) -->
+    <script src="https://cdn.gtranslate.net/widgets/latest/flags.js" defer></script>
 
     <!-- SCRIPT LÓGICA LOGIN Y COOKIES -->
     <script>
