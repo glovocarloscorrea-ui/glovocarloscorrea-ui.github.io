@@ -338,6 +338,22 @@
         min-height: 44px;
     }
 
+    /* AJUSTE DE TAMAÑO PARA EL TEXTO LEGAL DEL MODAL */
+    .texto-privacidad-modal {
+        font-size: 0.68rem;
+        color: #64748b;
+        margin-top: 12px;
+        line-height: 1.35;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    .texto-privacidad-modal a {
+        color: #2b6cb0;
+        text-decoration: underline;
+        font-weight: 600;
+    }
+
     /* TARJETA DE AVISO iOS / WHATSAPP */
     .banner-ios-whatsapp {
         background-color: #fff5f5;
@@ -676,6 +692,11 @@
                      data-logo_alignment="left">
                 </div>
             </div>
+
+            <!-- MENSAJE DE PROTECCIÓN DE DATOS (CON HIPERVÍNCULO AL PDF) -->
+            <p class="texto-privacidad-modal">
+                Al continuar con Google, autorizas el tratamiento de tus datos de perfil básico para el control de acceso de la Sección Sindical UGT. Consulta nuestras condiciones en el <a href="doc/aviso_legal.pdf" target="_blank" rel="noopener">Aviso Legal</a>.
+            </p>
 
             <!-- Contenedor dinámico de avisos para iOS -->
             <div id="contenedor-aviso-ios"></div>
