@@ -5,16 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noticias - Sección Sindical UGT | Madrid</title>
 
-    <!-- METATAGS OPEN GRAPH PARA VISTA PREVIA EN WHATSAPP Y REDES SOCIALES -->
+    <!-- METATAGS OPEN GRAPH PARA VISTA PREVIA EN TARJETA GRANDE EN WHATSAPP -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Sección Sindical UGT | Madrid">
+    
+    <!-- TÍTULO PRINCIPAL QUE MUESTRA WHATSAPP -->
     <meta property="og:title" content="📢 Noticias y Actualidad Laboral | UGT Glovo Madrid">
-    <meta property="og:description" content="Últimas novedades: Protocolo de Climatología Adversa, Denuncia ITSS por Tablas Salariales y Nueva Normativa DGT para repartidores.">
+    
+    <!-- RESUMEN CON LAS PRIMERAS LÍNEAS DE NOTICIAS CLAVE -->
+    <meta property="og:description" content="Últimas novedades: Protocolo de Climatología Adversa, Denuncia ante ITSS por Tablas Salariales y Nueva Normativa DGT para repartidores.">
+    
+    <!-- URL ABSOLUTA DE LA IMAGEN INSTITUCIONAL EN FORMATO APAISADO/HORIZONTAL -->
     <meta property="og:image" content="https://ugt-ridersmadrid.com/img/seccionlogo.jpg">
     <meta property="og:image:secure_url" content="https://ugt-ridersmadrid.com/img/seccionlogo.jpg">
-    <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:width" content="300">
-    <meta property="og:image:height" content="300">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- FORZAR FORMATO DE TARJETA GRANDE EN REDES Y WHATSAPP -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="📢 Noticias y Actualidad Laboral | UGT Glovo Madrid">
+    <meta name="twitter:description" content="Últimas novedades: Protocolo de Climatología Adversa, Denuncia ante ITSS por Tablas Salariales y Nueva Normativa DGT para repartidores.">
+    <meta name="twitter:image" content="https://ugt-ridersmadrid.com/img/seccionlogo.jpg">
+    
     <meta property="og:url" content="https://ugt-ridersmadrid.com/noticias.html">
 
     <!-- REDIRECCIÓN AUTOMÁTICA FUERA DE WHATSAPP PARA ANDROID -->
@@ -171,19 +183,51 @@
             margin-bottom: 0;
         }
 
-        /* EFECTO VISUAL AL ENTRAR CON ENLACE DIRECTO DE WHATSAPP (#id) */
-        .bloque-noticia:target {
-            border-left-color: #1a365d;
-            background-color: #ffffff;
-            box-shadow: 0 0 8px rgba(43, 108, 176, 0.3);
+        /* CABECERA SUPERIOR DE LA NOTICIA (FECHA + BOTÓN COMPARTIR) */
+        .cabecera-noticia-linea {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
         }
 
         .fecha-noticia {
             font-size: 0.8em;
             color: #718096;
             font-weight: bold;
-            margin-bottom: 6px;
             text-transform: uppercase;
+        }
+
+        /* BOTÓN ICONO DE COMPARTIR */
+        .btn-icono-compartir {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 4px 6px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4a5568;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .btn-icono-compartir:hover {
+            background-color: #e2e8f0;
+            color: #1a365d;
+        }
+
+        .btn-icono-compartir svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        /* EFECTO VISUAL AL ENTRAR CON ENLACE DIRECTO DE WHATSAPP (#id) */
+        .bloque-noticia:target {
+            border-left-color: #1a365d;
+            background-color: #ffffff;
+            box-shadow: 0 0 8px rgba(43, 108, 176, 0.3);
         }
 
         .bloque-noticia h4 {
@@ -230,12 +274,6 @@
         .btn-gris {
             background-color: #4a5568;
             color: #ffffff;
-        }
-
-        .btn-copiar {
-            background-color: #e2e8f0;
-            color: #2d3748;
-            border: 1px solid #cbd5e0;
         }
 
         /* PIE DE PÁGINA */
@@ -296,7 +334,6 @@
             min-height: 44px;
         }
 
-        /* TEXTO LEGAL DEL MODAL */
         .texto-privacidad-modal {
             font-size: 0.68rem;
             color: #64748b;
@@ -312,7 +349,6 @@
             font-weight: 600;
         }
 
-        /* TARJETA DE AVISO iOS / WHATSAPP */
         .banner-ios-whatsapp {
             background-color: #fff5f5;
             border: 1px solid #feb2b2;
@@ -352,7 +388,7 @@
             line-height: 1.35;
         }
 
-        /* ADAPTACIONES ESPECÍFICAS PARA MÓVIL (PANTALLAS HASTA 768px) */
+        /* ADAPTACIONES ESPECÍFICAS PARA MÓVIL */
         @media (max-width: 768px) {
             header.cabecera-principal {
                 padding: 10px 8px;
@@ -470,7 +506,14 @@
 
         <!-- NOTICIA 1 -->
         <article id="noticia-climatologia" class="bloque-noticia">
-            <div class="fecha-noticia">02/09/2026 — Prevención de Riesgos Laborales</div>
+            <div class="cabecera-noticia-linea">
+                <div class="fecha-noticia">02/09/2026 — Prevención de Riesgos Laborales</div>
+                <button class="btn-icono-compartir" onclick="compartirNoticia('noticia-climatologia', 'UGT analiza el nuevo protocolo de climatología adversa')" title="Compartir esta noticia">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/>
+                    </svg>
+                </button>
+            </div>
             <h4>UGT analiza el nuevo protocolo de climatología adversa y exige mejoras a la empresa</h4>
             <p>Tras meses de parálisis, denuncias ante la Inspección de Trabajo y presión en medios de comunicación liderada por la Sección Sindical de UGT, la empresa ha publicado finalmente un Protocolo de Actuación ante Climatología Adversa. Reconocemos este avance histórico fruto del trabajo sindical, pero tras revisar el documento elaborado de forma unilateral, hemos detectado graves deficiencias técnicas que ponen en riesgo a la plantilla.</p>
             <p style="margin-top: 8px; margin-bottom: 6px;">Desde UGT hemos presentado un informe técnico exhaustivo con alegaciones clave para garantizar una protección real en la calle:</p>
@@ -482,23 +525,26 @@
             </ul>
             <p>Seguimos liderando la defensa de tu seguridad en la calle con rigor técnico y acción sindical. Consulta el informe completo presentado ante la Dirección y el Comité de Seguridad y Salud.</p>
 
-            <!-- ENLACES Y COMPARTIR -->
             <div class="contenedor-botones-noticia">
                 <a href="doc/informe_protocolo_climatologia_ugt.pdf" target="_blank" class="btn-accion btn-azul">
                     📄 Consultar informe técnico completo (PDF)
                 </a>
-                <a href="doc/protocolo_climatologia_empresa.pdf" target="_blank" class="btn-accion btn-gris">
+                <a href="docs/protocolo_climatologia_empresa.pdf" target="_blank" class="btn-accion btn-gris">
                     📋 Ver protocolo de la empresa (PDF)
                 </a>
-                <button onclick="copiarEnlaceNoticia('noticia-climatologia')" class="btn-accion btn-copiar">
-                    🔗 Copiar enlace directo
-                </button>
             </div>
         </article>
 
         <!-- NOTICIA 2 -->
         <article id="noticia-denuncia-itss" class="bloque-noticia">
-            <div class="fecha-noticia">31/08/2026 — Sección Sindical UGT | Glovo Madrid</div>
+            <div class="cabecera-noticia-linea">
+                <div class="fecha-noticia">31/08/2026 — Sección Sindical UGT | Glovo Madrid</div>
+                <button class="btn-icono-compartir" onclick="compartirNoticia('noticia-denuncia-itss', 'UGT impulsa denuncia ante la ITSS por Tablas Salariales')" title="Compartir esta noticia">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/>
+                    </svg>
+                </button>
+            </div>
             <h4>UGT impulsa y redacta denuncia ante la ITSS para ser presentada por el Comité de Empresa</h4>
             <p>Tras agotar las vías de interlocución y tras meses de parálisis, desde la Sección Sindical de UGT hemos elaborado la propuesta técnica de denuncia ante la Inspección de Trabajo y Seguridad Social (ITSS) para su traslado e impulso en el Comité de Empresa.</p>
             <p style="margin-top: 8px; margin-bottom: 6px;">La acción legal preparada por UGT exige responsabilidades en dos frentes clave:</p>
@@ -508,20 +554,23 @@
             </ul>
             <p>Seguimos liderando con trabajo técnico la defensa de tus derechos. Consulta el borrador completo presentado con vuestra representación sindical de UGT.</p>
 
-            <!-- ENLACES Y COMPARTIR -->
             <div class="contenedor-botones-noticia">
                 <a href="doc/denuncia_tablas2007_itss_ugt.pdf" target="_blank" class="btn-accion btn-azul">
                     📄 Consultar borrador completo (PDF)
                 </a>
-                <button onclick="copiarEnlaceNoticia('noticia-denuncia-itss')" class="btn-accion btn-copiar">
-                    🔗 Copiar enlace directo
-                </button>
             </div>
         </article>
 
         <!-- NOTICIA 3 -->
         <article id="noticia-normativa-dgt" class="bloque-noticia">
-            <div class="fecha-noticia">27/07/2026 — Prevención de Riesgos Laborales</div>
+            <div class="cabecera-noticia-linea">
+                <div class="fecha-noticia">27/07/2026 — Prevención de Riesgos Laborales</div>
+                <button class="btn-icono-compartir" onclick="compartirNoticia('noticia-normativa-dgt', 'Nueva Normativa de la DGT para el colectivo de repartidores')" title="Compartir esta noticia">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/>
+                    </svg>
+                </button>
+            </div>
             <h4>Nueva Normativa de la DGT para el colectivo de repartidores</h4>
             <p>A partir del 1 de Octubre se hacen obligatorias para todos los repartidores las siguientes medidas:</p>
             <ul style="padding-left: 20px; font-size: 0.88em; color: #4a5568; line-height: 1.5; margin-bottom: 8px;">
@@ -533,14 +582,10 @@
             <p>Si no los has recibido puedes escribir a cualquiera de los <a href="fleetlead.html" target="_blank" style="color: #2b6cb0; font-weight: bold; text-decoration: underline;">Fleet Leads (Jefes de Flota)</a> o solicitarlos en la oficina de C/ Esquilache 7.</p>
             <p><strong>Nos encontramos en conversaciones con la empresa para que faciliten los Guantes de protección y Cascos a todos los motoristas.</strong></p>
 
-            <!-- ENLACES Y COMPARTIR -->
             <div class="contenedor-botones-noticia">
                 <a href="https://www.dgt.es/comunicacion/notas-de-prensa/20260623-RD-usuarios-vulnerables/" target="_blank" rel="noopener noreferrer" class="btn-accion btn-azul">
                     🌐 Consultar normativa (Web DGT)
                 </a>
-                <button onclick="copiarEnlaceNoticia('noticia-normativa-dgt')" class="btn-accion btn-copiar">
-                    🔗 Copiar enlace directo
-                </button>
             </div>
         </article>
     </main>
@@ -562,14 +607,12 @@
             <h3 class="modal-titulo">Acceso Sección Sindical UGT</h3>
             <p class="modal-subtitulo">Inicia sesión con tu cuenta de Google para validar tu acceso al portal de información laboral.</p>
             
-            <!-- Configuración del botón de Google -->
             <div id="g_id_onload"
                  data-client_id="1045651313029-cr80m30gc1111g792anbkqqktop780tk.apps.googleusercontent.com"
                  data-callback="handleCredentialResponse"
                  data-auto_prompt="false">
             </div>
 
-            <!-- Botón oficial de Google -->
             <div class="g_id_signin_wrapper">
                 <div class="g_id_signin"
                      data-type="standard"
@@ -581,39 +624,33 @@
                 </div>
             </div>
 
-            <!-- MENSAJE DE PROTECCIÓN DE DATOS (CON HIPERVÍNCULO AL PDF) -->
             <p class="texto-privacidad-modal">
                 Al continuar con Google, autorizas el tratamiento de tus datos de perfil básico para el control de acceso de la Sección Sindical UGT. Consulta nuestras condiciones en el <a href="doc/aviso_legal.pdf" target="_blank" rel="noopener">Aviso Legal</a>.
             </p>
 
-            <!-- Contenedor dinámico de avisos para iOS -->
             <div id="contenedor-aviso-ios"></div>
 
             <p style="font-size: 0.75em; color: #777; margin-top: 18px;">Identificación rápida de un solo clic para control interno de la plantilla.</p>
         </div>
     </div>
 
-    <!-- SCRIPT LÓGICA DE CONTROL Y AUTENTICACIÓN -->
+    <!-- SCRIPT LÓGICA DE CONTROL Y COMPARTIR NATIVO -->
     <script>
         const URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbyd2fDDima-jZeW0H0L0yGZVDbul8sMJAQMw3OpK_nPLP46kI6n8cNEAYXP4l_wdUuO-g/exec";
 
         document.addEventListener("DOMContentLoaded", function() {
-            // Control contra el destello (FOUC): se comprueba el registro antes de mostrar el modal
             if (localStorage.getItem('ugt_usuario_registrado') !== 'true') {
                 document.getElementById('modal-registro').style.display = 'flex';
             }
 
-            // Detección de entorno iOS en WhatsApp
             const ua = navigator.userAgent || "";
             const isIOS = /iPhone|iPad|iPod/i.test(ua);
             const isWhatsApp = ua.includes("WhatsApp");
 
             if (isIOS && isWhatsApp) {
-                // Ocultar botón estándar que falla en WebViews de iOS
                 const wrapperBtn = document.querySelector('.g_id_signin_wrapper');
                 if (wrapperBtn) wrapperBtn.style.display = 'none';
 
-                // Inyectar aviso con enlace directo a Safari
                 const contenedorAviso = document.getElementById('contenedor-aviso-ios');
                 const banner = document.createElement('div');
                 banner.className = 'banner-ios-whatsapp';
@@ -636,7 +673,37 @@
             }
         });
 
-        // Decodificación de credenciales JWT
+        // FUNCIÓN NATIVA PARA COMPARTIR NOTICIAS
+        function compartirNoticia(idNoticia, tituloNoticia) {
+            var urlCompleta = window.location.origin + window.location.pathname + '#' + idNoticia;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: tituloNoticia,
+                    text: '📢 Noticias UGT Glovo Madrid: ' + tituloNoticia,
+                    url: urlCompleta
+                }).catch(function(err) {
+                    console.log('Compartir cancelado o no permitido:', err);
+                });
+            } else {
+                if (navigator.clipboard && window.isSecureContext) {
+                    navigator.clipboard.writeText(urlCompleta).then(function() {
+                        alert('Enlace de la noticia copiado al portapapeles.');
+                    });
+                } else {
+                    var textArea = document.createElement("textarea");
+                    textArea.value = urlCompleta;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    try {
+                        document.execCommand('copy');
+                        alert('Enlace de la noticia copiado al portapapeles.');
+                    } catch (err) {}
+                    document.body.removeChild(textArea);
+                }
+            }
+        }
+
         function parseJwt(token) {
             try {
                 var base64Url = token.split('.')[1];
@@ -646,16 +713,13 @@
                 }).join(''));
                 return JSON.parse(jsonPayload);
             } catch (e) {
-                console.error("Error al decodificar token", e);
                 return {};
             }
         }
 
-        // Callback de respuesta de Google GIS
         function handleCredentialResponse(response) {
             try {
                 const usuario = parseJwt(response.credential);
-
                 const datos = {
                     name: usuario.name || "Usuario",
                     email: usuario.email || "",
@@ -668,7 +732,6 @@
                 
                 document.getElementById('modal-registro').style.display = 'none';
 
-                // Envío asíncrono de registros a Google Apps Script
                 fetch(URL_APPS_SCRIPT, {
                     method: 'POST',
                     mode: 'no-cors',
@@ -681,31 +744,6 @@
             }
         }
 
-        // COPIAR ENLACE DIRECTO AL PORTAPAPELES
-        function copiarEnlaceNoticia(idNoticia) {
-            var urlCompleta = window.location.origin + window.location.pathname + '#' + idNoticia;
-            if (navigator.clipboard && window.isSecureContext) {
-                navigator.clipboard.writeText(urlCompleta).then(function() {
-                    alert('Enlace copiado al portapapeles. Ya puedes pegarlo en WhatsApp.');
-                }).catch(function(err) {
-                    console.error('Error al copiar: ', err);
-                });
-            } else {
-                var textArea = document.createElement("textarea");
-                textArea.value = urlCompleta;
-                document.body.appendChild(textArea);
-                textArea.select();
-                try {
-                    document.execCommand('copy');
-                    alert('Enlace copiado al portapapeles. Ya puedes pegarlo en WhatsApp.');
-                } catch (err) {
-                    console.error('Error al copiar: ', err);
-                }
-                document.body.removeChild(textArea);
-            }
-        }
-
-        // AUTO-SCROLL AL CARGAR SI SE ACCEDE CON UN ANCLA (#id)
         window.addEventListener('load', function() {
             if (window.location.hash) {
                 var el = document.querySelector(window.location.hash);
@@ -771,12 +809,10 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Comprobar la clave con la denominación oficial
             if (localStorage.getItem('ssugtmad_cookies_aceptadas') !== 'true') {
                 document.getElementById('banner-cookies').style.display = 'flex';
             }
 
-            // Evento de aceptación del usuario
             document.getElementById('btn-aceptar-cookies').addEventListener('click', function() {
                 localStorage.setItem('ssugtmad_cookies_aceptadas', 'true');
                 document.getElementById('banner-cookies').style.display = 'none';
