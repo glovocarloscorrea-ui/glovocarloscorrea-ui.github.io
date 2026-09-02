@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Afiliación - Sección Sindical UGT | Madrid</title>
+    <title>Noticias - Sección Sindical UGT | Madrid</title>
 
     <!-- REDIRECCIÓN AUTOMÁTICA FUERA DE WHATSAPP PARA ANDROID -->
     <script>
@@ -23,107 +23,108 @@
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     
     <style>
-       /* ESTABLECER SCROLLBAR FIJO PARA EVITAR SALTOS DE PÁGINA */
-    html { 
-        overflow-y: scroll; 
-        scrollbar-gutter: stable;
-    }
+        /* ESTABLECER SCROLLBAR FIJO Y SCROLL SUAVE PARA EVITAR SALTOS DE PÁGINA */
+        html { 
+            overflow-y: scroll; 
+            scrollbar-gutter: stable;
+            scroll-behavior: smooth;
+        }
 
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    body { 
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-        background-color: #f4f4f9; 
-        color: #333; 
-        line-height: 1.5;
-    }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            background-color: #f4f4f9; 
+            color: #333; 
+            line-height: 1.5;
+        }
 
-    /* CABECERA SECCIÓN SINDICAL */
-    header.cabecera-principal { 
-        background-color: #1e3654; 
-        color: white; 
-        padding: 15px 20px; 
-    }
+        /* CABECERA SECCIÓN SINDICAL */
+        header.cabecera-principal { 
+            background-color: #1e3654; 
+            color: white; 
+            padding: 15px 20px; 
+        }
 
-    .contenedor-cabecera {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 20px;
-    }
+        .contenedor-cabecera {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
 
-    .bloque-izquierdo {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-    }
+        .bloque-izquierdo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
 
-    .logo-cabecera {
-        height: 130px;
-        width: auto;
-        object-fit: contain;
-    }
+        .logo-cabecera {
+            height: 130px;
+            width: auto;
+            object-fit: contain;
+        }
 
-    .logo-ugt-derecha {
-        height: 65px;
-        width: auto;
-        object-fit: contain;
-    }
+        .logo-ugt-derecha {
+            height: 65px;
+            width: auto;
+            object-fit: contain;
+        }
 
-    .texto-cabecera {
-        text-align: left;
-    }
+        .texto-cabecera {
+            text-align: left;
+        }
 
-    .titulo-principal { 
-        margin: 0; 
-        font-size: 22px; 
-        font-weight: bold; 
-        line-height: 1.2;
-    }
+        .titulo-principal { 
+            margin: 0; 
+            font-size: 22px; 
+            font-weight: bold; 
+            line-height: 1.2;
+        }
 
-    .subtitulo-empresa { 
-        margin: 6px 0 0 0; 
-        font-size: 16px; 
-        color: #ffffff; 
-        font-weight: 600; 
-    }
+        .subtitulo-empresa { 
+            margin: 6px 0 0 0; 
+            font-size: 16px; 
+            color: #ffffff; 
+            font-weight: 600; 
+        }
 
-    .descripcion-portal { 
-        margin: 8px 0 0 0; 
-        font-size: 14px; 
-        color: #e2e8f0; 
-    }
+        .descripcion-portal { 
+            margin: 8px 0 0 0; 
+            font-size: 14px; 
+            color: #e2e8f0; 
+        }
 
-    /* BARRA DE NAVEGACIÓN HORIZONTAL SUPERIOR */
-    .menu-navegacion { 
-        background-color: #2b6cb0; 
-        padding: 10px; 
-        text-align: center; 
-        white-space: nowrap;
-    }
-    .menu-navegacion a { 
-        color: white; 
-        margin: 0 5px; 
-        text-decoration: none; 
-        font-weight: bold; 
-        font-size: 14px; 
-        display: inline-block;
-        padding: 6px 10px;
-    }
-    .menu-navegacion a.activo {
-        background-color: #1a365d;
-        border-radius: 4px;
-    }
+        /* BARRA DE NAVEGACIÓN HORIZONTAL SUPERIOR */
+        .menu-navegacion { 
+            background-color: #2b6cb0; 
+            padding: 10px; 
+            text-align: center; 
+            white-space: nowrap;
+        }
+        .menu-navegacion a { 
+            color: white; 
+            margin: 0 5px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 14px; 
+            display: inline-block;
+            padding: 6px 10px;
+        }
+        .menu-navegacion a.activo {
+            background-color: #1a365d;
+            border-radius: 4px;
+        }
 
-        /* CONTENEDOR PRINCIPAL */
-        main { 
-            padding: 15px; 
+        /* CONTENEDOR PRINCIPAL Y TITULAR DE SECCIÓN */
+        main.contenido-principal { 
+            padding: 20px; 
             max-width: 800px; 
             margin: 15px auto; 
             background: white; 
@@ -135,225 +136,294 @@
             color: #1a365d;
             font-size: 20px;
             margin-top: 5px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             border-bottom: 2px solid #2b6cb0;
-            padding-bottom: 5px;
+            padding-bottom: 8px;
         }
 
-        /* IMAGEN EN CONSTRUCCIÓN */
-        .img-construccion {
+        /* ESTILOS DE LAS TARJETAS / BLOQUES DE NOTICIAS */
+        .bloque-noticia {
+            background-color: #f8fafc;
+            border-left: 4px solid #2b6cb0; /* Borde de color azul */
+            border-top: 1px solid #e2e8f0;
+            border-right: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+            border-radius: 0 6px 6px 0;
+            padding: 16px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            scroll-margin-top: 20px; /* Margen para no tapar el título al saltar por #id */
+        }
+
+        .bloque-noticia:last-child {
+            margin-bottom: 0;
+        }
+
+        /* EFECTO VISUAL AL ENTRAR CON ENLACE DIRECTO DE WHATSAPP (#id) */
+        .bloque-noticia:target {
+            border-left-color: #1a365d;
+            background-color: #ffffff;
+            box-shadow: 0 0 8px rgba(43, 108, 176, 0.3);
+        }
+
+        .fecha-noticia {
+            font-size: 0.8em;
+            color: #718096;
+            font-weight: bold;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
+
+        .bloque-noticia h4 {
+            margin: 0 0 10px 0;
+            color: #1a202c;
+            font-size: 1.1em;
+            line-height: 1.4;
+        }
+
+        .bloque-noticia p {
+            margin: 0 0 10px 0;
+            font-size: 0.95em;
+            line-height: 1.5;
+            color: #2d3748;
+        }
+
+        /* CONTENEDOR DE BOTONES Y ACCIONES */
+        .contenedor-botones-noticia {
+            margin-top: 14px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .btn-accion {
+            display: inline-block;
+            padding: 8px 12px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.82em;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .btn-azul {
+            background-color: #2b6cb0;
+            color: #ffffff;
+        }
+
+        .btn-gris {
+            background-color: #4a5568;
+            color: #ffffff;
+        }
+
+        .btn-copiar {
+            background-color: #e2e8f0;
+            color: #2d3748;
+            border: 1px solid #cbd5e0;
+        }
+
+        /* PIE DE PÁGINA */
+        footer { 
+            text-align: center; 
+            padding: 15px; 
+            background-color: #1a365d; 
+            color: white; 
+            margin-top: 30px; 
+            font-size: 13px;
+        }
+        footer a { color: #90cdf4; text-decoration: none; }
+
+        /* MODAL DE IDENTIFICACIÓN Y ACCESO */
+        #modal-registro {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-width: 500px;
-            height: auto;
-            display: block;
-            margin: 20px auto;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.75);
+            display: none; /* Se activa dinámicamente por JS solo si no está registrado */
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            padding: 16px;
+            backdrop-filter: blur(3px);
+        }
+
+        .modal-contenido {
+            background: #ffffff;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            padding: 26px 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .modal-titulo {
+            color: #1a365d;
+            margin-top: 0;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .modal-subtitulo {
+            font-size: 0.88rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .g_id_signin_wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            min-height: 44px;
+        }
+
+        /* TEXTO LEGAL DEL MODAL */
+        .texto-privacidad-modal {
+            font-size: 0.68rem;
+            color: #64748b;
+            margin-top: 12px;
+            line-height: 1.35;
+            text-align: center;
+            padding: 0 10px;
+        }
+
+        .texto-privacidad-modal a {
+            color: #2b6cb0;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        /* TARJETA DE AVISO iOS / WHATSAPP */
+        .banner-ios-whatsapp {
+            background-color: #fff5f5;
+            border: 1px solid #feb2b2;
             border-radius: 8px;
+            padding: 14px;
+            margin-top: 15px;
+            text-align: left;
         }
 
-       /* PIE DE PÁGINA */
-    footer { 
-        text-align: center; 
-        padding: 15px; 
-        background-color: #1a365d; 
-        color: white; 
-        margin-top: 30px; 
-        font-size: 13px;
-    }
-    footer a { color: #90cdf4; text-decoration: none; }
-
-       /* MODAL DE IDENTIFICACIÓN Y ACCESO */
-    #modal-registro {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.75);
-        display: none; /* Se activa dinámicamente por JS solo si no está registrado */
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-        padding: 16px;
-        backdrop-filter: blur(3px);
-    }
-
-    .modal-contenido {
-        background: #ffffff;
-        width: 100%;
-        max-width: 400px;
-        border-radius: 10px;
-        padding: 26px 20px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-        text-align: center;
-    }
-
-    .modal-titulo {
-        color: #1a365d;
-        margin-top: 0;
-        font-size: 1.25rem;
-        font-weight: 700;
-        margin-bottom: 8px;
-    }
-
-    .modal-subtitulo {
-        font-size: 0.88rem;
-        color: #555;
-        margin-bottom: 20px;
-    }
-
-    .g_id_signin_wrapper {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-        min-height: 44px;
-    }
-
-    /* AJUSTE DE TAMAÑO PARA EL TEXTO LEGAL DEL MODAL */
-    .texto-privacidad-modal {
-        font-size: 0.68rem;
-        color: #64748b;
-        margin-top: 12px;
-        line-height: 1.35;
-        text-align: center;
-        padding: 0 10px;
-    }
-
-    .texto-privacidad-modal a {
-        color: #2b6cb0;
-        text-decoration: underline;
-        font-weight: 600;
-    }
-
-    /* TARJETA DE AVISO iOS / WHATSAPP */
-    .banner-ios-whatsapp {
-        background-color: #fff5f5;
-        border: 1px solid #feb2b2;
-        border-radius: 8px;
-        padding: 14px;
-        margin-top: 15px;
-        text-align: left;
-    }
-
-    .banner-ios-titulo {
-        color: #c53030;
-        font-size: 0.85rem;
-        font-weight: 700;
-        margin-bottom: 6px;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-    }
-
-    .btn-safari-link {
-        display: block;
-        width: 100%;
-        background-color: #2b6cb0;
-        color: #ffffff;
-        text-decoration: none;
-        text-align: center;
-        padding: 12px;
-        border-radius: 6px;
-        font-weight: 700;
-        font-size: 0.88rem;
-        margin: 10px 0;
-    }
-
-    .banner-ios-instrucciones {
-        font-size: 0.76rem;
-        color: #742a2a;
-        line-height: 1.35;
-    }
-
-    /* ADAPTACIONES ESPECÍFICAS PARA MÓVIL */
-    @media (max-width: 768px) {
-        header.cabecera-principal {
-            padding: 10px 8px;
-        }
-
-        .contenedor-cabecera {
-            flex-direction: row;
-            justify-content: space-between;
+        .banner-ios-titulo {
+            color: #c53030;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            display: flex;
             align-items: center;
             gap: 6px;
         }
 
-        .bloque-izquierdo {
-            flex-direction: row;
-            gap: 8px;
-            align-items: center;
-            flex: 1;
-            min-width: 0;
-        }
-
-        .logo-cabecera {
-            height: 58px; 
-            flex-shrink: 0;
-        }
-
-        .logo-ugt-derecha {
-            height: 28px; 
-            flex-shrink: 0;
-        }
-
-        .texto-cabecera {
-            text-align: left;
-            min-width: 0;
-        }
-
-        .titulo-principal {
-            font-size: 13px;
-            line-height: 1.1;
-            white-space: nowrap; 
-        }
-
-        .subtitulo-empresa {
-            font-size: 10.5px;
-            margin-top: 2px;
-            white-space: nowrap;
-        }
-
-        .descripcion-portal {
-            display: none;
-        }
-
-        .menu-navegacion {
-            display: flex;
-            overflow-x: auto;
-            justify-content: flex-start;
-            padding: 6px 4px;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .menu-navegacion a {
-            flex: 0 0 auto;
-            font-size: 12px;
-            padding: 5px 10px;
-        }
-
-        .contenedor-pagina {
-            margin: 10px auto;
-            padding: 0 8px;
-        }
-
-        main.contenido-principal {
-            padding: 12px;
-        }
-
-        .boton-banner {
-            position: static;
-            transform: none;
+        .btn-safari-link {
             display: block;
-            margin-top: 8px;
             width: 100%;
-            padding: 12px 8px;
-            font-size: 13px;
+            background-color: #2b6cb0;
+            color: #ffffff;
+            text-decoration: none;
+            text-align: center;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            margin: 10px 0;
         }
 
-        .lista-documentos, .sublista-nomina {
-            padding-left: 18px;
+        .banner-ios-instrucciones {
+            font-size: 0.76rem;
+            color: #742a2a;
+            line-height: 1.35;
         }
-    }
-</style>
+
+        /* ADAPTACIONES ESPECÍFICAS PARA MÓVIL (PANTALLAS HASTA 768px) */
+        @media (max-width: 768px) {
+            header.cabecera-principal {
+                padding: 10px 8px;
+            }
+
+            .contenedor-cabecera {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 6px;
+            }
+
+            .bloque-izquierdo {
+                flex-direction: row;
+                gap: 8px;
+                align-items: center;
+                flex: 1;
+                min-width: 0;
+            }
+
+            .logo-cabecera {
+                height: 58px; 
+                flex-shrink: 0;
+            }
+
+            .logo-ugt-derecha {
+                height: 28px; 
+                flex-shrink: 0;
+            }
+
+            .texto-cabecera {
+                text-align: left;
+                min-width: 0;
+            }
+
+            .titulo-principal {
+                font-size: 13px;
+                line-height: 1.1;
+                white-space: nowrap; 
+            }
+
+            .subtitulo-empresa {
+                font-size: 10.5px;
+                margin-top: 2px;
+                white-space: nowrap;
+            }
+
+            .descripcion-portal {
+                display: none;
+            }
+
+            .menu-navegacion {
+                display: flex;
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding: 6px 4px;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .menu-navegacion a {
+                flex: 0 0 auto;
+                font-size: 12px;
+                padding: 5px 10px;
+            }
+
+            main.contenido-principal {
+                padding: 12px;
+                margin: 10px auto;
+            }
+
+            .bloque-noticia {
+                padding: 12px;
+                margin-bottom: 15px;
+            }
+
+            /* BOTONES EN MÓVIL AL 100% PARA FACILITAR EL TOQUE TÁCTIL */
+            .contenedor-botones-noticia .btn-accion {
+                width: 100%;
+                padding: 10px 8px;
+                font-size: 0.85em;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -384,85 +454,85 @@
     </nav>
 
     <!-- CONTENIDO PRINCIPAL DE NOTICIAS -->
-<main class="contenido-principal">
-    <h2 class="titulo-seccion-principal">📢 Tu Sección Sindical UGT | Madrid informa</h2>
+    <main class="contenido-principal">
+        <h2 class="titulo-seccion-principal">📢 Tu Sección Sindical UGT | Madrid informa</h2>
 
-    <!-- NOTICIA 1 -->
-    <article id="noticia-climatologia" class="bloque-noticia">
-        <div class="fecha-noticia">02/09/2026 — Prevención de Riesgos Laborales</div>
-        <h4>UGT analiza el nuevo protocolo de climatología adversa y exige mejoras a la empresa</h4>
-        <p>Tras meses de parálisis, denuncias ante la Inspección de Trabajo y presión en medios de comunicación liderada por la Sección Sindical de UGT, la empresa ha publicado finalmente un Protocolo de Actuación ante Climatología Adversa. Reconocemos este avance histórico fruto del trabajo sindical, pero tras revisar el documento elaborado de forma unilateral, hemos detectado graves deficiencias técnicas que ponen en riesgo a la plantilla.</p>
-        <p style="margin-top: 8px; margin-bottom: 6px;">Desde UGT hemos presentado un informe técnico exhaustivo con alegaciones clave para garantizar una protección real en la calle:</p>
-        <ul style="padding-left: 20px; font-size: 0.88em; color: #4a5568; line-height: 1.5; margin-bottom: 8px;">
-            <li style="margin-bottom: 4px;"><strong>Revisión de Umbrales Arbitrarios:</strong> Exigimos la justificación técnica de los límites de suspensión (como los 9 mm/h de lluvia o 50 km/h de viento) y se exigen estudios específicos que ayuden a determinar las tolerancias reales en los vehículos de dos ruedas ante climas extremos.</li>
-            <li style="margin-bottom: 4px;"><strong>Ajuste Algorítmico Real:</strong> Se debe configurar el algoritmo para incrementar los tiempos de entrega y reducir distancias, sin penalizaciones a los trabajadores.</li>
-            <li style="margin-bottom: 4px;"><strong>Pausas Fisiológicas Efectivas:</strong> Cuestionamos la trampa burocrática del protocolo en alerta naranja por calor; la espera bajo el sol no es descanso. Pedimos la interrupción del servicio desde alerta naranja para vehículos de dos ruedas, así como la inclusión de los compañeros en coches (los cuales quedaron excluidos).</li>
-            <li style="margin-bottom: 4px;"><strong>Dotación de EPIs Homologados:</strong> Reclamamos la entrega urgente de guantes técnicos y cascos para las motos (ante la nueva normativa DGT), así como prendas de verano e invierno y reposición continua de crema y electrolitos.</li>
-        </ul>
-        <p>Seguimos liderando la defensa de tu seguridad en la calle con rigor técnico y acción sindical. Consulta el informe completo presentado ante la Dirección y el Comité de Seguridad y Salud.</p>
+        <!-- NOTICIA 1 -->
+        <article id="noticia-climatologia" class="bloque-noticia">
+            <div class="fecha-noticia">02/09/2026 — Prevención de Riesgos Laborales</div>
+            <h4>UGT analiza el nuevo protocolo de climatología adversa y exige mejoras a la empresa</h4>
+            <p>Tras meses de parálisis, denuncias ante la Inspección de Trabajo y presión en medios de comunicación liderada por la Sección Sindical de UGT, la empresa ha publicado finalmente un Protocolo de Actuación ante Climatología Adversa. Reconocemos este avance histórico fruto del trabajo sindical, pero tras revisar el documento elaborado de forma unilateral, hemos detectado graves deficiencias técnicas que ponen en riesgo a la plantilla.</p>
+            <p style="margin-top: 8px; margin-bottom: 6px;">Desde UGT hemos presentado un informe técnico exhaustivo con alegaciones clave para garantizar una protección real en la calle:</p>
+            <ul style="padding-left: 20px; font-size: 0.88em; color: #4a5568; line-height: 1.5; margin-bottom: 8px;">
+                <li style="margin-bottom: 4px;"><strong>Revisión de Umbrales Arbitrarios:</strong> Exigimos la justificación técnica de los límites de suspensión (como los 9 mm/h de lluvia o 50 km/h de viento) y se exigen estudios específicos que ayuden a determinar las tolerancias reales en los vehículos de dos ruedas ante climas extremos.</li>
+                <li style="margin-bottom: 4px;"><strong>Ajuste Algorítmico Real:</strong> Se debe configurar el algoritmo para incrementar los tiempos de entrega y reducir distancias, sin penalizaciones a los trabajadores.</li>
+                <li style="margin-bottom: 4px;"><strong>Pausas Fisiológicas Efectivas:</strong> Cuestionamos la trampa burocrática del protocolo en alerta naranja por calor; la espera bajo el sol no es descanso. Pedimos la interrupción del servicio desde alerta naranja para vehículos de dos ruedas, así como la inclusión de los compañeros en coches (los cuales quedaron excluidos).</li>
+                <li style="margin-bottom: 4px;"><strong>Dotación de EPIs Homologados:</strong> Reclamamos la entrega urgente de guantes técnicos y cascos para las motos (ante la nueva normativa DGT), así como prendas de verano e invierno y reposición continua de crema y electrolitos.</li>
+            </ul>
+            <p>Seguimos liderando la defensa de tu seguridad en la calle con rigor técnico y acción sindical. Consulta el informe completo presentado ante la Dirección y el Comité de Seguridad y Salud.</p>
 
-        <!-- ENLACES Y COMPARTIR -->
-        <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
-            <a href="doc/informe_protocolo_climatologia_ugt.pdf" target="_blank" style="display: inline-block; background-color: #2b6cb0; color: #ffffff; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 0.82em; font-weight: bold;">
-                📄 Consultar informe técnico completo (PDF)
-            </a>
-            <a href="docs/protocolo_climatologia_empresa.pdf" target="_blank" style="display: inline-block; background-color: #4a5568; color: #ffffff; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 0.82em; font-weight: bold;">
-                📋 Ver protocolo de la empresa (PDF)
-            </a>
-            <button onclick="copiarEnlaceNoticia('noticia-climatologia')" style="background-color: #e2e8f0; color: #2d3748; border: 1px solid #cbd5e0; padding: 6px 12px; border-radius: 4px; font-size: 0.82em; font-weight: bold; cursor: pointer;">
-                🔗 Copiar enlace directo
-            </button>
-        </div>
-    </article>
+            <!-- ENLACES Y COMPARTIR -->
+            <div class="contenedor-botones-noticia">
+                <a href="doc/informe_protocolo_climatologia_ugt.pdf" target="_blank" class="btn-accion btn-azul">
+                    📄 Consultar informe técnico completo (PDF)
+                </a>
+                <a href="docs/protocolo_climatologia_empresa.pdf" target="_blank" class="btn-accion btn-gris">
+                    📋 Ver protocolo de la empresa (PDF)
+                </a>
+                <button onclick="copiarEnlaceNoticia('noticia-climatologia')" class="btn-accion btn-copiar">
+                    🔗 Copiar enlace directo
+                </button>
+            </div>
+        </article>
 
-    <!-- NOTICIA 2 -->
-    <article id="noticia-denuncia-itss" class="bloque-noticia">
-        <div class="fecha-noticia">31/08/2026 — Sección Sindical UGT | Glovo Madrid</div>
-        <h4>UGT impulsa y redacta denuncia ante la ITSS para ser presentada por el Comité de Empresa</h4>
-        <p>Tras agotar las vías de interlocución y tras meses de parálisis, desde la Sección Sindical de UGT hemos elaborado la propuesta técnica de denuncia ante la Inspección de Trabajo y Seguridad Social (ITSS) para su traslado e impulso en el Comité de Empresa.</p>
-        <p style="margin-top: 8px; margin-bottom: 6px;">La acción legal preparada por UGT exige responsabilidades en dos frentes clave:</p>
-        <ul style="padding-left: 20px; font-size: 0.88em; color: #4a5568; line-height: 1.5; margin-bottom: 8px;">
-            <li style="margin-bottom: 4px;"><strong>Incumplimiento Salarial:</strong> La empresa aplica las tablas retributivas de 2006 ignorando la actualización obligatoria del BOE de 2007 (BOE-A-2007-4036), generando impagos en el RUO y salario a más de 2.800 repartidores.</li>
-            <li><strong>Obstrucción Sindical:</strong> Exigimos la entrega inmediata del registro de jornada, auditoría del RUO, contratos y datos económicos ocultados tras haber superado el plazo legal.</li>
-        </ul>
-        <p>Seguimos liderando con trabajo técnico la defensa de tus derechos. Consulta el borrador completo presentado con vuestra representación sindical de UGT.</p>
+        <!-- NOTICIA 2 -->
+        <article id="noticia-denuncia-itss" class="bloque-noticia">
+            <div class="fecha-noticia">31/08/2026 — Sección Sindical UGT | Glovo Madrid</div>
+            <h4>UGT impulsa y redacta denuncia ante la ITSS para ser presentada por el Comité de Empresa</h4>
+            <p>Tras agotar las vías de interlocución y tras meses de parálisis, desde la Sección Sindical de UGT hemos elaborado la propuesta técnica de denuncia ante la Inspección de Trabajo y Seguridad Social (ITSS) para su traslado e impulso en el Comité de Empresa.</p>
+            <p style="margin-top: 8px; margin-bottom: 6px;">La acción legal preparada por UGT exige responsabilidades en dos frentes clave:</p>
+            <ul style="padding-left: 20px; font-size: 0.88em; color: #4a5568; line-height: 1.5; margin-bottom: 8px;">
+                <li style="margin-bottom: 4px;"><strong>Incumplimiento Salarial:</strong> La empresa aplica las tablas retributivas de 2006 ignorando la actualización obligatoria del BOE de 2007 (BOE-A-2007-4036), generando impagos en el RUO y salario a más de 2.800 repartidores.</li>
+                <li><strong>Obstrucción Sindical:</strong> Exigimos la entrega inmediata del registro de jornada, auditoría del RUO, contratos y datos económicos ocultados tras haber superado el plazo legal.</li>
+            </ul>
+            <p>Seguimos liderando con trabajo técnico la defensa de tus derechos. Consulta el borrador completo presentado con vuestra representación sindical de UGT.</p>
 
-        <!-- ENLACES Y COMPARTIR -->
-        <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
-            <a href="doc/denuncia_tablas2007_itss_ugt.pdf" target="_blank" style="display: inline-block; background-color: #2b6cb0; color: #ffffff; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 0.82em; font-weight: bold;">
-                📄 Consultar borrador completo (PDF)
-            </a>
-            <button onclick="copiarEnlaceNoticia('noticia-denuncia-itss')" style="background-color: #e2e8f0; color: #2d3748; border: 1px solid #cbd5e0; padding: 6px 12px; border-radius: 4px; font-size: 0.82em; font-weight: bold; cursor: pointer;">
-                🔗 Copiar enlace directo
-            </button>
-        </div>
-    </article>
+            <!-- ENLACES Y COMPARTIR -->
+            <div class="contenedor-botones-noticia">
+                <a href="doc/denuncia_tablas2007_itss_ugt.pdf" target="_blank" class="btn-accion btn-azul">
+                    📄 Consultar borrador completo (PDF)
+                </a>
+                <button onclick="copiarEnlaceNoticia('noticia-denuncia-itss')" class="btn-accion btn-copiar">
+                    🔗 Copiar enlace directo
+                </button>
+            </div>
+        </article>
 
-    <!-- NOTICIA 3 -->
-    <article id="noticia-normativa-dgt" class="bloque-noticia">
-        <div class="fecha-noticia">27/07/2026 — Prevención de Riesgos Laborales</div>
-        <h4>Nueva Normativa de la DGT para el colectivo de repartidores</h4>
-        <p>A partir del 1 de Octubre se hacen obligatorias para todos los repartidores las siguientes medidas:</p>
-        <ul style="padding-left: 20px; font-size: 0.88em; color: #4a5568; line-height: 1.5; margin-bottom: 8px;">
-            <li style="margin-bottom: 4px;"><strong>Bicicletas y Patinetes:</strong> Casco y Chaleco reflectante.</li>
-            <li><strong>Motocicletas:</strong> Guantes de protección, Calzado cerrado, Casco Homologado (no simplemente certificado), Chaleco reflectante.</li>
-        </ul>
-        <p>El no cumplimiento acarreará multas de 200 euros.</p>
-        <p>Actualmente Glovo proporciona los Chalecos reflectantes y los Cascos de bicicletas y patinetes.</p>
-        <p>Si no los has recibido puedes escribir a cualquiera de los <a href="fleetlead.html" target="_blank" style="color: #2b6cb0; font-weight: bold; text-decoration: underline;">Fleet Leads (Jefes de Flota)</a> o solicitarlos en la oficina de C/ Esquilache 7.</p>
-        <p><strong>Nos encontramos en conversaciones con la empresa para que faciliten los Guantes de protección y Cascos a todos los motoristas.</strong></p>
+        <!-- NOTICIA 3 -->
+        <article id="noticia-normativa-dgt" class="bloque-noticia">
+            <div class="fecha-noticia">27/07/2026 — Prevención de Riesgos Laborales</div>
+            <h4>Nueva Normativa de la DGT para el colectivo de repartidores</h4>
+            <p>A partir del 1 de Octubre se hacen obligatorias para todos los repartidores las siguientes medidas:</p>
+            <ul style="padding-left: 20px; font-size: 0.88em; color: #4a5568; line-height: 1.5; margin-bottom: 8px;">
+                <li style="margin-bottom: 4px;"><strong>Bicicletas y Patinetes:</strong> Casco y Chaleco reflectante.</li>
+                <li><strong>Motocicletas:</strong> Guantes de protección, Calzado cerrado, Casco Homologado (no simplemente certificado), Chaleco reflectante.</li>
+            </ul>
+            <p>El no cumplimiento acarreará multas de 200 euros.</p>
+            <p>Actualmente Glovo proporciona los Chalecos reflectantes y los Cascos de bicicletas y patinetes.</p>
+            <p>Si no los has recibido puedes escribir a cualquiera de los <a href="fleetlead.html" target="_blank" style="color: #2b6cb0; font-weight: bold; text-decoration: underline;">Fleet Leads (Jefes de Flota)</a> o solicitarlos en la oficina de C/ Esquilache 7.</p>
+            <p><strong>Nos encontramos en conversaciones con la empresa para que faciliten los Guantes de protección y Cascos a todos los motoristas.</strong></p>
 
-        <!-- ENLACES Y COMPARTIR -->
-        <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
-            <a href="https://www.dgt.es/comunicacion/notas-de-prensa/20260623-RD-usuarios-vulnerables/" target="_blank" rel="noopener noreferrer" style="display: inline-block; background-color: #2b6cb0; color: #ffffff; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 0.82em; font-weight: bold;">
-                🌐 Consultar normativa (Web DGT)
-            </a>
-            <button onclick="copiarEnlaceNoticia('noticia-normativa-dgt')" style="background-color: #e2e8f0; color: #2d3748; border: 1px solid #cbd5e0; padding: 6px 12px; border-radius: 4px; font-size: 0.82em; font-weight: bold; cursor: pointer;">
-                🔗 Copiar enlace directo
-            </button>
-        </div>
-    </article>
-</main>
+            <!-- ENLACES Y COMPARTIR -->
+            <div class="contenedor-botones-noticia">
+                <a href="https://www.dgt.es/comunicacion/notas-de-prensa/20260623-RD-usuarios-vulnerables/" target="_blank" rel="noopener noreferrer" class="btn-accion btn-azul">
+                    🌐 Consultar normativa (Web DGT)
+                </a>
+                <button onclick="copiarEnlaceNoticia('noticia-normativa-dgt')" class="btn-accion btn-copiar">
+                    🔗 Copiar enlace directo
+                </button>
+            </div>
+        </article>
+    </main>
         
     <!-- PIE DE PÁGINA -->
     <footer>
@@ -599,72 +669,108 @@
                 document.getElementById('modal-registro').style.display = 'none';
             }
         }
+
+        // COPIAR ENLACE DIRECTO AL PORTAPAPELES
+        function copiarEnlaceNoticia(idNoticia) {
+            var urlCompleta = window.location.origin + window.location.pathname + '#' + idNoticia;
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(urlCompleta).then(function() {
+                    alert('Enlace copiado al portapapeles. Ya puedes pegarlo en WhatsApp.');
+                }).catch(function(err) {
+                    console.error('Error al copiar: ', err);
+                });
+            } else {
+                var textArea = document.createElement("textarea");
+                textArea.value = urlCompleta;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    alert('Enlace copiado al portapapeles. Ya puedes pegarlo en WhatsApp.');
+                } catch (err) {
+                    console.error('Error al copiar: ', err);
+                }
+                document.body.removeChild(textArea);
+            }
+        }
+
+        // AUTO-SCROLL AL CARGAR SI SE ACCEDE CON UN ANCLA (#id)
+        window.addEventListener('load', function() {
+            if (window.location.hash) {
+                var el = document.querySelector(window.location.hash);
+                if (el) {
+                    setTimeout(function() {
+                        el.scrollIntoView({ behavior: 'smooth' });
+                    }, 300);
+                }
+            }
+        });
     </script>
 
     <!-- FALDÓN Y MODAL INVASIVO DE COOKIES -->
-<div id="banner-cookies" style="
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
-    z-index: 9998;
-    justify-content: center;
-    align-items: flex-end;
-    padding: 15px;
-    backdrop-filter: blur(4px);
-">
-    <div style="
-        background-color: #1a365d;
-        color: #ffffff;
+    <div id="banner-cookies" style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
         width: 100%;
-        max-width: 800px;
-        padding: 20px 25px;
-        border-radius: 8px;
-        box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
-        border: 1px solid #2b6cb0;
-        margin-bottom: 10px;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.85);
+        z-index: 9998;
+        justify-content: center;
+        align-items: flex-end;
+        padding: 15px;
+        backdrop-filter: blur(4px);
     ">
-        <h3 style="margin: 0 0 10px 0; font-size: 16px; color: #90cdf4; font-weight: bold;">
-            Aviso de Uso de Cookies y Almacenamiento Local
-        </h3>
-        <p style="margin: 0 0 15px 0; font-size: 13px; line-height: 1.5; color: #e2e8f0;">
-            Este portal web utiliza cookies técnicas y de almacenamiento local necesarias para garantizar el correcto funcionamiento del sistema, la gestión de la autenticación de usuarios y la seguridad en la navegación de la Sección Sindical.
-        </p>
-        <div style="text-align: right;">
-            <button id="btn-aceptar-cookies" style="
-                background-color: #2b6cb0;
-                color: #ffffff;
-                border: none;
-                padding: 10px 20px;
-                border-radius: 5px;
-                font-weight: bold;
-                font-size: 14px;
-                cursor: pointer;
-                width: 100%;
-                max-width: 220px;
-            ">
-                Aceptar y Continuar
-            </button>
+        <div style="
+            background-color: #1a365d;
+            color: #ffffff;
+            width: 100%;
+            max-width: 800px;
+            padding: 20px 25px;
+            border-radius: 8px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
+            border: 1px solid #2b6cb0;
+            margin-bottom: 10px;
+        ">
+            <h3 style="margin: 0 0 10px 0; font-size: 16px; color: #90cdf4; font-weight: bold;">
+                Aviso de Uso de Cookies y Almacenamiento Local
+            </h3>
+            <p style="margin: 0 0 15px 0; font-size: 13px; line-height: 1.5; color: #e2e8f0;">
+                Este portal web utiliza cookies técnicas y de almacenamiento local necesarias para garantizar el correcto funcionamiento del sistema, la gestión de la autenticación de usuarios y la seguridad en la navegación de la Sección Sindical.
+            </p>
+            <div style="text-align: right;">
+                <button id="btn-aceptar-cookies" style="
+                    background-color: #2b6cb0;
+                    color: #ffffff;
+                    border: none;
+                    padding: 10px 20px;
+                    border-radius: 5px;
+                    font-weight: bold;
+                    font-size: 14px;
+                    cursor: pointer;
+                    width: 100%;
+                    max-width: 220px;
+                ">
+                    Aceptar y Continuar
+                </button>
+            </div>
         </div>
     </div>
-</div>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Comprobar la clave con la nueva denominación
-        if (localStorage.getItem('ssugtmad_cookies_aceptadas') !== 'true') {
-            document.getElementById('banner-cookies').style.display = 'flex';
-        }
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Comprobar la clave con la denominación oficial
+            if (localStorage.getItem('ssugtmad_cookies_aceptadas') !== 'true') {
+                document.getElementById('banner-cookies').style.display = 'flex';
+            }
 
-        // Evento de aceptación del usuario
-        document.getElementById('btn-aceptar-cookies').addEventListener('click', function() {
-            localStorage.setItem('ssugtmad_cookies_aceptadas', 'true');
-            document.getElementById('banner-cookies').style.display = 'none';
+            // Evento de aceptación del usuario
+            document.getElementById('btn-aceptar-cookies').addEventListener('click', function() {
+                localStorage.setItem('ssugtmad_cookies_aceptadas', 'true');
+                document.getElementById('banner-cookies').style.display = 'none';
+            });
         });
-    });
-</script>
+    </script>
 </body>
 </html>
