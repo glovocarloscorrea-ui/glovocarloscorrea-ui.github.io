@@ -3,28 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UGT | Madrid informa: Impulsamos nueva denuncia</title>
+    <title>📢 [1/12 APÓSTOLES] UGT exige atrasos salariales ante la ITSS</title>
 
-    <!-- METATAGS OPEN GRAPH ESPECÍFICOS DE ESTA NOTICIA PARA WHATSAPP -->
-<meta property="og:type" content="article">
-<meta property="og:site_name" content="Sección Sindical UGT | Madrid">
-<meta property="og:title" content="📢 Nueva Normativa DGT para repartidores">
-<meta property="og:description" content="Nuevas medidas obligatorias de la DGT para repartidores a partir del 1 de Octubre.">
+    <!-- METATAGS OPEN GRAPH (ESPECIAL PARA PREVISUALIZACIÓN EN WHATSAPP Y TELEGRAM) -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Sección Sindical UGT | Madrid">
+    <meta property="og:title" content="📢 [1/12 APÓSTOLES] UGT fundamenta denuncia por atrasos salariales y la traslada al Comité">
+    <meta property="og:description" content="Apostamos por la unidad intersindical: UGT aporta su capacidad técnica trasladando al Comité de Empresa la 1.ª de 12 denuncias ante la ITSS para reclamar sueldos y atrasos a toda la plantilla.">
 
-    <!-- IMAGEN ESPECÍFICA PARA LA VIÑETA DE WHATSAPP (Ruta exacta a la imagen real) -->
-<meta property="og:image" content="https://ugt-ridersmadrid.com/noticia/normativa_dgt_270726.jpg">
-<meta property="og:image:secure_url" content="https://ugt-ridersmadrid.com/noticia/normativa_dgt_270726.jpg">
-<meta property="og:image:type" content="image/jpeg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+    <!-- URL DE LA IMAGEN/VIÑETA ESPECÍFICA DE ESTA NOTICIA -->
+    <meta property="og:image" content="https://ugt-ridersmadrid.com/noticia/denuncia_serie1de12_1_310826.jpg">
+    <meta property="og:image:secure_url" content="https://ugt-ridersmadrid.com/noticia/denuncia_serie1de12_1_310826.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="📢 Nueva Normativa DGT para repartidores">
-<meta name="twitter:description" content="Nuevas medidas obligatorias de la DGT para repartidores a partir del 1 de Octubre.">
-<meta name="twitter:image" content="https://ugt-ridersmadrid.com/noticia/normativa_dgt_270726.jpg">
+    <!-- METATAGS PARA TWITTER / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="📢 [1/12 APÓSTOLES] UGT exige atrasos salariales ante la ITSS">
+    <meta name="twitter:description" content="Unidad y rigor técnico: UGT traslada al Comité de Empresa la primera denuncia de la serie 'Los 12 Apóstoles' para exigir la actualización de sueldos en Madrid.">
+    <meta name="twitter:image" content="https://ugt-ridersmadrid.com/noticia/denuncia_serie1de12_1_310826.jpg">
 
-<!-- URL REAL Y EXACTA DEL ARCHIVO -->
-<meta property="og:url" content="https://ugt-ridersmadrid.com/noticia/normativa_dgt_270726.html">
+    <!-- ENLACE CANÓNICO Y URL REAL DEL ARCHIVO -->
+    <meta property="og:url" content="https://ugt-ridersmadrid.com/noticia/denuncia_serie1de12_1_310826.html">
+    <link rel="canonical" href="https://ugt-ridersmadrid.com/noticia/denuncia_serie1de12_1_310826.html">
 
     <!-- REDIRECCIÓN AUTOMÁTICA FUERA DE WHATSAPP PARA ANDROID -->
     <script>
@@ -44,7 +46,6 @@
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     
     <style>
-        /* ESTABLECER SCROLLBAR FIJO PARA EVITAR SALTOS DE PÁGINA */
         html { 
             overflow-y: scroll; 
             scrollbar-gutter: stable;
@@ -163,8 +164,17 @@
             font-size: 0.85em;
             color: #718096;
             font-weight: bold;
-            text-transform: uppercase;
             margin-bottom: 10px;
+        }
+
+        .etiqueta-categoria {
+            color: #e53e3e;
+            font-size: 0.75em;
+            display: block;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 0.5px;
         }
 
         .titulo-noticia-individual {
@@ -202,6 +212,13 @@
         .cuerpo-noticia li {
             margin-bottom: 6px;
             line-height: 1.5;
+        }
+
+        .subtitulo-seccion {
+            color: #1a365d;
+            font-size: 1.1em;
+            font-weight: 700;
+            margin: 18px 0 10px 0;
         }
 
         .contenedor-acciones-noticia {
@@ -427,43 +444,48 @@
 
         <!-- NOTICIA COMPLETA -->
         <main class="contenido-principal">
-            <div class="metadatos-noticia" style="text-transform: none;">
-                <span>27/07/2026 - Prevención de Riesgos Laborales</span>
+            <div class="metadatos-noticia">
+                <span>31/08/2026 — Sección Sindical UGT | Glovo Madrid</span>
             </div>
 
-            <h2 class="titulo-noticia-individual">Nueva Normativa de la DGT para el colectivo de repartidores</h2>
+            <h2 class="titulo-noticia-individual">
+                <span class="etiqueta-categoria">[CAMPAÑA 12 APÓSTOLES — SERIE 1 DE 12]</span>
+                UGT impulsa la campaña «Los 12 Apóstoles» y pone su capacidad técnica al servicio de la unidad en el Comité de Empresa
+            </h2>
 
             <!-- IMAGEN DESTACADA DE LA NOTICIA -->
-            <img src="/noticia/normativa_dgt_270726.jpg" alt="Nueva Normativa DGT Repartidores" class="imagen-destacada-noticia">
+            <img src="/noticia/denuncia_serie1de12_1_310826.jpg" alt="Denuncia Serie 1 de 12 UGT" class="imagen-destacada-noticia">
 
             <div class="cuerpo-noticia">
-                <p>A partir del 1 de Octubre se hacen obligatorias para todos los repartidores las siguientes medidas impuestas por la Dirección General de Tráfico (DGT):</p>
-                
+                <p>En la Sección Sindical de UGT Madrid tenemos una certeza clara: <strong>los logros aislados o individuales tienen un alcance limitado</strong>. Para garantizar que la totalidad de la plantilla de Madrid vea reconocidos y protegidos sus derechos, es imprescindible apostar por la plena colaboración e integración intersindical. Nuestro objetivo no es el reconocimiento de siglas, sino la mejora real y efectiva en el día a día de cada repartidor y repartidora.</p>
+
+                <p>Por ello, asumimos el compromiso de liderar desde la responsabilidad y el trabajo de fondo, poniendo nuestra experiencia, fundamentación jurídica y capacidad técnica al servicio del Comité de Empresa.</p>
+
+                <p>En el marco de esta estrategia unitaria, presentamos <strong>«Los 12 Apóstoles»</strong>: un plan integral compuesto por <strong>12 denuncias técnicas</strong> diseñadas para corregir de forma sistemática los mayores incumplimientos de la empresa.</p>
+
+                <h3 class="subtitulo-seccion">Serie 1 de 12: Reclamación Salarial y Atrasos en Nómina</h3>
+
+                <p>Iniciamos esta serie con el primer gran bloque técnico, elaborado de manera íntegra por UGT y puesto formalmente a disposición del Comité de Empresa para su asunción e impulso unificado ante la Inspección de Trabajo y Seguridad Social (ITSS):</p>
+
                 <ul>
-                    <li><strong>Bicicletas y Patinetes:</strong> Casco obligatorio y Chaleco reflectante.</li>
-                    <li><strong>Motocicletas:</strong> Guantes de protección, Calzado cerrado, Casco Homologado (no simplemente certificado) y Chaleco reflectante.</li>
+                    <li><strong>Atrasos y Actualización Salarial:</strong> Exigimos la regularización de las retribuciones conforme a la actualización obligatoria del convenio (referencia BOE), reclamando los importes adeudados en salario y en el concepto de RUO a más de 2.800 trabajadores.</li>
+                    <li><strong>Transparencia e Información:</strong> Denunciamos la falta de entrega del registro de jornada, la falta de auditoría sobre las métricas del RUO y la vulneración continuada de los derechos de información de la representación legal.</li>
                 </ul>
 
-                <p>El no cumplimiento de estas medidas acarreará sanciones económicas con multas de <strong>200 euros</strong>.</p>
-                
-                <p>Actualmente Glovo proporciona los Chalecos reflectantes y los Cascos de bicicletas y patinetes.</p>
-                
-                <p>Si no los has recibido puedes escribir a cualquiera de los <a href="/fleetlead.html" target="_blank" style="color: #2b6cb0; font-weight: bold; text-decoration: underline;">Fleet Leads (Jefes de Flota)</a> o solicitarlos en la oficina de C/ Esquilache 7.</p>
-                
-                <p><strong>Nos encontramos en conversaciones con la empresa para que faciliten los Guantes de protección y Cascos a todos los motoristas.</strong></p>
+                <p>UGT aporta el trabajo técnico y la base legal; el Comité de Empresa aporta la fuerza de la unidad institucional. Seguimos trabajando por y para toda la plantilla.</p>
             </div>
 
-            <!-- BOTÓN DGT ALINEADO A LA IZQUIERDA -->
+            <!-- BOTÓN DOCUMENTO ALINEADO A LA IZQUIERDA -->
             <div style="margin: 25px 0;">
-                <a href="https://www.dgt.es/comunicacion/notas-de-prensa/20260623-RD-usuarios-vulnerables/" target="_blank" rel="noopener noreferrer" class="btn-accion btn-azul">
-                🌐 Consultar normativa (Web DGT)
+                <a href="/doc/denuncia_tablas2007_itss_ugt.pdf" target="_blank" rel="noopener noreferrer" class="btn-accion btn-azul">
+                    📄 Consultar borrador completo (PDF)
                 </a>
             </div>
 
             <div class="contenedor-acciones-noticia">
                 <a href="/noticias.html" class="btn-accion btn-volver">← Volver a Noticias</a>
 
-                <button class="btn-icono-compartir" onclick="compartirNoticia('Nueva Normativa de la DGT para el colectivo de repartidores')" title="Compartir esta noticia">
+                <button class="btn-icono-compartir" onclick="compartirNoticia('[1/12 APÓSTOLES] UGT fundamenta denuncia por atrasos salariales y la traslada al Comité')" title="Compartir esta noticia">
                     <svg viewBox="0 0 24 24">
                         <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/>
                     </svg>
@@ -490,14 +512,12 @@
             <h3 class="modal-titulo">Acceso Sección Sindical UGT</h3>
             <p class="modal-subtitulo">Inicia sesión con tu cuenta de Google para validar tu acceso al portal de información laboral.</p>
             
-            <!-- Configuración del botón de Google -->
             <div id="g_id_onload"
                  data-client_id="1045651313029-cr80m30gc1111g792anbkqqktop780tk.apps.googleusercontent.com"
                  data-callback="handleCredentialResponse"
                  data-auto_prompt="false">
             </div>
 
-            <!-- Botón oficial de Google -->
             <div class="g_id_signin_wrapper">
                 <div class="g_id_signin"
                      data-type="standard"
@@ -509,12 +529,10 @@
                 </div>
             </div>
 
-            <!-- MENSAJE DE PROTECCIÓN DE DATOS (CON HIPERVÍNCULO AL PDF) -->
             <p class="texto-privacidad-modal">
                 Al continuar con Google, autorizas el tratamiento de tus datos de perfil básico para el control de acceso de la Sección Sindical UGT. Consulta nuestras condiciones en el <a href="/doc/aviso_legal.pdf" target="_blank" rel="noopener">Aviso Legal</a>.
             </p>
 
-            <!-- Contenedor dinámico de avisos para iOS -->
             <div id="contenedor-aviso-ios"></div>
 
             <p style="font-size: 0.75em; color: #777; margin-top: 18px;">Identificación rápida de un solo clic para control interno de la plantilla.</p>
